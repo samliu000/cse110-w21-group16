@@ -1,28 +1,40 @@
-Feel free to refer to any of the meeting notes.
+#### Meeting 1
 
+##### Saturday 1/16/21, 3:00-3:50 pm on Zoom, Team 16/Skynet 
+Attendees: Aven Huang, Fengdi Liu, Joshue Aguirre, Kevin Stubbings, Matias Lin, Lara Daneshgaran Bajastani, Shuhua Xie, Yuru Zhou, Samuel Liu (first ten minutes)
 
-1. Header—date, start time - end time, method (e.g. physical location or Skype call), full names of the members who attended, Team number/name
+##### Purpose: Discuss team rules, introduce ourselves, and work on current assignments. 
 
-2. Objective statement—1-2 sentences that establish the goal or purpose of the meeting (e.g., to share findings and progress, to decide on a design, or to brainstorm)
+##### Current agenda, everything was accomplished: 
+1. Team screenshot after playing among us
+2. Personal introductions
+3. Present Github Repo
+4. Complete team contract assignment 
+5. Discuss group wiki and assign wiki makers
+6. Take team video 
 
-3. Current agenda for meeting
-  
-    Also mention anything on agenda not discussed (save for next meeting)
+##### Tasks completed from previous week: No tasks from last week, this is first week. 
 
-4. Completed tasks from previous week or last meeting, including:
+##### Tasks to be completed:
+1. Make group wiki (In Progress)
+2. Each person submits own information for roster
+  - Matias & Joshue
+3. Submit Group Video (In Progress)
+  - Edit video
+4. Submit Screenshot (In Progress)
+5. Submit rules.md (In Progress)
+  - Each person should sign and add pdf to repo
 
-    Bulleted list of tasks
-  
-    Person(s) assigned to each task (“task owner”)
+##### Project Timeline Week 1, due dates:
+1. Wednesday 1/20 by 9:59 am - Group Bonding Screenshot
+2. Wednesday 1/20  by 11:59 pm
+  - Group Kickoff, Repo, Meeting Prep
+  - Group Page and Video
+  - Group Contract
 
-    Short summary of status (e.g., completed and submitted on Carmen or in progress or pending group review)
-
-5. Tasks to be completed for the upcoming week, including:
-
-    Bulleted list of tasks
-
-    Person(s) assigned to the task (“task owner”)
-
-6. Project timeline (may be presented as a Gantt chart) indicating major milestones and deadlines
-
-7. Decisions made by group with key information about how the decisions were made (e.g., group consensus, dissenting opinions, decided by project manager)
+##### Decisions made:
+- Group name - group consensus
+- Slack was chosen as primary means of communication - group consensus
+- Rules for contract were discussed and agreed upon - group consensus
+- Group wiki task was delegated to two members - they volunteered
+- Group video editor was selected - they volunteered 

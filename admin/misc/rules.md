@@ -25,7 +25,7 @@ Aven Huang			xih017@ucsd.edu		303-526-8837
 
 Slack will be used to communicate between team members and collaborate on projects. All members will be expected to read emails from anyone in the group on a daily basis and respond in not more than 24 hours. Emails may be used for more important information that needs to be shared with the whole team. Files may be transferred over Slack or added individually to the team repo. Personal phone numbers are for worst case scenarios when no other means is working. 
 
-3) Scheduling Meetings (Schedule at least one meeting as part of constructing your team agreement.)
+3) Scheduling Meetings 
 
 The meeting time will be determined by the best availability according to the when2meet form. Meetings will be held once a week on Saturdays from 3:00-3:45 pm. In order to change weekly meeting times, everyone one the team must be in agreement. If someone is absent for unavoidable reasons, they will be updated via Slack from the team leaders. Meetings may be recorded for safekeeping and used to review information. 
 

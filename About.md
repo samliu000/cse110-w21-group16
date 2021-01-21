@@ -10,19 +10,22 @@ Hey! My name is Matias Lin and I am a junior Muir student studying Bioinformatic
 ## Lara Daneshgaran-Bajastani
 <img align="left" src="profiles/LaraDaneshgaran.jpg" width=250 style="margin-right: 20px;">
 <br /><br /><br />
-TODO
+Hi! I’m Lara Daneshgaran, a 4th year Computer Engineering student at UCSD. In my free time I like to listen to music and hike.  
+[My Github Profile](https://github.com/ldaneshg)
 <br /><br /><br /><br />
 
 ## Shuhua Xie
 <img align="left" src="profiles/ShuhuaXie.jpg" width=250 style="margin-right: 20px;">
 <br /><br /><br />
-TODO
+Nice to meet everyone, I’m Shuhua Xie, a 2nd year student studying Computer Science and Applied Math. I’m a Muir student that enjoys hiking and photography.  
+[My Github Profile](https://github.com/sa-xie/)
 <br /><br /><br /><br />
 
 ## Kevin Stubbings 
 <img align="left" src="profiles/KevinStubbings.jpg" width=250 style="margin-right: 20px;">
 <br /><br /><br /><br />
-TODO
+Hey there, I’m Kevin Stubbings, a 2nd year Computer Science student. In my free time I like to read mythology and study computer security.  
+[My Github Profile](https://github.com/memkizz/)
 <br /><br /><br /><br /><br /><br />
 
 ## Samuel Liu
@@ -40,8 +43,10 @@ My name is Yuru Zhou, a second year undergraduate student majoring in Mathematic
 <br /><br /><br /><br /><br />
 
 ## Fengdi Liu
+<img align="left" src="profiles/FengdiLiu.jpg" width=250 style="margin-right: 20px;">
 <br /><br /><br />
-TODO
+Hi there, my name is Fengdi. I am a Computer Science major student from Warren College. I like playing tennis, hiking, and cooking.  
+[My Github Profile](https://github.com/fengdi-liu)
 <br /><br /><br /><br />
 
 ## Joshue Aguirre

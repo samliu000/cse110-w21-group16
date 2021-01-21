@@ -5,14 +5,14 @@
 <br /><br /><br />
 Hey! My name is Matias Lin and I am a junior Muir student studying Bioinformatics under the Computer Science department. I'm very passionate about the possibilities of machine learning in the area of personalized medicine.  
 [My Github Profile](https://github.com/matiaslin)
-<br /><br /><br /><br />
+<br /><br /><br /><br /><br />
 
 ## Lara Daneshgaran-Bajastani
 <img align="left" src="profiles/LaraDaneshgaran.jpg" width=250 style="margin-right: 20px;">
 <br /><br /><br />
 Hi! I’m Lara Daneshgaran, a 4th year Computer Engineering student at UCSD. In my free time I like to listen to music and hike.  
 [My Github Profile](https://github.com/ldaneshg)
-<br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br />
 
 ## Shuhua Xie
 <img align="left" src="profiles/ShuhuaXie.jpg" width=250 style="margin-right: 20px;">
@@ -33,14 +33,14 @@ Hey there, I’m Kevin Stubbings, a 2nd year Computer Science student. In my fre
 <br /><br /><br />
 Hello! My name is Samuel Liu and I am a 2nd year Warren student studying Computer Science. I love cooking, growing plants, and playing games. 
 [My Github Profile](https://github.com/samliu000)
-<br /><br /><br /><br />
+<br /><br /><br /><br /><br />
 
 ## Yuru Zhou
 <img align="left" src="profiles/YuruZhou.jpg" width=250 style="margin-right: 20px;">
 <br /><br /><br />
 My name is Yuru Zhou, a second year undergraduate student majoring in Mathematics & Computer Science. I am interested in web & mobile app development, and passionate about creating innovative solutions for future technology.  
 [My Github Profile](https://github.com/xxwwyytt1)
-<br /><br /><br /><br /><br />
+<br /><br /><br /><br />
 
 ## Fengdi Liu
 <img align="left" src="profiles/FengdiLiu.jpg" width=250 style="margin-right: 20px;">

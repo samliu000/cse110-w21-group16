@@ -12,7 +12,7 @@ Hey! My name is Matias Lin and I am a junior Muir student studying Bioinformatic
 <br /><br /><br />
 Hi! I’m Lara Daneshgaran, a 4th year Computer Engineering student at UCSD. In my free time I like to listen to music and hike.  
 [My Github Profile](https://github.com/ldaneshg)
-<br /><br /><br /><br />
+<br /><br /><br /><br /><br />
 
 ## Shuhua Xie
 <img align="left" src="profiles/ShuhuaXie.jpg" width=250 style="margin-right: 20px;">
@@ -51,7 +51,7 @@ Hi there, my name is Fengdi. I am a Computer Science major student from Warren C
 
 ## Joshue Aguirre
 <img align="left" src="profiles/JoshueAguirre.jpg" width=250 style="margin-right: 20px;">
-<br /><br /><br />
+<br /><br /><br /><br />
 My name is Joshue Aguirre. I am a fourth year
 Computer Science major. I enjoy listening to music and playing video games. 
 [My Github Profile](https://github.com/Yoshisham)

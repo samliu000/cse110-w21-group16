@@ -1,4 +1,4 @@
-Home | [About Us](https://melinucsd.github.io/cse110-team16-tmpwebsite/About)
+Home | [About Us](https://melinucsd.github.io/cse110-w21-group16/About)
 # Skynet - Team 16
 
 ## Brand
@@ -13,4 +13,4 @@ Our set of skills and diverse backgrounds allow us to overcome any challenge in 
 -  Peacemaker in nature. 
 
 ## Roster
-Click [here](https://melinucsd.github.io/cse110-team16-tmpwebsite/About) to get to know us!
+Click [here](https://melinucsd.github.io/cse110-w21-group16/About) to get to know us!

@@ -28,17 +28,17 @@
 
 #### Decisions made:   
   - Role setup
-     a. Coordinate A: Hold c, d, e, f and b accountable
-     b. Coordinate B: Hold g, h and accountable.
-     Phase I (Planning, Designing and Prototyping)
-     c. Planner: Fengdi Liu
-     d. Designer: Shuhua Xie, (Kevin would like to help too) 
-     e. Bridge(Helping designer) :Yuru
-     Phase II (CS dungeon session. Note: we can go back to Phase I at any time) 
-     f. Dev A: Joshue
-     g. Dev B: Aven
-     h. Tester A: Kevin
-     i. Tester B: Samuel
+     --a. Coordinate A: Hold c, d, e, f and b accountable
+     --b. Coordinate B: Hold g, h and accountable.
+     #####Phase I (Planning, Designing and Prototyping)
+     --c. Planner: Fengdi Liu
+     --d. Designer: Shuhua Xie, (Kevin would like to help too) 
+     --e. Bridge(Helping designer) :Yuru
+     #####Phase II (CS dungeon session. Note: we can go back to Phase I at any time) 
+     --f. Dev A: Joshue
+     --g. Dev B: Aven
+     --h. Tester A: Kevin
+     --i. Tester B: Samuel
   - Brain Strom: Figure out the propurse of this project. The features should include.    
   - Group meeting time - Every Saturday 3:00-3:50  
   

@@ -1,4 +1,4 @@
-## Meeting 2.5
+## Meeting 2.2
 
 #### Wednesday 1/23/21, 4:00-4:40 pm on Zoom, Team 16/Skynet  
   - Attendees: Shuhua Xie, Yuru Zhou

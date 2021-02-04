@@ -1,4 +1,4 @@
-## Meeting 2.5
+## Meeting 2.1
 
 #### Wednesday 1/23/21, 2:00-2:50 pm on Zoom, Team 16/Skynet  
   - Attendees: Joshue Aguirre, Matias Lin, Lara Daneshgaran Bajastani, Shuhua Xie, Samuel Liu

@@ -1,4 +1,4 @@
-# Task addition: 
+# Task addition: line on desktop, box on mobile
 
 * Status: tentatively accepted
 * Deciders: majority vote by 
@@ -6,7 +6,7 @@
 
 ## Context and Problem Statement
 
-[Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.]
+How should the add task feature of the todo list look?
 
 ## Decision Drivers <!-- optional -->
 

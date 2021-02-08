@@ -27,7 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build --if-present
-    - name: Install modules
-      run: yarn
+    - name: Install eslint
+      run: npm install eslint --save-dev
     - name: Run ESLint
       run: eslint . --ext .js,.jsx,.ts,.tsx

@@ -31,8 +31,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build --if-present
+    - name: Install ESLint
+    - run: npm i -g eslint
+    - name: Run ESLint
+    - run: eslint .
     - name: Install JSDocs
-      run: npm i -g jsdoc
+    - run: npm i -g jsdoc
     - name: Run JSDocs
       run: jsdoc . --verbose -d ./docs
       

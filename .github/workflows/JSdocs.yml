@@ -34,6 +34,6 @@ jobs:
     - name: Install JSDocs
       run: npm i -g jsdoc
     - name: Run JSDocs
-      run: jsdoc .
+      run: jsdoc . --verbose -d ./docs
       
 

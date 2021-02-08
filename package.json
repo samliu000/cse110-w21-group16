@@ -1,0 +1,25 @@
+{
+  "name": "cse110-w21-group16",
+  "version": "1.0.0",
+  "description": "Website Link: https://melinucsd.github.io/cse110-w21-group16/",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MelinUCSD/cse110-w21-group16.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MelinUCSD/cse110-w21-group16/issues"
+  },
+  "homepage": "https://github.com/MelinUCSD/cse110-w21-group16#readme",
+  "devDependencies": {
+    "eslint": "^7.19.0"
+  }
+}

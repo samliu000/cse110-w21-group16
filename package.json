@@ -1,1 +1,0 @@
-"lint": "eslint --ext .js --ignore-path .gitignore ."

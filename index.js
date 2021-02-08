@@ -1,4 +1,3 @@
-let didShowMessage = false;
 
 // show message 
 function showMessage() {

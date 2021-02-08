@@ -28,6 +28,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - name: Install eslint
-      run: npm install eslint --save-dev
+      run: npm i -g eslint
+
     - name: Run ESLint
       run: eslint . --ext .js,.jsx,.ts,.tsx

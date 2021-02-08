@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/MelinUCSD/cse110-w21-group16/issues"
   },
-  "homepage": "https://github.com/MelinUCSD/cse110-w21-group16#readme"
+  "homepage": "https://github.com/MelinUCSD/cse110-w21-group16#readme",
+  "devDependencies": {
+    "eslint": "^7.19.0"
+  }
 }

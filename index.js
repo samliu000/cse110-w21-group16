@@ -1,3 +1,4 @@
+let randomVariable = "hi";
 
 // show message 
 function showMessage() {

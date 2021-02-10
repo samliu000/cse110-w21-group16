@@ -18,7 +18,7 @@
             "error",
             "single"
         ],
-        "ignorePatterns": ["./docs/**", "./specs/**", "./source/**"],
+        // "ignorePatterns": ["./docs/**", "./specs/**", "./source/**"],
 
         "semi": [
             "error",

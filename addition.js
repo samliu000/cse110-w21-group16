@@ -12,5 +12,3 @@ function testAddition(num1, num2){
 
 
 exports.testAddition = testAddition;
-
-sdfssdf

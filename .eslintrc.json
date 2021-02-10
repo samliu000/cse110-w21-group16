@@ -18,6 +18,8 @@
             "error",
             "single"
         ],
+        "ignorePatterns": ["./docs/**", "./specs/**", "./source/**"],
+
         "semi": [
             "error",
             "always"

@@ -5,7 +5,7 @@ name: JSDOCS
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
+  pull_request:
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -30,4 +30,4 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - name: Run JSDocs
-      run: jsdoc . --verbose -d ./docs/jsdocs
+      run: npx jsdoc . --verbose -d ./docs/jsdocs

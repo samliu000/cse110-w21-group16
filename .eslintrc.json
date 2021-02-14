@@ -10,23 +10,12 @@
         "sourceType": "module"
     },
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
+
         // "ignorePatterns": ["./docs/**", "./specs/**", "./source/**"],
 
         "semi": [
             "error",
             "always"
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
         ]
     }
 }   

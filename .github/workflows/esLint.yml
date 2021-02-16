@@ -30,6 +30,7 @@ jobs:
     - name: Install eslint
       run: npm i -g eslint
 
-    - name: Run ESLint
+    - name: Check Directory
       run:  echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"
-            eslint $GITHUB_WORKSPACE/source --ext .js
+    - name: Run ESLint
+      run: eslint $GITHUB_WORKSPACE/source --ext .js

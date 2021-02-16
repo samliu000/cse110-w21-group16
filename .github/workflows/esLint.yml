@@ -26,6 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build --if-present
+    - run: npm install -g eslint
 
     - name: Check Directory
       run:  echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"

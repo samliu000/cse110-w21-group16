@@ -29,4 +29,5 @@ jobs:
       run: npm i -g eslint
 
     - name: Run ESLint
-      run: eslint $GITHUB_WORKSPACE/source --ext .js
+      run:  echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"
+            eslint $GITHUB_WORKSPACE/source --ext .js

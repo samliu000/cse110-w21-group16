@@ -1,4 +1,4 @@
-var chai = require('chai');
+/**var chai = require('chai');
 var addition = require('../addition.js');
 var assert = chai.assert;
 describe("Addition", function(){
@@ -10,3 +10,4 @@ describe("Addition", function(){
 	});
 
 });
+**/

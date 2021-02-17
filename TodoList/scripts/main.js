@@ -70,5 +70,3 @@ function openForm(){
 function closeForm(){
     document.getElementById("add-form").style.display = "none";
 }
-
-

@@ -2,7 +2,7 @@
 
 #table-header {
     border-bottom: 1px solid black;
-    width: 60%;  
+    width: 60%;
 }
 
 #table-content {
@@ -12,7 +12,7 @@
 }
 
 
-th:nth-child(2) {   
+th:nth-child(2) {
     width: 60%;
     text-align: left;
 }
@@ -23,7 +23,7 @@ th:nth-child(4) {
     width: 20%;
 }
 
-td:nth-child(1) {   
+td:nth-child(1) {
     width: 60%;
     text-align: left;
 }

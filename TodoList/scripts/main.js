@@ -31,7 +31,7 @@ function addTask(){
     btn = document.createElement('input');
     btn.type = "button";
     btn.id = "edit"+bId;
-    btn.onclick = function() {editRow(this)};
+    btn.onclick = function() {editRow(this);};
 
     let row = document.createElement('tr');
     let cell1 = document.createElement('td');
@@ -61,10 +61,12 @@ function editRow(elem) {
     
 }
 
+// eslint-disable-next-line no-unused-vars
 function openForm(){
     document.getElementById("add-form").style.display = "block";
 }
 
+// eslint-disable-next-line no-unused-vars
 function closeForm(){
     document.getElementById("add-form").style.display = "none";
 }

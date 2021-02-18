@@ -1,0 +1,26 @@
+@font-face {
+        font-family: Roboto-r;
+        src: url(./assets/Roboto/Roboto-Regular.ttf);
+}
+html {
+        font-family: Roboto-r;
+}
+.main-timer {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 20rem;
+        height: 20rem;
+        border: 5px solid;
+        border-radius: 10rem;;
+        align-items: center;
+        margin: auto;
+}
+.timerDisplay{
+        font-size: 600%;
+}
+.buttons{
+        padding: 2rem;
+        text-align: center;
+}

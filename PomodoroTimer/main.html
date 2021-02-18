@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/stylesheet.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
       </head>  
 </head>
@@ -20,6 +21,21 @@
 <body>
 
     <main>
+
+        <div>
+            <input type="number" id="counter" value="0" style="display: none;">
+        </div>
+
+        <!-- Main Timer -->
+        <div class ="main-timer">
+        <div id="status"></div>
+        <div class="timerDisplay">25:00</div>
+        </div>
+        <!-- start and reset buttons -->
+        <div class="buttons">
+            <button id="start-btn">Start</button>
+            <button id="reset">Reset</button></a>
+        </div>
      
         <div id="table">
             <table id="table-header">
@@ -33,8 +49,8 @@
             <table id="table-content"></table>
         </div>
 
-            <div id="add-task-container">
-                <button id="add-task" type="button" onclick="openForm()">+Add Task</button>
+        <div id="add-task-container">
+            <button id="add-task" type="button" onclick="openForm()">+Add Task</button>
         </div>
        
 
@@ -51,11 +67,11 @@
               <button type="button" id="btn-add">+Add Task</button>
               <button type="button" class="btn-cancel" onclick="closeForm()">Cancel</button>
             </form>
-          </div>
-            
+        </div>
     </main>
 
-    <script src="scripts/main.js"></script>
+    <script src="scripts/timer.js"></script>
+    <script src="scripts/todo.js"></script>
 </body>
 
 

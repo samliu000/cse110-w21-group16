@@ -7,11 +7,14 @@
 
 #table-content {
 
-    width: 61%;
+    width: 62%;
     text-align: center;
 }
 
 
+th:nth-child(1) {
+    width: 1%;
+}
 th:nth-child(2) {
     width: 60%;
     text-align: left;
@@ -23,17 +26,17 @@ th:nth-child(4) {
     width: 20%;
 }
 
-td:nth-child(1) {
+td:nth-child(2) {
     width: 60%;
     text-align: left;
-}
-td:nth-child(2) {
-    width: 20%;
 }
 td:nth-child(3) {
     width: 20%;
 }
 td:nth-child(4) {
+    width: 20%;
+}
+td:nth-child(5) {
     width: 1%;
 }
 
@@ -50,10 +53,9 @@ td:nth-child(4) {
     cursor: pointer;
 }
 
-.button:hover{
-    opacity: 1;
-}
+
 
 .add-popup {
     display: none;
 }
+

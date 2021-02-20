@@ -5,7 +5,8 @@ let session_minutes = 25;
 let break_minutes = 5;
 let isBreak = true;
 let session_count = 1;
-let actual = document.getElementById('counter');
+let index;
+let actual;
 
 const alarm = document.createElement('audio'); // A bell sound will play when the timer reaches 0
 alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
@@ -15,6 +16,8 @@ alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
 document.getElementById("start-btn").addEventListener('click', () => {
   clearInterval(countdown);
   countdown = setInterval(timer, 1);
+  index = getRadioIndex('tSelect');
+  actual = document.getElementById('table-content').childNodes[index].childNodes[3].innerHTML;
 });
 
 document.getElementById("reset").addEventListener('click', () => {
@@ -44,7 +47,7 @@ function timer() {
       }
       session_seconds = break_minutes * 60;
       isBreak = false;
-      actual.value++;
+      actual++;
       session_count ++;
       countdown = setInterval(timer, 10);
     }else{
@@ -62,8 +65,8 @@ function countdownDisplay() {
 
 function updateHTML() {
   countdownDisplay();
-  var x = document.getElementById("table-content").childNodes[0].cells;
-  x[3].innerHTML = actual.value;
+  let x = document.getElementById("table-content").childNodes[index].cells;
+  x[3].innerHTML = actual;
   if(isBreak == true){
     document.getElementById("status").innerHTML = "Promodoro Session";
   }
@@ -77,3 +80,16 @@ function updateHTML() {
 window.setInterval(updateHTML, 100);
 
 document.onclick = updateHTML;
+
+//Radio Index
+function getRadioIndex(name)
+{
+    let elements = document.getElementsByName(name);
+    for (let i = 0, l = elements.length; i < l; i++)
+    {
+        if (elements[i].checked)
+        {
+            return i;
+        }
+    }
+}

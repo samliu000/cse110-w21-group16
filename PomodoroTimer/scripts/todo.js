@@ -5,19 +5,10 @@ let bId = 1;
 let addT = document.getElementById('btn-add');
 let table = document.getElementById('table-content');
 
-/*
-let delB = document.getElementById('delete');
-delB.addEventListener("click", editRow);
-*/
-
 let btn;
 let rad;
 
-/*
-let eDrop;
-let div;
-let dBtn;
-*/
+
 
 addT.addEventListener("click", checkFields);
 
@@ -46,6 +37,7 @@ function addTask(){
     rad.type = "radio";
     rad.id = "radio"+bId;
     rad.name = "tSelect";
+    rad.onclick = function(){updateCounter(this);};
     
 
     //delete button
@@ -80,7 +72,7 @@ function addTask(){
     cell1.appendChild(rad);
     cell2.innerHTML = document.getElementById("tName").value;
     cell3.innerHTML = document.getElementById("est").value;
-    cell4.innerHTML = document.getElementById("counter").value;
+    cell4.innerHTML = 0;
     cell5.appendChild(btn);
 
     //cells appended to row, and row to table
@@ -99,6 +91,10 @@ function addTask(){
 function editOptions() {
     document.getElementsByClassName('edit-dropdown').style.display = "block";
 }*/
+
+function updateCounter(elem) {
+    document.etElementById('counter').value = elem.parentElement.childNodes[3].value;
+}
 
 function editRow(elem) {
     let row = elem.parentElement.parentElement;

@@ -17,7 +17,7 @@ html {
         align-items: center;
         margin: auto;
 }
-.timerDisplay{
+#timerDisplay{
         font-size: 600%;
 }
 .buttons{

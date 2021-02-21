@@ -24,3 +24,8 @@ html {
         padding: 2rem;
         text-align: center;
 }
+
+#list{
+	max-width: 70%;
+	margin: 0 auto;
+}

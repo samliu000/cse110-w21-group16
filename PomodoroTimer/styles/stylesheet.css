@@ -25,6 +25,15 @@ html {
         text-align: center;
 }
 
+/*****List Styling*****/
+/*Fonts*/
+
+#taskForm, 
+#taskForm input{
+	color: #fff;
+}
+
+/*Container*/
 #list{
 	max-width: 70%;
 	margin: 0 auto;
@@ -34,13 +43,15 @@ html {
     border-radius: 3em;
     padding: 2em 1em;
 }
-
+/*Rows*/
 #table-content{
     border-collapse: separate;
     border-spacing: .5em;
 }
 
-#table-content input[type="button"]{
+/*Buttons*/
+#list input[type="button"],
+#taskForm button{
     font-family: 'Roboto';
     color: #fff;
     background-color: rgba(120, 170, 222, 0);
@@ -49,6 +60,63 @@ html {
     border-radius: 1.5em;
 }
 
-#table-content input[type="button"]:hover{
+#list input[type="button"]:hover, 
+#taskForm button:hover{
     background-color: rgba(120, 170, 222, 0.75);
+}
+
+/*Add Task Fields*/
+#tName, #est{
+	border: none;
+	border-bottom: .05em solid #fff;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#tName::placeholder,			/* Chrome, Firefox, Opera, Safari 10.1+ */
+#est::placeholder,
+#tName::-ms-input-placeholder, 	/* Microsoft Edge */
+#est::-ms-input-placeholder{ 
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+
+/*Add Task Flexbox*/
+#taskForm{
+    display: flex;
+    margin-top: 2%;
+    justify-content: space-around;
+}
+
+#taskForm > *{
+    margin: 0 .7%;
+	
+}
+
+#taskForm label[for="task"]{
+	order: 1;
+}
+
+#tName{
+	order: 2;
+	flex-grow: 5;
+}
+
+#taskForm label[for="estimate"]{
+	order: 3;
+}
+
+#est{
+	order: 4;
+	flex-grow: 5;
+}
+
+#btn-add{
+	order: 5;
+	flex-grow: 1;
+}
+
+.btn-cancel{
+	order: 6;
+	flex-grow: 1;
 }

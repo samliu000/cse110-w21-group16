@@ -41,6 +41,14 @@ html {
 	color: #fff;
 }
 
+::placeholder{
+	color: white;
+}
+
+::-ms-input-placeholder {
+	color: white;
+}
+	
 /*Container*/
 #list{
 	max-width: 70%;

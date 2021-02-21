@@ -59,13 +59,13 @@ td:nth-child(4) {
 
 #add-task {
     width: 100%;
-    color: black;
+    color: #fff;
     background-color: transparent;
     text-align: center;
     border: dashed;
     border-radius: 1px;
     padding: 8px 16px;
-    opacity: 0.6;
+    opacity: 0.8;
     transition: 0.3s;
     cursor: pointer;
 	margin-top: 1%;

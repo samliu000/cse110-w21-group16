@@ -28,6 +28,16 @@ html {
 #list{
 	max-width: 70%;
 	margin: 0 auto;
+	
+	
+    background-color: rgba(34, 59, 90,.5);
+    border-radius: 3em;
+    padding: 2em 1em;
+}
+
+#table-content{
+    border-collapse: separate;
+    border-spacing: .5em;
 }
 
 #table-content input[type="button"]{

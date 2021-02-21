@@ -1,10 +1,18 @@
+/*****Overall styling*****/
 @font-face {
         font-family: Roboto-r;
         src: url(./assets/Roboto/Roboto-Regular.ttf);
 }
 html {
-        font-family: Roboto-r;
+	font-family: Roboto-r;
+	background: url(../img/water.jpg) no-repeat left 25% center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
+
+/*****Timer Styling*****/
 .main-timer {
         text-align: center;
         display: flex;

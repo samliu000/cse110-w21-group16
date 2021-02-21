@@ -29,3 +29,16 @@ html {
 	max-width: 70%;
 	margin: 0 auto;
 }
+
+#table-content input[type="button"]{
+    font-family: 'Roboto';
+    color: #fff;
+    background-color: rgba(120, 170, 222, 0);
+	border-style: solid;
+    border-color: #fff;
+    border-radius: 1.5em;
+}
+
+#table-content input[type="button"]:hover{
+    background-color: rgba(120, 170, 222, 0.75);
+}

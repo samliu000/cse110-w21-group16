@@ -5,6 +5,7 @@
     border-bottom: 1px solid black;
     width: 98%;
 	margin: 0 auto;
+	color: #fff;
 }
 
 #table-content {
@@ -12,6 +13,7 @@
     text-align: center;
 	table-layout: fixed;
 	word-break: break-word;
+	color: #fff;
 }
 
 
@@ -36,6 +38,12 @@ td:nth-child(4){
 th:nth-child(5),
 td:nth-child(5){
     width: 2.5%;
+	font-size: 1.25em;
+	color: #ddd;
+}
+
+td:nth-child(5):hover{
+	color: #fff;
 }
 
 /*td:nth-child(2) {

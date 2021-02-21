@@ -1,4 +1,5 @@
-//main.js
+//todo.js
+
 
 let bId = 1;
 
@@ -20,7 +21,6 @@ let dBtn;
 */
 
 addT.addEventListener("click", checkFields);
-
 
 function checkFields(){
 

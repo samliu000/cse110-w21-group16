@@ -28,12 +28,14 @@
         src: url(./assets/Roboto/Roboto-Regular.ttf);
 }
 html {
-	font-family: Roboto-r;
-	background: url(../img/water.jpg) no-repeat left 25% center fixed; 
+	/*font-family: Roboto-r;
+	/*background: url(../img/water.jpg) no-repeat left 25% center fixed; */
+	background: url(../img/green.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	font-family: Georgia, serif;
 }
 
 main{
@@ -46,12 +48,11 @@ main{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 20rem;
-	height: 20rem;
-	border: 5px solid;
-	border-radius: 10rem;
+	border-radius: 3rem;
 	align-items: center;
+		
 	margin: 0 auto;
+	margin-top: 5vh;
 	transition: margin-top 2s ease-out;
 }
 
@@ -60,12 +61,30 @@ main{
 	transition: margin-top 2s ease-out;
 }
 
-#timerDisplay{
-        font-size: 600%;
-}
 .buttons{
-	padding: 2rem;
+	padding: 1rem;
 	text-align: center;
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 5vw;
+}
+
+#start-btn,
+#reset  {
+	font-size: 1.25rem;
+	padding: .75em 2em;
+	border-radius: 1rem;
+	background-color: #6A8874;
+	border: none;
+	color:#FFF;
+}
+
+
+
+#timerDisplay{
+    font-size: 10rem;
 }
 
 /*****List Styling*****/
@@ -78,32 +97,32 @@ main{
 
 ::placeholder{
 	color: white;
-	font-size: 1.2rem;
 }
 
 ::-ms-input-placeholder {
 	color: white;
-	font-size: 1.2rem;
 }
 	
 /*Container*/
 #list{
 	max-width: 70%;
 	margin: 0 auto;
-    background-color: rgba(34, 59, 90,.5);
+	margin-top: 3%;
+    /*background-color: rgba(34, 59, 90,.5);*/
+	background-color: rgba(106, 136, 116,.6);
     border-radius: 3em;
     padding: 2em 1em;
 	max-height: 35vh;
     overflow: auto;
     overflow-x: hidden;
-	font-size: 1.3rem;
+	font-size: 1.1rem;
 }
 
 /*Scrollbar*/
 #list::-webkit-scrollbar-track
 {
   border-radius: 1em;
-  background-color: rgba(34, 59, 90,.5)
+  background-color: rgba(106, 136, 116,.6);
 }
 
 #list::-webkit-scrollbar
@@ -114,7 +133,7 @@ main{
 #list::-webkit-scrollbar-thumb
 {
   border-radius: 1em;
-  background-color: rgba(34, 59, 90,1);
+  background-color: rgba(106, 136, 116, 1);
 }
 
 #list::-webkit-scrollbar-button:end:increment {
@@ -151,7 +170,6 @@ main{
     background-color: rgba(120, 170, 222, 0);
 	border-style: solid;
     border-color: #fff;
-	font-size: 1.05rem;
     border-radius: 1.5em;
 	padding: .25em 1em;
 }

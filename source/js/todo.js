@@ -23,15 +23,6 @@ function checkFields(){
 
 function addTask(){
 
-    /** 
-    //edit dropdown
-    eDrop = document.createElement('input');
-    eDrop.type = "button";
-    eDrop.value = "Edit";
-    eDrop.id = "drop"+bId;
-    eDrop.onclick = function() {editOptions();};
-    */
-
     //radio button
     rad = document.createElement('input');
     rad.type = "radio";
@@ -46,19 +37,6 @@ function addTask(){
     btn.type = "button";
     btn.id = "edit"+bId;
     btn.onclick = function() {editRow(this);};
-
-
-    /*
-    div = document.createElement('div');
-    div.id = "eDrop"+bId;
-    div.className = "edit-dropdown";
-    div.style.display = "none";
-    dBtn = document.createElement('a');
-    dBtn.href = "#";
-    dBtn.id = "dBtn"+bId;
-    
-    div.appendChild(dBtn);
-    */
 
     //cells created
     let row = document.createElement('tr');
@@ -87,11 +65,6 @@ function addTask(){
     document.getElementById("add-form").style.display = "none";
 }
 
-/*
-function editOptions() {
-    document.getElementsByClassName('edit-dropdown').style.display = "block";
-}*/
-
 function updateCounter(elem) {
     document.etElementById('counter').value = elem.parentElement.childNodes[3].value;
 }
@@ -105,6 +78,8 @@ function editRow(elem) {
 // eslint-disable-next-line no-unused-vars
 function openForm(){
     document.getElementById("add-form").style.display = "block";
+    document.getElementById('tName').value = "";
+    document.getElementById('est').value = 1;
 }
 
 // eslint-disable-next-line no-unused-vars

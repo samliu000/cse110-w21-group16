@@ -17,6 +17,8 @@ alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
 document.getElementById("start-btn").addEventListener('click', () => {
   clearInterval(countdown);
   countdown = setInterval(timer, 1);
+  document.getElementById('table').style.display="none";
+  document.getElementById('add-task-container').style.display="none";
   index = getRadioIndex('tSelect');
   actual = document.getElementById('table-content').childNodes[index].childNodes[3].innerHTML;
   // display which task the Pomodoro session is currently on 
@@ -55,12 +57,14 @@ function timer() {
       isBreak = false;
       actual++;
       session_count ++;
+      // remove the current task text before checklist appears
+      document.querySelector('main').removeChild(document.querySelector('main').childNodes[15]);
       countdown = setInterval(timer, 10);
     }else{
       session_seconds = session_minutes * 60;
       isBreak = true;
-      // remove the current task text before checklist appears
-      document.querySelector('main').removeChild(document.querySelector('main').childNodes[15]);
+      document.getElementById('table').style.display="block";
+      document.getElementById('add-task-container').style.display="block";
     }
   }
 }

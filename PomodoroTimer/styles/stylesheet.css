@@ -51,8 +51,15 @@ main{
 	border: 5px solid;
 	border-radius: 10rem;
 	align-items: center;
-	margin: auto;
+	margin: 0 auto;
+	transition: margin-top 2s ease-out;
 }
+
+.main-timer-active{
+	margin-top: 15vh;
+	transition: margin-top 2s ease-out;
+}
+
 #timerDisplay{
         font-size: 600%;
 }

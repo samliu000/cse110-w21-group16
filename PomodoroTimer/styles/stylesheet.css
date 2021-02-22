@@ -108,13 +108,13 @@ html {
 /*Add Task Flexbox*/
 #taskForm{
     display: flex;
+	flex-wrap: wrap;
     margin-top: 2%;
     justify-content: space-around;
 }
 
 #taskForm > *{
     margin: 0 .7%;
-	
 }
 
 #taskForm label[for="task"]{
@@ -133,6 +133,7 @@ html {
 #est{
 	order: 4;
 	flex-grow: 5;
+	max-width: 60%;
 }
 
 #btn-add{
@@ -143,4 +144,18 @@ html {
 .btn-cancel{
 	order: 6;
 	flex-grow: 1;
+}
+
+@media only screen and (max-width: 1100px) {
+  #taskForm > *{
+	  margin: 2.5% 1%;
+  }
+  
+  #taskForm{
+    justify-content: space-between;
+  }
+  
+  #add-task{
+	  margin-top: 1em;
+  }
 }

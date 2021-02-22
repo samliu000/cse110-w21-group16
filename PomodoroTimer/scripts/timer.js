@@ -50,6 +50,7 @@ function timer() {
       actual++;
       session_count ++;
       countdown = setInterval(timer, 10);
+      undoCheck('tSelect');
     }else{
       session_seconds = session_minutes * 60;
       isBreak = true;
@@ -65,8 +66,10 @@ function countdownDisplay() {
 
 function updateHTML() {
   countdownDisplay();
-  let x = document.getElementById("table-content").childNodes[index].cells;
-  x[3].innerHTML = actual;
+  if(index >= 0){
+    let x = document.getElementById("table-content").childNodes[index].cells;
+    x[3].innerHTML = actual;
+  }
   if(isBreak == true){
     document.getElementById("status").innerHTML = "Promodoro Session";
   }
@@ -76,10 +79,6 @@ function updateHTML() {
     document.getElementById("status").innerHTML= "Long Break!";
   }
 }
-
-window.setInterval(updateHTML, 100);
-
-document.onclick = updateHTML;
 
 //Radio Index
 function getRadioIndex(name)
@@ -93,3 +92,19 @@ function getRadioIndex(name)
         }
     }
 }
+//
+function undoCheck(name)
+{
+    let elements = document.getElementsByName(name);
+    for (let i = 0, l = elements.length; i < l; i++)
+    {
+        if (elements[i].checked)
+        {
+            elements[i].checked = false;
+        }
+    }
+}
+
+window.setInterval(updateHTML, 100);
+
+document.onclick = updateHTML;

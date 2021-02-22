@@ -5,6 +5,7 @@
  * List Styling
  *   Fonts
  *   Containers
+ * 	 Scrollbar
  *   Rows
  *   Buttons
  *   Add Task Fields
@@ -35,18 +36,22 @@ html {
 	background-size: cover;
 }
 
+main{
+	padding: 5% 0;
+}
+
 /*****Timer Styling*****/
 .main-timer {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 20rem;
-        height: 20rem;
-        border: 5px solid;
-        border-radius: 10rem;
-        align-items: center;
-        margin: auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 20rem;
+	height: 20rem;
+	border: 5px solid;
+	border-radius: 10rem;
+	align-items: center;
+	margin: auto;
 }
 #timerDisplay{
         font-size: 600%;
@@ -76,12 +81,32 @@ html {
 #list{
 	max-width: 70%;
 	margin: 0 auto;
-	
-	
     background-color: rgba(34, 59, 90,.5);
     border-radius: 3em;
     padding: 2em 1em;
+	max-height: 35vh;
+    overflow: auto;
+    overflow-x: hidden;
 }
+
+/*Scrollbar*/
+#list::-webkit-scrollbar-track
+{
+  border-radius: 1em;
+  background-color: rgba(34, 59, 90,.5)
+}
+
+#list::-webkit-scrollbar
+{
+  width: .8em;
+}
+
+#list::-webkit-scrollbar-thumb
+{
+  border-radius: 1em;
+  background-color: rgba(34, 59, 90,1);
+}
+
 /*Rows*/
 #table-content{
     border-collapse: separate;

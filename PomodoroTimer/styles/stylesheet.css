@@ -57,8 +57,8 @@ main{
         font-size: 600%;
 }
 .buttons{
-        padding: 2rem;
-        text-align: center;
+	padding: 2rem;
+	text-align: center;
 }
 
 /*****List Styling*****/
@@ -71,10 +71,12 @@ main{
 
 ::placeholder{
 	color: white;
+	font-size: 1.2rem;
 }
 
 ::-ms-input-placeholder {
 	color: white;
+	font-size: 1.2rem;
 }
 	
 /*Container*/
@@ -87,6 +89,7 @@ main{
 	max-height: 35vh;
     overflow: auto;
     overflow-x: hidden;
+	font-size: 1.3rem;
 }
 
 /*Scrollbar*/
@@ -105,6 +108,18 @@ main{
 {
   border-radius: 1em;
   background-color: rgba(34, 59, 90,1);
+}
+
+#list::-webkit-scrollbar-button:end:increment {
+    height: 2.1em;
+    display: block;
+    background: transparent;
+}
+
+#list::-webkit-scrollbar-button:start:increment {
+    height: 2.1em;
+    display: block;
+    background: transparent;
 }
 
 /*Rows*/
@@ -129,7 +144,9 @@ main{
     background-color: rgba(120, 170, 222, 0);
 	border-style: solid;
     border-color: #fff;
+	font-size: 1.05rem;
     border-radius: 1.5em;
+	padding: .25em 1em;
 }
 
 #list input[type="button"]:hover, 
@@ -143,15 +160,6 @@ main{
 	border-bottom: .05em solid #fff;
 	background-color: rgba(0, 0, 0, 0);
 }
-
-#tName::placeholder,			/* Chrome, Firefox, Opera, Safari 10.1+ */
-#est::placeholder,
-#tName::-ms-input-placeholder, 	/* Microsoft Edge */
-#est::-ms-input-placeholder{ 
-  color: #fff;
-  opacity: 1; /* Firefox */
-}
-
 
 /*Add Task Flexbox*/
 #taskForm{

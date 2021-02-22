@@ -7,6 +7,7 @@ let isBreak = true;
 let session_count = 1;
 let index;
 let actual;
+let currTask;
 
 const alarm = document.createElement('audio'); // A bell sound will play when the timer reaches 0
 alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
@@ -18,6 +19,11 @@ document.getElementById("start-btn").addEventListener('click', () => {
   countdown = setInterval(timer, 1);
   index = getRadioIndex('tSelect');
   actual = document.getElementById('table-content').childNodes[index].childNodes[3].innerHTML;
+  // display which task the Pomodoro session is currently on 
+  currTask = document.getElementById('table-content').childNodes[index].childNodes[1].innerHTML; 
+  let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
+  currTask.id = 'current_task'; 
+  currTaskText.innerHTML = "Currently on task: " + currTask;
 });
 
 document.getElementById("reset").addEventListener('click', () => {
@@ -53,6 +59,8 @@ function timer() {
     }else{
       session_seconds = session_minutes * 60;
       isBreak = true;
+      // remove the current task text before checklist appears
+      document.querySelector('main').removeChild(document.querySelector('main').childNodes[15]);
     }
   }
 }

@@ -33,7 +33,7 @@
 #### Project Timeline Week 6, due dates:    
    1. Hide todo list when timer is running. (Sunday by Joshue)
    2. Unselect the radio button once the timer is finished. (Monday by Yuru) 
-   3. Current task from the timer is running. (Monday by Yuru) 
+   3. Current task from the timer is running. (Monday by Aven) 
    4. css part about. (List by Shuhua & Fengdi; Timer by Lara & Matias)    
    5. Start code testing and debugging 
    

@@ -147,6 +147,12 @@ html {
 }
 
 @media only screen and (max-width: 1100px) {
+/*****List Styling*****/
+	/*Overall styling*/
+  #list{
+	  max-width: 95vw;
+  }
+	/*Flexbox*/
   #taskForm > *{
 	  margin: 2.5% 1%;
   }
@@ -157,5 +163,29 @@ html {
   
   #add-task{
 	  margin-top: 1em;
+  }
+  
+  /*Task row styling*/
+  th:nth-child(1),
+  td:nth-child(1){
+    margin: 0;
+  }
+  th:nth-child(2),
+  td:nth-child(2){
+    width: 50%;
+    text-align: left;
+  }
+  th:nth-child(3),
+  td:nth-child(3){
+    width: 5%;
+  }
+  th:nth-child(4),
+  td:nth-child(4){
+    width: 5%;
+  }
+
+  th:nth-child(5),
+  td:nth-child(5){
+	color: #fff;
   }
 }

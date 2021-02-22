@@ -65,6 +65,14 @@ html {
     border-spacing: .5em;
 }
 
+#list > *{
+	padding: 0 5%;
+}
+
+#add-task-container{
+	padding: 0 7%;
+}
+
 /*Buttons*/
 #list input[type="button"],
 #taskForm button{

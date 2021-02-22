@@ -35,6 +35,3 @@
      * b. List (Todo list, actual pomo, estimate pomos)
      * c. Notification
     
-  - Brain Strom: Figure out the propurse of this project. The features should include.    
-  - Group meeting time - Every Saturday 3:00-3:50  
-  

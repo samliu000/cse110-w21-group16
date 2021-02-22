@@ -52,6 +52,7 @@ function timer() {
       }
       session_seconds = break_minutes * 60;
       isBreak = false;
+      isStarted = false;
       actual++;
       session_count ++;
       countdown = setInterval(timer, 10);

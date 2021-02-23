@@ -57,7 +57,7 @@ main{
 }
 
 .main-timer-active{
-	margin-top: 15vh;
+	margin-top: 25vh;
 	transition: margin-top 2s ease-out;
 }
 

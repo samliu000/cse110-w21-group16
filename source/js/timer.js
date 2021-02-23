@@ -8,7 +8,7 @@ let isBreak = true;
 let session_count = 1;
 let index;
 let actual;
-let isStarted = false
+let isStarted = false;
 
 let timer_container = document.getElementById("timer");
 
@@ -20,7 +20,6 @@ alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
 document.getElementById("start-btn").addEventListener('click', () => {
   timer_container.classList.add("main-timer-active");
   isStarted = true;  
-  timer_container
   clearInterval(countdown);
   countdown = setInterval(timer, 1);
   index = getRadioIndex('tSelect');

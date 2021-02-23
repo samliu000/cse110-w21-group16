@@ -17,6 +17,7 @@
  *   Overall
  *   Flexbox
  *   Task Row Styling
+ * Overlay (depends on aspect ratio)
  * /
 
 
@@ -237,7 +238,7 @@ td:nth-child(5):hover{
     opacity: 0.8;
     transition: 0.3s;
     cursor: pointer;
-	margin-top: 1%;
+	margin-top: 2.5%;
 }
 .add-popup {
     display: none;
@@ -253,6 +254,7 @@ td:nth-child(5):hover{
 
 #taskForm > *{
     margin: 0 .7%;
+	margin-bottom: 2%;
 }
 
 #taskForm #add-form-task{
@@ -260,6 +262,7 @@ td:nth-child(5):hover{
 	justify-content: space-between;
 	order: 1;
 	flex-grow: 5;
+	flex-basis: 20em;
 }
 
 #taskForm #add-form-est{
@@ -267,6 +270,7 @@ td:nth-child(5):hover{
 	justify-content: space-between;
 	order: 2;
 	flex-grow: 5;
+	flex-basis: 20em;
 }
 
 #taskForm #add-form-btn{
@@ -335,4 +339,59 @@ td:nth-child(5):hover{
 	color: #fff;
   }
 
+}
+
+/*****Overlay*****/
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+#help{
+	position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 1%;
+    font-size: 2rem;
+	color: #ddd;
+}
+
+#help:hover{
+	color: #fff;
+}
+
+#overlay img{
+	max-width: 100vw;
+}
+
+#help-mobile-img{
+	display: none;
+}
+
+@media only screen and (max-aspect-ratio: 1/1){
+	#help-desktop-img{
+		display: none;
+	}
+	
+	#help-mobile-img{
+		display: block;
+	}
+}
+
+@media only screen and (min-aspect-ratio: 1/1) and (min-width: 950px) {
+	#overlay img{
+		max-width: 950px;
+		width: 65vw;
+	}
 }

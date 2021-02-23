@@ -12,7 +12,6 @@
  *   Add Task Fields
  *   Add Task Flexbox
  * 	 Nested Flexboxes
- * 
  * ~Mobile Styling ~
  * List styling
  *   Overall
@@ -31,7 +30,7 @@
 html {
 	/*font-family: Roboto-r;
 	/*background: url(../img/water.jpg) no-repeat left 25% center fixed; */
-	background: url(../img/green.jpg) no-repeat center center fixed; 
+	background: url(../img/green.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -91,7 +90,7 @@ main{
 /*****List Styling*****/
 /*Fonts*/
 
-#taskForm, 
+#taskForm,
 #taskForm input{
 	color: #fff;
 }
@@ -131,6 +130,8 @@ main{
 	table-layout: fixed;
 	word-break: break-word;
 	color: #fff;
+	border-collapse: separate;
+    border-spacing: .5em;
 }
 
 th:nth-child(1),
@@ -193,11 +194,6 @@ td:nth-child(5):hover{
 }
 
 /*Rows*/
-#table-content{
-    border-collapse: separate;
-    border-spacing: .5em;
-}
-
 #list > *{
 	padding: 0 5%;
 }
@@ -218,7 +214,7 @@ td:nth-child(5):hover{
 	padding: .25em 1em;
 }
 
-#list input[type="button"]:hover, 
+#list input[type="button"]:hover,
 #taskForm button:hover{
     background-color: rgba(120, 170, 222, 0.75);
 }

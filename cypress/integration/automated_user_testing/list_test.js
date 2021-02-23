@@ -13,7 +13,7 @@ describe('Automated Button Testing', () => {
 	 cy.contains('+Add Task').click()
 	 cy.get('input[id="tName"]').click().type('example')
 	 cy.get('button[id="btn-add"]').click()
-	 cy.get('input[value="Delete"]').click()
+	 cy.get('i[class="fa fa-trash"]').click()
 	 cy.get('example').should('not.exist');
 });
   it('Check the cancel button', () => {

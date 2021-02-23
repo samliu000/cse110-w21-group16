@@ -32,11 +32,17 @@ function addTask(){
     
 
     //delete button
-    btn = document.createElement('input');
+	//try: <i class="fas fa-trash"></i>
+    /*btn = document.createElement('input');
     btn.value = "Delete";
     btn.type = "button";
     btn.id = "edit"+bId;
-    btn.onclick = function() {editRow(this);};
+    btn.onclick = function() {editRow(this);};*/
+	
+	btn = document.createElement('i');
+	btn.id = "edit"+bId;
+	btn.className = "fa fa-trash";
+	btn.onclick = function() {editRow(this);};
 
     //cells created
     let row = document.createElement('tr');

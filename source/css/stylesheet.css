@@ -28,6 +28,22 @@
         font-family: Roboto-r;
         src: url(./assets/Roboto/Roboto-Regular.ttf);
 }
+
+/*Colors*/
+:root{
+	--accent-1: #6A8874;
+	--accent-2-transparent: rgba(106, 136, 116, .6);
+	--accent-2-opaque: rgba(106, 136, 116, 1);
+	--before-hover: #ddd;
+	--after-hover: rgba(135, 212, 140, .7);
+	--transparent: rgba(0, 0, 0, 0);
+	/*
+	--after-hover: rgba(120, 170, 222, 0.75);
+	--accent-2-transparent: rgba(34, 59, 90,.5);
+	--accent-2-opaque: rgba(34, 59, 90, 1);
+	*/
+}
+
 html {
 	/*font-family: Roboto-r;
 	/*background: url(../img/water.jpg) no-repeat left 25% center fixed; */
@@ -77,7 +93,7 @@ main{
 	font-size: 1.25rem;
 	padding: .75em 2em;
 	border-radius: 1rem;
-	background-color: #6A8874;
+	background-color: var(--accent-1);
 	border: none;
 	color:#FFF;
 }
@@ -109,8 +125,7 @@ main{
 	max-width: 70%;
 	margin: 0 auto;
 	margin-top: 3%;
-    /*background-color: rgba(34, 59, 90,.5);*/
-	background-color: rgba(106, 136, 116,.6);
+	background-color: var(--accent-2-transparent);
     border-radius: 3em;
     padding: 2em 1em;
 	max-height: 35vh;
@@ -157,7 +172,7 @@ th:nth-child(5),
 td:nth-child(5){
     width: 2.5%;
 	font-size: 1.25em;
-	color: #ddd;
+	color: var(before-hover);
 }
 
 td:nth-child(5):hover{
@@ -168,7 +183,7 @@ td:nth-child(5):hover{
 #list::-webkit-scrollbar-track
 {
   border-radius: 1em;
-  background-color: rgba(106, 136, 116,.6);
+  background-color: var(--accent-2-transparent);
 }
 
 #list::-webkit-scrollbar
@@ -179,7 +194,7 @@ td:nth-child(5):hover{
 #list::-webkit-scrollbar-thumb
 {
   border-radius: 1em;
-  background-color: rgba(106, 136, 116, 1);
+  background-color: var(--accent-2-opaque);
 }
 
 #list::-webkit-scrollbar-button:end:increment {
@@ -208,7 +223,7 @@ td:nth-child(5):hover{
 #taskForm button{
     font-family: 'Roboto';
     color: #fff;
-    background-color: rgba(120, 170, 222, 0);
+    background-color: var(--transparent);
 	border-style: solid;
     border-color: #fff;
     border-radius: 1.5em;
@@ -217,20 +232,20 @@ td:nth-child(5):hover{
 
 #list input[type="button"]:hover,
 #taskForm button:hover{
-    background-color: rgba(120, 170, 222, 0.75);
+    background-color: var(--after-hover);
 }
 
 /*Add Task Fields*/
 #tName, #est{
 	border: none;
 	border-bottom: .05em solid #fff;
-	background-color: rgba(0, 0, 0, 0);
+	background-color: var(--transparent);
 }
 
 #add-task {
     width: 100%;
     color: #fff;
-    background-color: transparent;
+    background-color: var(--transparent);
     text-align: center;
     border: dashed;
     border-radius: 1px;
@@ -364,7 +379,7 @@ td:nth-child(5):hover{
     right: 0;
     margin: 1%;
     font-size: 2rem;
-	color: #ddd;
+	color: var(--before-hover);
 }
 
 #help:hover{

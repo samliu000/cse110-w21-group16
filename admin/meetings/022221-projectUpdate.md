@@ -43,6 +43,7 @@
    4. Push the changes to github main branch
    
 #### Decisions made:   
+  - What need be done this week:
      * a. Estimation number (Joshue)
      * b. Enter botton task (Joshue)
      * c. Local stroage task list (Yuru and Matias by Wedsday)

@@ -4,9 +4,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/main.css">
+
         <link rel="stylesheet" href="css/stylesheet.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		    <script src="https://use.fontawesome.com/5ac31ccdf4.js"></script>
       </head>  
 </head>
 
@@ -22,55 +23,62 @@
 
     <main>
 
+
         <!-- Main Timer -->
-        <div class ="main-timer">
-        <div id="status"></div>
-        <div id = "timerDisplay">25:00</div>
+        <div class="main-timer" id="timer">
+			<!--div id="status"></div-->
+			<div id = "timerDisplay">25:00</div>
+			
+			<div class="buttons">
+				<button id="start-btn">Start</button>
+				<button id="reset">Reset</button></a>
+			</div>
         </div>
         <!-- start and reset buttons -->
-        <div class="buttons">
-            <button id="start-btn">Start</button>
-            <button id="reset">Reset</button></a>
-        </div>
+        
      
-        <div id="table">
-            <table id="table-header">
-                <tr>
-                    <th></th>
-                    <th>Todo</th>
-                    <th>Estimation</th>
-                    <th>Actual</th>
-                </tr>
-            </table>
-            <table id="table-content"></table>
-        </div>
+		<div id="list">
+			<div id="table">
+				<table id="table-header">
+					<tr>
+						<th></th>
+						<th>Todo</th>
+						<th>Estimation</th>
+						<th>Actual</th>
+						<th></th>
+					</tr>
+				</table>
+				<table id="table-content"></table>
+			</div>
 
-        <div id="add-task-container">
-            <button id="add-task" type="button" onclick="openForm()">+Add Task</button>
-        </div>
-       
+			<div id="add-task-container">
+				<button id="add-task" type="button" onclick="openForm()">+Add Task</button>
+			</div>
+		   
 
-        <div class="add-popup" id="add-form">
-            <form id="taskForm" class="form-container">
-              <h1>Add Task</h1>
-          
-              <label for="task"><b>Task</b></label>
-              <input type="text" placeholder="Enter Task Name" value="" id="tName" required>
-          
-              <label for="estimate"><b>Estimation</b></label>
-              <input type="number" placeholder="Enter a Number" min="1" step="1" id="est" required>
-          
-              <button type="button" id="btn-add">+Add Task</button>
-              <button type="button" class="btn-cancel" onclick="closeForm()">Cancel</button>
-            </form>
-        </div>
+			<div class="add-popup" id="add-form">
+				<form id="taskForm" class="form-container">
+				  <!--h1>Add Task</h1-->
+				  <div id="add-form-task">
+					<label for="task"><b>Task</b></label>
+					<input type="text" placeholder="Enter Task Name" value="" id="tName" required>
+				  </div>
+				  
+				  <div id="add-form-est">
+					<label for="estimate"><b>Estimation</b></label>
+					<input type="number" placeholder="Enter a Number" min="1" step="1" id="est" required>
+				  </div>
+				  
+				  <div id="add-form-btn">
+					<button type="button" id="btn-add">+Add Task</button>
+					<button type="button" class="btn-cancel" onclick="closeForm()">Cancel</button>
+				  </div>
+				</form>
+			</div>
+		</div>
     </main>
 
     <script src="js/timer.js"></script>
     <script src="js/todo.js"></script>
 </body>
-
-
-
-
 </html>

@@ -17,6 +17,7 @@
  *   Overall
  *   Flexbox
  *   Task Row Styling
+ * Overlay (depends on aspect ratio)
  * /
 
 
@@ -27,6 +28,22 @@
         font-family: Roboto-r;
         src: url(./assets/Roboto/Roboto-Regular.ttf);
 }
+
+/*Colors*/
+:root{
+	--accent-1: #6A8874;
+	--accent-2-transparent: rgba(106, 136, 116, .6);
+	--accent-2-opaque: rgba(106, 136, 116, 1);
+	--before-hover: #ddd;
+	--after-hover: rgba(135, 212, 140, .7);
+	--transparent: rgba(0, 0, 0, 0);
+	/*
+	--after-hover: rgba(120, 170, 222, 0.75);
+	--accent-2-transparent: rgba(34, 59, 90,.5);
+	--accent-2-opaque: rgba(34, 59, 90, 1);
+	*/
+}
+
 html {
 	/*font-family: Roboto-r;
 	/*background: url(../img/water.jpg) no-repeat left 25% center fixed; */
@@ -57,7 +74,7 @@ main{
 }
 
 .main-timer-active{
-	margin-top: 15vh;
+	margin-top: 25vh;
 	transition: margin-top 2s ease-out;
 }
 
@@ -76,7 +93,7 @@ main{
 	font-size: 1.25rem;
 	padding: .75em 2em;
 	border-radius: 1rem;
-	background-color: #6A8874;
+	background-color: var(--accent-1);
 	border: none;
 	color:#FFF;
 }
@@ -108,8 +125,7 @@ main{
 	max-width: 70%;
 	margin: 0 auto;
 	margin-top: 3%;
-    /*background-color: rgba(34, 59, 90,.5);*/
-	background-color: rgba(106, 136, 116,.6);
+	background-color: var(--accent-2-transparent);
     border-radius: 3em;
     padding: 2em 1em;
 	max-height: 35vh;
@@ -156,7 +172,7 @@ th:nth-child(5),
 td:nth-child(5){
     width: 2.5%;
 	font-size: 1.25em;
-	color: #ddd;
+	color: var(before-hover);
 }
 
 td:nth-child(5):hover{
@@ -167,7 +183,7 @@ td:nth-child(5):hover{
 #list::-webkit-scrollbar-track
 {
   border-radius: 1em;
-  background-color: rgba(106, 136, 116,.6);
+  background-color: var(--accent-2-transparent);
 }
 
 #list::-webkit-scrollbar
@@ -178,7 +194,7 @@ td:nth-child(5):hover{
 #list::-webkit-scrollbar-thumb
 {
   border-radius: 1em;
-  background-color: rgba(106, 136, 116, 1);
+  background-color: var(--accent-2-opaque);
 }
 
 #list::-webkit-scrollbar-button:end:increment {
@@ -207,7 +223,7 @@ td:nth-child(5):hover{
 #taskForm button{
     font-family: 'Roboto';
     color: #fff;
-    background-color: rgba(120, 170, 222, 0);
+    background-color: var(--transparent);
 	border-style: solid;
     border-color: #fff;
     border-radius: 1.5em;
@@ -216,20 +232,20 @@ td:nth-child(5):hover{
 
 #list input[type="button"]:hover,
 #taskForm button:hover{
-    background-color: rgba(120, 170, 222, 0.75);
+    background-color: var(--after-hover);
 }
 
 /*Add Task Fields*/
 #tName, #est{
 	border: none;
 	border-bottom: .05em solid #fff;
-	background-color: rgba(0, 0, 0, 0);
+	background-color: var(--transparent);
 }
 
 #add-task {
     width: 100%;
     color: #fff;
-    background-color: transparent;
+    background-color: var(--transparent);
     text-align: center;
     border: dashed;
     border-radius: 1px;
@@ -237,7 +253,7 @@ td:nth-child(5):hover{
     opacity: 0.8;
     transition: 0.3s;
     cursor: pointer;
-	margin-top: 1%;
+	margin-top: 2.5%;
 }
 .add-popup {
     display: none;
@@ -253,6 +269,7 @@ td:nth-child(5):hover{
 
 #taskForm > *{
     margin: 0 .7%;
+	margin-bottom: 2%;
 }
 
 #taskForm #add-form-task{
@@ -260,6 +277,7 @@ td:nth-child(5):hover{
 	justify-content: space-between;
 	order: 1;
 	flex-grow: 5;
+	flex-basis: 20em;
 }
 
 #taskForm #add-form-est{
@@ -267,6 +285,7 @@ td:nth-child(5):hover{
 	justify-content: space-between;
 	order: 2;
 	flex-grow: 5;
+	flex-basis: 20em;
 }
 
 #taskForm #add-form-btn{
@@ -335,4 +354,59 @@ td:nth-child(5):hover{
 	color: #fff;
   }
 
+}
+
+/*****Overlay*****/
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+#help{
+	position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 1%;
+    font-size: 2rem;
+	color: var(--before-hover);
+}
+
+#help:hover{
+	color: #fff;
+}
+
+#overlay img{
+	max-width: 100vw;
+}
+
+#help-mobile-img{
+	display: none;
+}
+
+@media only screen and (max-aspect-ratio: 1/1){
+	#help-desktop-img{
+		display: none;
+	}
+	
+	#help-mobile-img{
+		display: block;
+	}
+}
+
+@media only screen and (min-aspect-ratio: 1/1) and (min-width: 950px) {
+	#overlay img{
+		max-width: 950px;
+		width: 65vw;
+	}
 }

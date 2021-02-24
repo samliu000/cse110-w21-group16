@@ -10,13 +10,16 @@ let index;
 let actual;
 let isStarted = false;
 
+let timer_container = document.getElementById("timer");
+
 const alarm = document.createElement('audio'); // A bell sound will play when the timer reaches 0
 alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
 
 
 /* EVENT LISTENERS FOR START AND RESET BUTTONS */
 document.getElementById("start-btn").addEventListener('click', () => {
-  isStarted = true;
+  timer_container.classList.add("main-timer-active");
+  isStarted = true;  
   clearInterval(countdown);
   countdown = setInterval(timer, 1);
   index = getRadioIndex('tSelect');
@@ -77,12 +80,14 @@ function updateHTML() {
     x[3].innerHTML = actual;
   }
   if(isBreak == true){
-    document.getElementById("status").innerHTML = "Promodoro Session";
+    //document.getElementById("status").innerHTML = "Promodoro Session";
   }
   if(isBreak == false && session_count != 1){
-    document.getElementById("status").innerHTML = "Short Break";
+    //document.getElementById("status").innerHTML = "Short Break";
+	timer_container.classList.remove("main-timer-active");
   }else if(isBreak == false && session_count == 1){
-    document.getElementById("status").innerHTML= "Long Break!";
+    //document.getElementById("status").innerHTML= "Long Break!";
+	timer_container.classList.remove("main-timer-active");
   }
 }
 

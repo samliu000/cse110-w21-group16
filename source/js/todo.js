@@ -8,15 +8,33 @@ let table = document.getElementById('table-content');
 let btn;
 let rad;
 
-
-
 addT.addEventListener("click", checkFields);
 
+document.getElementById('tName').addEventListener('keyup', function(event) {
+    if (event.key == 'Enter') {
+        addT.click();
+    }
+    else if (event.key == 'Escape') {
+        document.getElementById('btn-cancel').click();
+    }
+    event.preventDefault();
+});
+
+document.getElementById('est').addEventListener('keyup', function(event) {
+    if (event.key == 'Enter') {
+        addT.click();
+    }
+    else if (event.key == 'Escape') {
+        document.getElementById('btn-cancel').click();
+    }
+    event.preventDefault();
+});
 
 function checkFields(){
 
     if (document.getElementById('tName').value != "" &&
-        document.getElementById('est').value > 0) {
+        document.getElementById('est').value > 0 &&
+        document.getElementById('est').value < 51) {
             addTask();
         }
 }
@@ -28,15 +46,21 @@ function addTask(){
     rad.type = "radio";
     rad.id = "radio"+bId;
     rad.name = "tSelect";
-    rad.onclick = function(){updateCounter(this);};
+    
     
 
     //delete button
-    btn = document.createElement('input');
+	//try: <i class="fas fa-trash"></i>
+    /*btn = document.createElement('input');
     btn.value = "Delete";
     btn.type = "button";
     btn.id = "edit"+bId;
-    btn.onclick = function() {editRow(this);};
+    btn.onclick = function() {editRow(this);};*/
+	
+	btn = document.createElement('i');
+	btn.id = "edit"+bId;
+	btn.className = "fa fa-trash";
+	btn.onclick = function() {editRow(this);};
 
     //cells created
     let row = document.createElement('tr');
@@ -63,10 +87,6 @@ function addTask(){
 
     bId++;
     document.getElementById("add-form").style.display = "none";
-}
-
-function updateCounter(elem) {
-    document.etElementById('counter').value = elem.parentElement.childNodes[3].value;
 }
 
 function editRow(elem) {

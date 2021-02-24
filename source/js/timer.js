@@ -31,6 +31,8 @@ document.getElementById("start-btn").addEventListener('click', () => {
   currTask.id = 'current_task';
   currTaskText.style.color = 'white';
   currTaskText.innerHTML = "Currently on task: " + currTask;
+  // disable the start button to avoid multiple text showing up
+  document.getElementById("start-btn").disabled = true;
 });
 
 document.getElementById("reset").addEventListener('click', () => {
@@ -48,6 +50,7 @@ document.getElementById("reset").addEventListener('click', () => {
 
 /* TIMER - HANDLES COUNTDOWN */
 function timer() {
+  document.getElementById("start-btn").disabled = false;
   session_seconds --;
   if (session_seconds < 0) {
     clearInterval(countdown);

@@ -11,6 +11,8 @@ let actual;
 let isStarted = false;
 
 let timer_container = document.getElementById("timer");
+let overlay = document.getElementById("popup-overlay");
+let reset_popup = document.getElementById("reset-flex");
 
 const alarm = document.createElement('audio'); // A bell sound will play when the timer reaches 0
 alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
@@ -28,15 +30,33 @@ document.getElementById("start-btn").addEventListener('click', () => {
 
 document.getElementById("reset").addEventListener('click', () => {
   if(isStarted){
-      if(confirm("Are you sure you want to reset?")) {
-      clearInterval(countdown);
-      session_seconds = session_minutes * 60;
-      countdown = 0;
-      isBreak = true;
-      clearInterval(countdown);
-      countdown = setInterval(timer, 10);
-      }
+	  overlay.style.display = "block";
+	  reset_popup.classList.add("active");
+      /*if(confirm("Are you sure you want to reset?")) {
+		  clearInterval(countdown);
+		  session_seconds = session_minutes * 60;
+		  countdown = 0;
+		  isBreak = true;
+		  clearInterval(countdown);
+		  countdown = setInterval(timer, 10);
+      }*/
   }
+});
+
+document.getElementById("btn-yes").addEventListener('click', () =>{
+	clearInterval(countdown);
+	session_seconds = session_minutes * 60;
+	countdown = 0;
+	isBreak = true;
+	clearInterval(countdown);
+	countdown = setInterval(timer, 10);
+	overlay.style.display = "none";
+	reset_popup.classList.remove("active");
+});
+
+document.getElementById("btn-no").addEventListener('click', () =>{
+	overlay.style.display = "none";
+	reset_popup.classList.remove("active");
 });
 
 /* TIMER - HANDLES COUNTDOWN */
@@ -85,9 +105,13 @@ function updateHTML() {
   if(isBreak == false && session_count != 1){
     //document.getElementById("status").innerHTML = "Short Break";
 	timer_container.classList.remove("main-timer-active");
+	overlay.style.display = "none";
+	reset_popup.classList.remove("active");
   }else if(isBreak == false && session_count == 1){
     //document.getElementById("status").innerHTML= "Long Break!";
 	timer_container.classList.remove("main-timer-active");
+	overlay.style.display = "none";
+	reset_popup.classList.remove("active");
   }
 }
 

@@ -97,7 +97,50 @@ main{
 	color:#FFF;
 }
 
+/*Reset popup*/
+#reset-popup{
+	font-size: 1.25rem;
+	padding: .75em 2em;
+	margin: 0 auto;
+	max-width: min(100vw, 20em);
+	border-radius: 1rem;
+	background-color: var(--accent-1);
+	border: none;
+	color:#FFF;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+	z-index: 5;
+}
 
+#reset-flex{
+	display: flex;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	align-items: center;
+	left: 0;
+	top: -100vw;
+	transition: top 1s ease;
+	z-index: 3;
+}
+
+#reset-popup p{
+	text-align: center;
+	flex-basis: 15em;
+    flex-grow: 1;
+}
+
+#reset-popup .form-btn{
+	margin: 0 2em;
+	font-size: 1.1rem;
+}
+
+#reset-flex.active{
+	top: 0;
+	transition: top .5s ease;
+}
 
 #timerDisplay{
     font-size: 10rem;
@@ -171,7 +214,7 @@ th:nth-child(5),
 td:nth-child(5){
     width: 2.5%;
 	font-size: 1.25em;
-	color: var(before-hover);
+	color: var(--before-hover);
 }
 
 td:nth-child(5):hover{
@@ -218,8 +261,7 @@ td:nth-child(5):hover{
 }
 
 /*Buttons*/
-#list input[type="button"],
-#taskForm button{
+.form-btn{
     font-family: 'Roboto';
     color: #fff;
     background-color: var(--transparent);
@@ -229,8 +271,7 @@ td:nth-child(5):hover{
 	padding: .25em 1em;
 }
 
-#list input[type="button"]:hover,
-#taskForm button:hover{
+.form-btn:hover{
     background-color: var(--after-hover);
 }
 
@@ -356,7 +397,8 @@ td:nth-child(5):hover{
 }
 
 /*****Overlay*****/
-#overlay {
+#help-overlay,
+#popup-overlay{
   position: fixed;
   display: none;
   width: 100%;
@@ -386,7 +428,7 @@ td:nth-child(5):hover{
 	color: #fff;
 }
 
-#overlay img{
+#help-overlay img{
 	max-width: 100vw;
 }
 
@@ -405,7 +447,7 @@ td:nth-child(5):hover{
 }
 
 @media only screen and (min-aspect-ratio: 1/1) and (min-width: 950px) {
-	#overlay img{
+	#help-overlay img{
 		max-width: 950px;
 		width: 65vw;
 	}

@@ -70,17 +70,27 @@
 				  </div>
 				  
 				  <div id="add-form-btn">
-					<button type="button" id="btn-add">+Add Task</button>
-					<button type="button" class="btn-cancel" onclick="closeForm()">Cancel</button>
+					<button type="button" id="btn-add" class="form-btn">+Add Task</button>
+					<button type="button" class="btn-cancel form-btn" onclick="closeForm()">Cancel</button>
 				  </div>
 				</form>
 			</div>
 		</div>
 		
 		<i class="fa fa-question-circle" id="help"></i>
-		<div id="overlay">
+		<div id="help-overlay">
 			<img src="img/desktop-help.jpg" alt="Tutorial image" id="help-desktop-img">
 			<img src="img/mobile-help.jpg" alt="Tutorial image" id="help-mobile-img">
+		</div>
+		
+		<div id="popup-overlay"></div>
+		
+		<div id="reset-flex">
+			<div id="reset-popup">
+				<p>Are you sure you want to reset? Your timer will automatically start again.</p>
+				<button type="button" id="btn-yes" class="form-btn">Yes</button>
+				<button type="button" id="btn-no" class="form-btn">No</button>
+			</div>
 		</div>
     </main>
 

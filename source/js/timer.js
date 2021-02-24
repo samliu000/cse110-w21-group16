@@ -32,14 +32,6 @@ document.getElementById("reset").addEventListener('click', () => {
   if(isStarted){
 	  overlay.style.display = "block";
 	  reset_popup.classList.add("active");
-      /*if(confirm("Are you sure you want to reset?")) {
-		  clearInterval(countdown);
-		  session_seconds = session_minutes * 60;
-		  countdown = 0;
-		  isBreak = true;
-		  clearInterval(countdown);
-		  countdown = setInterval(timer, 10);
-      }*/
   }
 });
 

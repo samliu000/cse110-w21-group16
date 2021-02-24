@@ -17,7 +17,8 @@
  *   Overall
  *   Flexbox
  *   Task Row Styling
- * Overlay (depends on aspect ratio)
+ * Help/Overlay (depends on aspect ratio)
+ * Settings
  * /
 
 
@@ -98,7 +99,8 @@ main{
 }
 
 /*Reset popup*/
-#reset-popup{
+#reset-popup,
+#settings-popup{
 	font-size: 1.25rem;
 	padding: .75em 2em;
 	margin: 0 auto;
@@ -114,14 +116,15 @@ main{
 	z-index: 5;
 }
 
-#reset-flex{
+#reset-flex,
+#settings-flex{
 	display: flex;
 	height: 100%;
 	width: 100%;
 	position: fixed;
 	align-items: center;
 	left: 0;
-	top: -100vw;
+	top: -100vh;
 	transition: top 1s ease;
 	z-index: 3;
 }
@@ -137,7 +140,8 @@ main{
 	font-size: 1.1rem;
 }
 
-#reset-flex.active{
+#reset-flex.active,
+#settings-flex.active{
 	top: 0;
 	transition: top .5s ease;
 }
@@ -276,7 +280,7 @@ td:nth-child(5):hover{
 }
 
 /*Add Task Fields*/
-#tName, #est{
+.in-field{
 	border: none;
 	border-bottom: .05em solid #fff;
 	background-color: var(--transparent);
@@ -328,8 +332,10 @@ td:nth-child(5):hover{
 	flex-basis: 20em;
 }
 
-#taskForm #add-form-btn{
+#add-form-btn,
+#set-form-btn{
 	display: flex;
+	align-items: center;
 	justify-content: center;
 	flex-basis: 10em;
 	order: 3;
@@ -396,7 +402,7 @@ td:nth-child(5):hover{
 
 }
 
-/*****Overlay*****/
+/*****Help*****/
 #help-overlay,
 #popup-overlay{
   position: fixed;
@@ -415,16 +421,20 @@ td:nth-child(5):hover{
 }
 
 #help{
-	position: fixed;
-    bottom: 0;
     right: 0;
+}
+
+i.fa.icon{
+	position: fixed;
+	bottom: 0;
     margin: 1%;
     font-size: 2rem;
 	cursor: pointer;
 	color: var(--before-hover);
 }
 
-#help:hover{
+#help:hover,
+#settings:hover{
 	color: #fff;
 }
 
@@ -451,4 +461,55 @@ td:nth-child(5):hover{
 		max-width: 950px;
 		width: 65vw;
 	}
+}
+
+/*****Settings*****/
+#settings{
+	left: 0;
+}
+#settings-popup{
+	max-width: min(100vw, 50em);
+    min-width: 15em;
+}
+
+#setForm{
+	display: flex;
+    flex-direction: column;
+}
+
+#setForm > * {
+	margin: .2em auto;
+    width: 100%;
+}
+
+#set-form-btn{
+	flex-basis: auto;
+	margin-top: .7em;
+}
+
+#set-form span{
+	text-align: center;
+}
+
+#set-form-btn button{
+    margin: 0 1em;
+}
+
+.set-item{
+	display: flex;
+	justify-content:space-between;
+}
+
+.set-item label{
+	order: 1;
+	flex-basis: 8em;
+	flex-grow: 1;
+	margin-right: 1em;
+}
+
+.set-item input{
+	order: 2;
+    flex-basis: 2em;
+    width: 7em;
+    flex-grow: 2;
 }

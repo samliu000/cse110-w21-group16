@@ -8,15 +8,33 @@ let table = document.getElementById('table-content');
 let btn;
 let rad;
 
-
-
 addT.addEventListener("click", checkFields);
 
+document.getElementById('tName').addEventListener('keyup', function(event) {
+    if (event.key == 'Enter') {
+        addT.click();
+    }
+    else if (event.key == 'Escape') {
+        document.getElementById('btn-cancel').click();
+    }
+    event.preventDefault();
+});
+
+document.getElementById('est').addEventListener('keyup', function(event) {
+    if (event.key == 'Enter') {
+        addT.click();
+    }
+    else if (event.key == 'Escape') {
+        document.getElementById('btn-cancel').click();
+    }
+    event.preventDefault();
+});
 
 function checkFields(){
 
     if (document.getElementById('tName').value != "" &&
-        document.getElementById('est').value > 0) {
+        document.getElementById('est').value > 0 &&
+        document.getElementById('est').value < 51) {
             addTask();
         }
 }
@@ -28,7 +46,7 @@ function addTask(){
     rad.type = "radio";
     rad.id = "radio"+bId;
     rad.name = "tSelect";
-    rad.onclick = function(){updateCounter(this);};
+    
     
 
     //delete button
@@ -69,10 +87,6 @@ function addTask(){
 
     bId++;
     document.getElementById("add-form").style.display = "none";
-}
-
-function updateCounter(elem) {
-    document.etElementById('counter').value = elem.parentElement.childNodes[3].value;
 }
 
 function editRow(elem) {

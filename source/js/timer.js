@@ -22,6 +22,7 @@ document.getElementById("start-btn").addEventListener('click', () => {
   isStarted = true;  
   clearInterval(countdown);
   countdown = setInterval(timer, 1);
+  document.getElementById('list').style.display = "none";
   index = getRadioIndex('tSelect');
   actual = document.getElementById('table-content').childNodes[index].childNodes[3].innerHTML;
 });
@@ -59,6 +60,7 @@ function timer() {
       actual++;
       session_count ++;
       countdown = setInterval(timer, 10);
+      document.getElementById('list').style.display = "block";
       undoCheck('tSelect');
     }else{
       session_seconds = session_minutes * 60;
@@ -79,9 +81,12 @@ function updateHTML() {
     let x = document.getElementById("table-content").childNodes[index].cells;
     x[3].innerHTML = actual;
   }
-  if(isBreak == true){
-    //document.getElementById("status").innerHTML = "Promodoro Session";
-  }
+  
+  //Block is causing TypeError
+  /*if(isBreak == true){
+    document.getElementById("status").innerHTML = "Promodoro Session";
+  }*/
+
   if(isBreak == false && session_count != 1){
     //document.getElementById("status").innerHTML = "Short Break";
 	timer_container.classList.remove("main-timer-active");

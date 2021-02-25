@@ -33,3 +33,9 @@ document.getElementById("focus").addEventListener('input', () => {
 	short_break.placeholder = "Try: " + Math.ceil((Number(focus) / 5));
 	long_break.placeholder = "Try: " + Math.ceil((Number(focus) * 3 / 5));
 });
+
+document.getElementById("setForm").addEventListener("keydown", ({key}) => {
+    if (key === "Escape") {
+		document.getElementById("btn-no-set").click();
+	}
+});

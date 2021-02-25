@@ -14,13 +14,20 @@ let overlay = document.getElementById("popup-overlay");
 let reset_popup = document.getElementById("reset-flex");
 let currTask;
 
+let setIcon = document.getElementById("settings");
+let helpIcon = document.getElementById("help");
+
 const alarm = document.createElement('audio'); // A bell sound will play when the timer reaches 0
 alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
 
 
 /* EVENT LISTENERS FOR START AND RESET BUTTONS */
 document.getElementById("start-btn").addEventListener('click', () => {
+	//On timer start
   timer_container.classList.add("main-timer-active");
+  setIcon.style.display = "none";
+  helpIcon.style.display = "none";
+	  
   isStarted = true;  
   clearInterval(countdown);
   countdown = setInterval(timer, 1);
@@ -52,6 +59,7 @@ document.getElementById("btn-yes").addEventListener('click', () =>{
 	clearInterval(countdown);
 	countdown = setInterval(timer, 10);
 	overlay.style.display = "none";
+	
 	reset_popup.classList.remove("active");
 });
 
@@ -115,12 +123,18 @@ function updateHTML() {
     //document.getElementById("status").innerHTML = "Short Break";
 	timer_container.classList.remove("main-timer-active");
 	overlay.style.display = "none";
+	//on timer end
 	reset_popup.classList.remove("active");
+	setIcon.style.display = "block";
+	helpIcon.style.display = "block";
   }else if(isBreak == false && session_count == 1){
     //document.getElementById("status").innerHTML= "Long Break!";
 	timer_container.classList.remove("main-timer-active");
 	overlay.style.display = "none";
+	//on timer end
 	reset_popup.classList.remove("active");
+	setIcon.style.display = "block";
+	helpIcon.style.display = "block";
   }
 }
 

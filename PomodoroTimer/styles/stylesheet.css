@@ -1,0 +1,255 @@
+/**
+ * TOC:
+ * Overall Styling
+ * Timer Styling
+ * List Styling
+ *   Fonts
+ *   Containers
+ * 	 Scrollbar
+ *   Rows
+ *   Buttons
+ *   Add Task Fields
+ *   Add Task Flexbox
+ * 	 Nested Flexboxes
+ * 
+ * ~Mobile Styling ~
+ * List styling
+ *   Overall
+ *   Flexbox
+ *   Task Row Styling
+ * /
+
+
+
+
+/*****Overall styling*****/
+@font-face {
+        font-family: Roboto-r;
+        src: url(./assets/Roboto/Roboto-Regular.ttf);
+}
+html {
+	font-family: Roboto-r;
+	background: url(../img/water.jpg) no-repeat left 25% center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+main{
+	padding: 5% 0;
+}
+
+/*****Timer Styling*****/
+.main-timer {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 20rem;
+	height: 20rem;
+	border: 5px solid;
+	border-radius: 10rem;
+	align-items: center;
+	margin: auto;
+}
+#timerDisplay{
+        font-size: 600%;
+}
+.buttons{
+	padding: 2rem;
+	text-align: center;
+}
+
+/*****List Styling*****/
+/*Fonts*/
+
+#taskForm, 
+#taskForm input{
+	color: #fff;
+}
+
+::placeholder{
+	color: white;
+	font-size: 1.2rem;
+}
+
+::-ms-input-placeholder {
+	color: white;
+	font-size: 1.2rem;
+}
+	
+/*Container*/
+#list{
+	max-width: 70%;
+	margin: 0 auto;
+    background-color: rgba(34, 59, 90,.5);
+    border-radius: 3em;
+    padding: 2em 1em;
+	max-height: 35vh;
+    overflow: auto;
+    overflow-x: hidden;
+	font-size: 1.3rem;
+}
+
+/*Scrollbar*/
+#list::-webkit-scrollbar-track
+{
+  border-radius: 1em;
+  background-color: rgba(34, 59, 90,.5)
+}
+
+#list::-webkit-scrollbar
+{
+  width: .8em;
+}
+
+#list::-webkit-scrollbar-thumb
+{
+  border-radius: 1em;
+  background-color: rgba(34, 59, 90,1);
+}
+
+#list::-webkit-scrollbar-button:end:increment {
+    height: 2.1em;
+    display: block;
+    background: transparent;
+}
+
+#list::-webkit-scrollbar-button:start:increment {
+    height: 2.1em;
+    display: block;
+    background: transparent;
+}
+
+/*Rows*/
+#table-content{
+    border-collapse: separate;
+    border-spacing: .5em;
+}
+
+#list > *{
+	padding: 0 5%;
+}
+
+#add-task-container{
+	padding: 0 7%;
+}
+
+/*Buttons*/
+#list input[type="button"],
+#taskForm button{
+    font-family: 'Roboto';
+    color: #fff;
+    background-color: rgba(120, 170, 222, 0);
+	border-style: solid;
+    border-color: #fff;
+	font-size: 1.05rem;
+    border-radius: 1.5em;
+	padding: .25em 1em;
+}
+
+#list input[type="button"]:hover, 
+#taskForm button:hover{
+    background-color: rgba(120, 170, 222, 0.75);
+}
+
+/*Add Task Fields*/
+#tName, #est{
+	border: none;
+	border-bottom: .05em solid #fff;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+/*Add Task Flexbox*/
+#taskForm{
+    display: flex;
+	flex-wrap: wrap;
+    margin-top: 2%;
+    justify-content: space-around;
+}
+
+#taskForm > *{
+    margin: 0 .7%;
+}
+
+#taskForm #add-form-task{
+	display: flex;
+	justify-content: space-between;
+	order: 1;
+	flex-grow: 5;
+}
+
+#taskForm #add-form-est{
+	display: flex;
+	justify-content: space-between;
+	order: 2;
+	flex-grow: 5;
+}
+
+#taskForm #add-form-btn{
+	display: flex;
+	justify-content: center;
+	flex-basis: 10em;
+	order: 3;
+	flex-grow: 1;
+}
+/*Nested Flexboxes*/
+#taskForm div > *{
+    margin: 0 2%;
+}
+
+#taskForm input{
+	order: 2;
+	flex-grow: 4;
+}
+
+#taskForm label{
+	order:1;
+	flex-grow: 1;
+}
+
+/***** Mobile Styling *****/
+@media only screen and (max-width: 1100px) {
+/*****List Styling*****/
+	/*Overall styling*/
+  #list{
+	  max-width: 95vw;
+  }
+	/*Flexbox*/
+  #taskForm > *{
+	  margin: 2.5% 1%;
+  }
+  
+  #taskForm{
+    justify-content: space-between;
+  }
+  
+  #add-task{
+	  margin-top: 1em;
+  }
+  
+  /*Task row styling*/
+  th:nth-child(1),
+  td:nth-child(1){
+    margin: 0;
+  }
+  th:nth-child(2),
+  td:nth-child(2){
+    width: 50%;
+    text-align: left;
+  }
+  th:nth-child(3),
+  td:nth-child(3){
+    width: 5%;
+  }
+  th:nth-child(4),
+  td:nth-child(4){
+    width: 5%;
+  }
+
+  th:nth-child(5),
+  td:nth-child(5){
+	color: #fff;
+  }
+}

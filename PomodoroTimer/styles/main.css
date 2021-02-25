@@ -1,0 +1,79 @@
+/* main.css */
+
+/*Table sizing*/
+#table-header {
+    border-bottom: 1px solid white;
+    width: 98%;
+	margin: 0 auto;
+	color: #fff;
+}
+
+#table-content {
+    width: 100%;
+    text-align: center;
+	table-layout: fixed;
+	word-break: break-word;
+	color: #fff;
+}
+
+
+th:nth-child(1),
+td:nth-child(1){
+    width: 2.5%;
+}
+th:nth-child(2),
+td:nth-child(2){
+    width: 75%;
+    text-align: left;
+}
+th:nth-child(3),
+td:nth-child(3){
+    width: 10%;
+}
+th:nth-child(4),
+td:nth-child(4){
+    width: 10%;
+}
+
+th:nth-child(5),
+td:nth-child(5){
+    width: 2.5%;
+	font-size: 1.25em;
+	color: #ddd;
+}
+
+td:nth-child(5):hover{
+	color: #fff;
+}
+
+/*td:nth-child(2) {
+    width: 60%;
+    text-align: left;
+}
+td:nth-child(3) {
+    width: 20%;
+}
+td:nth-child(4) {
+    width: 20%;
+}*/
+
+#add-task {
+    width: 100%;
+    color: #fff;
+    background-color: transparent;
+    text-align: center;
+    border: dashed;
+    border-radius: 1px;
+    padding: 8px 16px;
+    opacity: 0.8;
+    transition: 0.3s;
+    cursor: pointer;
+	margin-top: 1%;
+}
+
+
+
+.add-popup {
+    display: none;
+}
+

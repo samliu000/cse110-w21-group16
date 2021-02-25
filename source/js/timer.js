@@ -9,10 +9,10 @@ let session_count = 1;
 let index;
 let actual;
 let isStarted = false;
-
 let timer_container = document.getElementById("timer");
 let overlay = document.getElementById("popup-overlay");
 let reset_popup = document.getElementById("reset-flex");
+let currTask;
 
 const alarm = document.createElement('audio'); // A bell sound will play when the timer reaches 0
 alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
@@ -24,8 +24,17 @@ document.getElementById("start-btn").addEventListener('click', () => {
   isStarted = true;  
   clearInterval(countdown);
   countdown = setInterval(timer, 1);
+  document.getElementById('list').style.display = "none";
   index = getRadioIndex('tSelect');
   actual = document.getElementById('table-content').childNodes[index].childNodes[3].innerHTML;
+  // display which task the Pomodoro session is currently on 
+  currTask = document.getElementById('table-content').childNodes[index].childNodes[1].innerHTML; 
+  let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
+  currTask.id = 'current_task';
+  currTaskText.style.color = 'white';
+  currTaskText.innerHTML = "Currently on task: " + currTask;
+  // disable the start button to avoid multiple text showing up
+  document.getElementById("start-btn").disabled = true;
 });
 
 document.getElementById("reset").addEventListener('click', () => {
@@ -53,6 +62,7 @@ document.getElementById("btn-no").addEventListener('click', () =>{
 
 /* TIMER - HANDLES COUNTDOWN */
 function timer() {
+  document.getElementById("start-btn").disabled = false;
   session_seconds --;
   if (session_seconds < 0) {
     clearInterval(countdown);
@@ -71,6 +81,10 @@ function timer() {
       actual++;
       session_count ++;
       countdown = setInterval(timer, 10);
+      console.log(document.querySelector('main').childNodes);
+      // remove the current task text before checklist appears
+      document.querySelector('main').removeChild(document.querySelector('main').childNodes[document.querySelector('main').childNodes.length - 1]);
+      document.getElementById('list').style.display = "block";
       undoCheck('tSelect');
     }else{
       session_seconds = session_minutes * 60;
@@ -91,9 +105,12 @@ function updateHTML() {
     let x = document.getElementById("table-content").childNodes[index].cells;
     x[3].innerHTML = actual;
   }
-  if(isBreak == true){
-    //document.getElementById("status").innerHTML = "Promodoro Session";
-  }
+  
+  //Block is causing TypeError
+  /*if(isBreak == true){
+    document.getElementById("status").innerHTML = "Promodoro Session";
+  }*/
+
   if(isBreak == false && session_count != 1){
     //document.getElementById("status").innerHTML = "Short Break";
 	timer_container.classList.remove("main-timer-active");

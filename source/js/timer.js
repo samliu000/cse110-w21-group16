@@ -29,7 +29,7 @@ document.getElementById("start-btn").addEventListener('click', () => {
   timer_container.classList.add("main-timer-active");
   setIcon.style.display = "none";
   helpIcon.style.display = "none";
-	  
+
   isStarted = true;  
   clearInterval(countdown);
   countdown = setInterval(timer, 1);
@@ -48,8 +48,8 @@ document.getElementById("start-btn").addEventListener('click', () => {
 
 document.getElementById("reset").addEventListener('click', () => {
   if(isStarted){
-	  overlay.style.display = "block";
-	  reset_popup.classList.add("active");
+	overlay.style.display = "block";
+	reset_popup.classList.add("active");
   }
 });
 

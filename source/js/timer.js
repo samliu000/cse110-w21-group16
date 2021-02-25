@@ -4,6 +4,8 @@ let countdown = 0; // variable to set/clear intervals
 let session_seconds = 1500; // seconds left on the clock
 let session_minutes = 25;
 let break_minutes = 5;
+let short_break_minutes = 5;
+let long_break_minutes = 15;
 let isBreak = true; 
 let session_count = 1;
 let index;
@@ -78,10 +80,10 @@ function timer() {
     alarm.play();
     if(isBreak == true){
       if(session_count == 4){
-        break_minutes = 15;
+        break_minutes = long_break_minutes;
         session_count = 0;
       }else{
-        break_minutes = 5;
+        break_minutes = short_break_minutes;
       }
       session_seconds = break_minutes * 60;
       isBreak = false;
@@ -100,6 +102,26 @@ function timer() {
     }
   }
 }
+
+/* Settings for Timer*/
+document.getElementById("setForm").addEventListener('submit', () => {
+	event.preventDefault();
+	document.getElementById("popup-overlay").style.display = "none";
+	document.getElementById("settings-flex").classList.remove("active");
+	let focus = document.getElementById("focus").value;
+	let short_break = document.getElementById("short-break").value;
+	let long_break = document.getElementById("long-break").value;
+	
+	if(focus != ""){
+		session_seconds = Number(focus) * 60;
+	}
+	if(short_break != "")
+		short_break_minutes = Number(short_break);
+	if(long_break != "")
+		long_break_minutes = Number(long_break);
+});
+
+
 /* UPDATE HTML CONTENT */
 function countdownDisplay() {
   let session_minutes = Math.floor(session_seconds / 60);

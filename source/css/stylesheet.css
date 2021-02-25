@@ -159,11 +159,11 @@ main{
 }
 
 ::placeholder{
-	color: white;
+	color: var(--before-hover);
 }
 
 ::-ms-input-placeholder {
-	color: white;
+	color: var(--before-hover);
 }
 	
 /*Container*/
@@ -512,4 +512,8 @@ i.fa.icon{
     flex-basis: 2em;
     width: 7em;
     flex-grow: 2;
+}
+
+#setForm input{
+	color: white;
 }

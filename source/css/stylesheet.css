@@ -17,7 +17,8 @@
  *   Overall
  *   Flexbox
  *   Task Row Styling
- * Overlay (depends on aspect ratio)
+ * Help/Overlay (depends on aspect ratio)
+ * Settings
  * /
 
 
@@ -81,24 +82,69 @@ main{
 .buttons{
 	padding: 1rem;
 	text-align: center;
-	
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	gap: 5vw;
 }
 
 #start-btn,
 #reset  {
 	font-size: 1.25rem;
 	padding: .75em 2em;
+	margin: 0 2.5vw;
 	border-radius: 1rem;
 	background-color: var(--accent-1);
 	border: none;
 	color:#FFF;
 }
 
+/*Reset popup*/
+#reset-popup,
+#settings-popup{
+	font-size: 1.25rem;
+	padding: .75em 2em;
+	margin: 0 auto;
+	max-width: min(100vw, 20em);
+	border-radius: 1rem;
+	background-color: var(--accent-1);
+	border: none;
+	color:#FFF;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+	z-index: 5;
+}
 
+#reset-flex,
+#settings-flex{
+	display: flex;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	align-items: center;
+	left: 0;
+	top: -100vh;
+	transition: top 1s ease;
+	z-index: 3;
+}
+
+#reset-popup p{
+	text-align: center;
+	flex-basis: 15em;
+    flex-grow: 1;
+}
+
+#reset-popup .form-btn{
+	margin: 0 2em;
+	font-size: 1.1rem;
+}
+
+#reset-flex.active,
+#settings-flex.active{
+	top: 0;
+	transition: top .5s ease;
+}
 
 #timerDisplay{
     font-size: 10rem;
@@ -113,16 +159,16 @@ main{
 }
 
 ::placeholder{
-	color: white;
+	color: var(--before-hover);
 }
 
 ::-ms-input-placeholder {
-	color: white;
+	color: var(--before-hover);
 }
 	
 /*Container*/
 #list{
-	max-width: 70%;
+	max-width: 50%;
 	margin: 0 auto;
 	margin-top: 3%;
 	background-color: var(--accent-2-transparent);
@@ -172,7 +218,7 @@ th:nth-child(5),
 td:nth-child(5){
     width: 2.5%;
 	font-size: 1.25em;
-	color: var(before-hover);
+	color: var(--before-hover);
 }
 
 td:nth-child(5):hover{
@@ -219,8 +265,7 @@ td:nth-child(5):hover{
 }
 
 /*Buttons*/
-#list input[type="button"],
-#taskForm button{
+.form-btn{
     font-family: 'Roboto';
     color: #fff;
     background-color: var(--transparent);
@@ -230,13 +275,12 @@ td:nth-child(5):hover{
 	padding: .25em 1em;
 }
 
-#list input[type="button"]:hover,
-#taskForm button:hover{
+.form-btn:hover{
     background-color: var(--after-hover);
 }
 
 /*Add Task Fields*/
-#tName, #est{
+.in-field{
 	border: none;
 	border-bottom: .05em solid #fff;
 	background-color: var(--transparent);
@@ -288,8 +332,10 @@ td:nth-child(5):hover{
 	flex-basis: 20em;
 }
 
-#taskForm #add-form-btn{
+#add-form-btn,
+#set-form-btn{
 	display: flex;
+	align-items: center;
 	justify-content: center;
 	flex-basis: 10em;
 	order: 3;
@@ -356,8 +402,9 @@ td:nth-child(5):hover{
 
 }
 
-/*****Overlay*****/
-#overlay {
+/*****Help*****/
+#help-overlay,
+#popup-overlay{
   position: fixed;
   display: none;
   width: 100%;
@@ -374,19 +421,24 @@ td:nth-child(5):hover{
 }
 
 #help{
-	position: fixed;
-    bottom: 0;
     right: 0;
+}
+
+i.fa.icon{
+	position: fixed;
+	bottom: 0;
     margin: 1%;
     font-size: 2rem;
+	cursor: pointer;
 	color: var(--before-hover);
 }
 
-#help:hover{
+#help:hover,
+#settings:hover{
 	color: #fff;
 }
 
-#overlay img{
+#help-overlay img{
 	max-width: 100vw;
 }
 
@@ -405,8 +457,63 @@ td:nth-child(5):hover{
 }
 
 @media only screen and (min-aspect-ratio: 1/1) and (min-width: 950px) {
-	#overlay img{
+	#help-overlay img{
 		max-width: 950px;
 		width: 65vw;
 	}
+}
+
+/*****Settings*****/
+#settings{
+	left: 0;
+}
+#settings-popup{
+	max-width: min(100vw, 50em);
+    min-width: 15em;
+}
+
+#setForm{
+	display: flex;
+    flex-direction: column;
+}
+
+#setForm > * {
+	margin: .2em auto;
+    width: 100%;
+}
+
+#set-form-btn{
+	flex-basis: auto;
+	margin-top: .7em;
+}
+
+#set-form span{
+	text-align: center;
+}
+
+#set-form-btn button{
+    margin: 0 1em;
+}
+
+.set-item{
+	display: flex;
+	justify-content:space-between;
+}
+
+.set-item label{
+	order: 1;
+	flex-basis: 8em;
+	flex-grow: 1;
+	margin-right: 1em;
+}
+
+.set-item input{
+	order: 2;
+    flex-basis: 2em;
+    width: 7em;
+    flex-grow: 2;
+}
+
+#setForm input{
+	color: white;
 }

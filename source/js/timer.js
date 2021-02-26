@@ -1,5 +1,4 @@
 //timer.js
-
 let countdown = 0; // variable to set/clear intervals
 let session_seconds = 1500; // seconds left on the clock
 let session_minutes = 25;
@@ -172,6 +171,7 @@ function getRadioIndex(name)
         }
     }
 }
+
 //
 function undoCheck(name)
 {

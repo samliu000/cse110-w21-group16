@@ -10,6 +10,12 @@ let rad;
 
 addT.addEventListener("click", checkFields);
 
+document.getElementById('est').addEventListener('keydown', function(event) {
+    if (event.key == 'e' || event.key == '+' || event.key == '-') {
+        event.preventDefault();
+    }
+});
+
 document.getElementById('tName').addEventListener('keyup', function(event) {
     if (event.key == 'Enter') {
         addT.click();
@@ -50,40 +56,25 @@ function addTask(){
     
 
     //delete button
-	//try: <i class="fas fa-trash"></i>
-    /*btn = document.createElement('input');
-    btn.value = "Delete";
-    btn.type = "button";
-    btn.id = "edit"+bId;
-    btn.onclick = function() {editRow(this);};*/
-	
 	btn = document.createElement('i');
 	btn.id = "edit"+bId;
 	btn.className = "fa fa-trash";
 	btn.onclick = function() {editRow(this);};
 
     //cells created
-    let row = document.createElement('tr');
-    let cell1 = document.createElement('td');
-    let cell2 = document.createElement('td');
-    let cell3 = document.createElement('td');
-    let cell4 = document.createElement('td');
-    let cell5 = document.createElement('td');
+    let row = table.insertRow(-1);
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+    let cell3 = row.insertCell(2);
+    let cell4 = row.insertCell(3);
+    let cell5 = row.insertCell(4);
     
     //cells filled
     cell1.appendChild(rad);
-    cell2.innerHTML = document.getElementById("tName").value;
+    cell2.innerText = document.getElementById("tName").value;
     cell3.innerHTML = document.getElementById("est").value;
     cell4.innerHTML = 0;
     cell5.appendChild(btn);
-
-    //cells appended to row, and row to table
-    row.appendChild(cell1);
-    row.appendChild(cell2);
-    row.appendChild(cell3);
-    row.appendChild(cell4);
-    row.appendChild(cell5);
-    table.appendChild(row);
 
     bId++;
     document.getElementById("add-form").style.display = "none";

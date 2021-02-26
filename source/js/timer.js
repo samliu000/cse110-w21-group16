@@ -24,7 +24,9 @@ document.getElementById("start-btn").addEventListener('click', () => {
   countdown = setInterval(timer, 1);
   document.getElementById('list').style.display = "none";
   index = getRadioIndex('tSelect');
-  actual = document.getElementById('table-content').childNodes[index].childNodes[3].innerHTML;
+  if (index >= 0){
+    actual = document.getElementById('table-content').rows[index].cells[3].innerHTML;
+  }
 });
 
 document.getElementById("reset").addEventListener('click', () => {
@@ -57,7 +59,10 @@ function timer() {
       session_seconds = break_minutes * 60;
       isBreak = false;
       isStarted = false;
-      actual++;
+      if (index >= 0){
+        actual++;
+        document.getElementById('table-content').rows[index].cells[3].innerHTML = actual;
+      }
       session_count ++;
       countdown = setInterval(timer, 10);
       document.getElementById('list').style.display = "block";
@@ -77,10 +82,11 @@ function countdownDisplay() {
 
 function updateHTML() {
   countdownDisplay();
+  /* 
   if(index >= 0){
     let x = document.getElementById("table-content").childNodes[index].cells;
-    x[3].innerHTML = actual;
-  }
+    x[3].value = actual;
+  }*/
   
   //Block is causing TypeError
   /*if(isBreak == true){

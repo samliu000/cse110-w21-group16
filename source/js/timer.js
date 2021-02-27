@@ -1,5 +1,4 @@
 //timer.js
-
 let countdown = 0; // variable to set/clear intervals
 let session_seconds = 1500; // seconds left on the clock
 let session_minutes = 25;
@@ -24,7 +23,9 @@ alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
 
 
 /* EVENT LISTENERS FOR START AND RESET BUTTONS */
-document.getElementById("start-btn").addEventListener('click', () => {
+var el = document.getElementById("start-btn");
+if(el){
+el.addEventListener('click', () => {
 	//On timer start
   timer_container.classList.add("main-timer-active");
   setIcon.style.display = "none";
@@ -47,14 +48,17 @@ document.getElementById("start-btn").addEventListener('click', () => {
   // disable the start button to avoid multiple text showing up
   document.getElementById("start-btn").disabled = true;
 });
-
-document.getElementById("reset").addEventListener('click', () => {
+}
+var le =document.getElementById("reset");
+if (le){
+le.addEventListener('click', () => {
   if(isStarted){
 	overlay.style.display = "block";
 	reset_popup.classList.add("active");
   }
 });
-
+}
+ifdocument.getElementById("btn-yes").
 document.getElementById("btn-yes").addEventListener('click', () =>{
 	clearInterval(countdown);
 	session_seconds = session_minutes * 60;
@@ -178,6 +182,7 @@ function getRadioIndex(name)
         }
     }
 }
+
 //
 function undoCheck(name)
 {
@@ -190,7 +195,7 @@ function undoCheck(name)
         }
     }
 }
-
+modules.export(undoCheck);
 window.setInterval(updateHTML, 100);
 
 document.onclick = updateHTML;

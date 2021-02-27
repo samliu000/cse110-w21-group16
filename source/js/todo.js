@@ -1,22 +1,25 @@
-//main.js
+//todo.js
 
 let bId = 1;
 
 let addT = document.getElementById('btn-add');
 let table = document.getElementById('table-content');
-
+const es = document.getElementById('est');
+const taskName = document.getElementById('tName');
 let btn;
 let rad;
 
 addT.addEventListener("click", checkFields);
-
-document.getElementById('est').addEventListener('keydown', function(event) {
+//Forced by Unit testing because of DOM issues
+if(es){
+    es.addEventListener('keydown', function(event) {
     if (event.key == 'e' || event.key == '+' || event.key == '-') {
         event.preventDefault();
     }
 });
-
-document.getElementById('tName').addEventListener('keyup', function(event) {
+//Forced by Unit testing because of DOM issues
+if (taskName){
+    taskName.addEventListener('keyup', function(event) {
     if (event.key == 'Enter') {
         addT.click();
     }
@@ -25,8 +28,10 @@ document.getElementById('tName').addEventListener('keyup', function(event) {
     }
     event.preventDefault();
 });
-
-document.getElementById('est').addEventListener('keyup', function(event) {
+}
+//Forced by Unit testing because of DOM issues
+if(es){
+    es.addEventListener('keyup', function(event) {
     if (event.key == 'Enter') {
         addT.click();
     }
@@ -35,6 +40,7 @@ document.getElementById('est').addEventListener('keyup', function(event) {
     }
     event.preventDefault();
 });
+}
 
 function checkFields(){
 

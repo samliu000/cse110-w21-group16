@@ -36,7 +36,7 @@
    2. Enter button task
    3. Local storage task list
 
-#### Project Timeline Week 6, due dates:    
+#### Project Timeline Week 8, due dates:    
    1. Estimation number
    2. Enter button task
    3. Local storage task list

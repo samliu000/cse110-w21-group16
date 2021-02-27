@@ -17,6 +17,7 @@ if(es){
         event.preventDefault();
     }
 });
+}
 //Forced by Unit testing because of DOM issues
 if (taskName){
     taskName.addEventListener('keyup', function(event) {

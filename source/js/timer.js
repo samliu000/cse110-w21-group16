@@ -39,8 +39,8 @@ document.getElementById("start-btn").addEventListener('click', () => {
   }
   // display which task the Pomodoro session is currently on 
   currTask = document.getElementById('table-content').rows[index].cells[1].innerHTML; 
-  let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
-  currTask.id = 'current_task';
+  let currTaskText = document.getElementById('current-task-text');
+  document.getElementById('current-task').style.display = 'block';
   currTaskText.style.color = 'white';
   currTaskText.innerHTML = "Currently on task: " + currTask;
   // disable the start button to avoid multiple text showing up
@@ -95,9 +95,8 @@ function timer() {
       }
       session_count ++;
       countdown = setInterval(timer, 10);
-      console.log(document.querySelector('main').childNodes);
-      // remove the current task text before checklist appears
-      document.querySelector('main').removeChild(document.querySelector('main').childNodes[document.querySelector('main').childNodes.length - 1]);
+      // hide the current task once pomo session is done
+      document.getElementById('current-task').style.display = 'none';
       document.getElementById('list').style.display = "block";
       undoCheck('tSelect');
     }else{

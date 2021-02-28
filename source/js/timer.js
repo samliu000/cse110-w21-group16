@@ -105,9 +105,8 @@ function timer() {
       }
       session_count ++;
       countdown = setInterval(timer, 10);
-      console.log(document.querySelector('main').childNodes);
-      // remove the current task text before checklist appears
-      document.querySelector('main').removeChild(document.querySelector('main').childNodes[document.querySelector('main').childNodes.length - 1]);
+      // hide the current task once pomo session is done
+      document.getElementById('current-task').style.display = 'none';
       document.getElementById('list').style.display = "block";
       undoCheck('tSelect');
     }else{

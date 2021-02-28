@@ -1,4 +1,5 @@
 //timer.js
+
 let countdown = 0; // variable to set/clear intervals
 let session_seconds = 1500; // seconds left on the clock
 let session_minutes = 25;
@@ -31,14 +32,12 @@ document.getElementById("start-btn").addEventListener('click', () => {
 
   isStarted = true;  
   clearInterval(countdown);
-  countdown = setInterval(timer, 1);
+  countdown = setInterval(timer, 1000);
   document.getElementById('list').style.display = "none";
   index = getRadioIndex('tSelect');
-  if (index >= 0){
-    actual = document.getElementById('table-content').rows[index].cells[3].innerHTML;
-  }
+  actual = document.getElementById('table-content').childNodes[index].childNodes[3].innerHTML;
   // display which task the Pomodoro session is currently on 
-  currTask = document.getElementById('table-content').rows[index].cells[1].innerHTML; 
+  currTask = document.getElementById('table-content').childNodes[index].childNodes[1].innerHTML; 
   let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
   currTask.id = 'current_task';
   currTaskText.style.color = 'white';
@@ -60,7 +59,7 @@ document.getElementById("btn-yes").addEventListener('click', () =>{
 	countdown = 0;
 	isBreak = true;
 	clearInterval(countdown);
-	countdown = setInterval(timer, 10);
+	countdown = setInterval(timer, 1000);
 	overlay.style.display = "none";
 	
 	reset_popup.classList.remove("active");
@@ -89,10 +88,7 @@ function timer() {
       session_seconds = break_minutes * 60;
       isBreak = false;
       isStarted = false;
-      if (index >= 0){
-        actual++;
-        document.getElementById('table-content').rows[index].cells[3].innerHTML = actual;
-      }
+      actual++;
       session_count ++;
       countdown = setInterval(timer, 10);
       console.log(document.querySelector('main').childNodes);
@@ -135,11 +131,10 @@ function countdownDisplay() {
 
 function updateHTML() {
   countdownDisplay();
-  /* 
   if(index >= 0){
     let x = document.getElementById("table-content").childNodes[index].cells;
-    x[3].value = actual;
-  }*/
+    x[3].innerHTML = actual;
+  }
   
   //Block is causing TypeError
   /*if(isBreak == true){
@@ -177,7 +172,6 @@ function getRadioIndex(name)
         }
     }
 }
-
 //
 function undoCheck(name)
 {

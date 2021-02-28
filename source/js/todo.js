@@ -1,38 +1,41 @@
-//todo.js
+//main.js
 
 let bId = 1;
 
 let addT = document.getElementById('btn-add');
 let table = document.getElementById('table-content');
-const es = document.getElementById('est');
-const taskName = document.getElementById('tName');
+let est = document.getElementById('est');
+let tName =document.getElementById('tName')
+
 let btn;
 let rad;
-
+//Added if statement for testing
+if(addT){
 addT.addEventListener("click", checkFields);
-//Forced by Unit testing because of DOM issues
-if(es){
-    es.addEventListener('keydown', function(event) {
-    if (event.key == 'e' || event.key == '+' || event.key == '-') {
+}
+
+if(est){
+    est.addEventListener('keydown', function(event) {
+        if (event.key == 'e' || event.key == '+' || event.key == '-') {
+            event.preventDefault();
+        }
+    });
+}
+
+if(tName){
+        tName.addEventListener('keyup', function(event) {
+        if (event.key == 'Enter') {
+            addT.click();
+        }
+        else if (event.key == 'Escape') {
+            document.getElementById('btn-cancel').click();
+        }
         event.preventDefault();
-    }
-});
+    });
 }
-//Forced by Unit testing because of DOM issues
-if (taskName){
-    taskName.addEventListener('keyup', function(event) {
-    if (event.key == 'Enter') {
-        addT.click();
-    }
-    else if (event.key == 'Escape') {
-        document.getElementById('btn-cancel').click();
-    }
-    event.preventDefault();
-});
-}
-//Forced by Unit testing because of DOM issues
-if(es){
-    es.addEventListener('keyup', function(event) {
+
+if(est){
+    est.addEventListener('keyup', function(event) {
     if (event.key == 'Enter') {
         addT.click();
     }
@@ -104,3 +107,4 @@ function openForm(){
 function closeForm(){
     document.getElementById("add-form").style.display = "none";
 }
+module.exports = {closeForm, openForm, editRow, checkFields, addTask};

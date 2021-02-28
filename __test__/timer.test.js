@@ -1,12 +1,13 @@
-const res= require('../source/js/functions.js');
-const mock = jest.fn(res.undoCheck);
-describe("something", () => {
+const res= require('../source/js/timer.js');
+// example mock for closeForm function
+//const mock_closeForm = jest.fn(res.closeForm);
+const mock_undoCheck = jest.fn(res.undoCheck);
+describe("Test UncheckFunction", () => {
 
-test('tests unchecking of stuff', () => {
-	document.body.innerHTML =` <input type="radio" checked="checked" id="male" name="gender" value="male">`;
-	mock("gender");
-	expect(mock).toHaveBeenCalled();
-	expect(document.getElementById('male').checked).toEqual(false);
+	test('Remove', () => {
+		document.body.innerHTML =`<input type="radio" id="radio1" name="tSelect" checked>`;
+		mock_undoCheck();
+		expect(mock_undoCheck).toHaveBeenCalled();
+        expect(document.getElementById('radio1')).toHaveProperty('checked', false);
+	});
 });
-});
-

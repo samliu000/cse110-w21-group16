@@ -28,7 +28,7 @@
    2. Keep working on the Timer and List code
    3. Setup test enviroment
 
-#### Project Timeline Week 5, due dates:    
+#### Project Timeline Week 7, due dates:    
    1. Finish the code of timer and list
    2. Setup github enviroment 
 

@@ -18,12 +18,18 @@ let currTask;
 
 let setIcon = document.getElementById("settings");
 let helpIcon = document.getElementById("help");
+let startbtn = document.getElementById("start-btn");
+let reset = document.getElementById("reset");
+let yes = document.getElementById("btn-yes");
+let no = document.getElementById("btn-no");
+let settings = document.getElementById("setForm");
 
 const alarm = document.createElement('audio'); // A bell sound will play when the timer reaches 0
 alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
 
 
 /* EVENT LISTENERS FOR START AND RESET BUTTONS */
+<<<<<<< HEAD
 document.getElementById("start-btn").addEventListener('click', () => {
 	//On timer start
   timer_container.classList.add("main-timer-active");
@@ -66,9 +72,60 @@ document.getElementById("btn-yes").addEventListener('click', () =>{
 });
 
 document.getElementById("btn-no").addEventListener('click', () =>{
+=======
+if(startbtn){
+  document.getElementById("start-btn").addEventListener('click', () => {
+    //On timer start
+    timer_container.classList.add("main-timer-active");
+    setIcon.style.display = "none";
+    helpIcon.style.display = "none";
+
+    isStarted = true;  
+    clearInterval(countdown);
+    countdown = setInterval(timer, 1);
+    document.getElementById('list').style.display = "none";
+    index = getRadioIndex('tSelect');
+    if (index >= 0){
+      actual = document.getElementById('table-content').rows[index].cells[3].innerHTML;
+    }
+    // display which task the Pomodoro session is currently on 
+    currTask = document.getElementById('table-content').rows[index].cells[1].innerHTML; 
+    let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
+    currTask.id = 'current_task';
+    currTaskText.style.color = 'white';
+    currTaskText.innerHTML = "Currently on task: " + currTask;
+    // disable the start button to avoid multiple text showing up
+    document.getElementById("start-btn").disabled = true;
+  });
+}
+if(reset){
+  reset.addEventListener('click', () => {
+    if(isStarted){
+    overlay.style.display = "block";
+    reset_popup.classList.add("active");
+    }
+  });
+}
+if(yes){
+  yes.addEventListener('click', () =>{
+    clearInterval(countdown);
+    session_seconds = session_minutes * 60;
+    countdown = 0;
+    isBreak = true;
+    clearInterval(countdown);
+    countdown = setInterval(timer, 10);
+    overlay.style.display = "none";
+    
+    reset_popup.classList.remove("active");
+  });
+}
+if(no){
+no.addEventListener('click', () =>{
+>>>>>>> 67a1ec4f67cc4d4539059da84959705b8a5d8474
 	overlay.style.display = "none";
 	reset_popup.classList.remove("active");
 });
+}
 
 /* TIMER - HANDLES COUNTDOWN */
 function timer() {
@@ -91,9 +148,8 @@ function timer() {
       actual++;
       session_count ++;
       countdown = setInterval(timer, 10);
-      console.log(document.querySelector('main').childNodes);
-      // remove the current task text before checklist appears
-      document.querySelector('main').removeChild(document.querySelector('main').childNodes[document.querySelector('main').childNodes.length - 1]);
+      // hide the current task once pomo session is done
+      document.getElementById('current-task').style.display = 'none';
       document.getElementById('list').style.display = "block";
       undoCheck('tSelect');
     }else{
@@ -104,22 +160,24 @@ function timer() {
 }
 
 /* Settings for Timer*/
-document.getElementById("setForm").addEventListener('submit', () => {
-	event.preventDefault();
-	document.getElementById("popup-overlay").style.display = "none";
-	document.getElementById("settings-flex").classList.remove("active");
-	let focus = document.getElementById("focus").value;
-	let short_break = document.getElementById("short-break").value;
-	let long_break = document.getElementById("long-break").value;
-	
-	if(focus != ""){
-		session_seconds = Number(focus) * 60;
-	}
-	if(short_break != "")
-		short_break_minutes = Number(short_break);
-	if(long_break != "")
-		long_break_minutes = Number(long_break);
-});
+if (settings){
+  settings.addEventListener('submit', () => {
+    event.preventDefault();
+    document.getElementById("popup-overlay").style.display = "none";
+    document.getElementById("settings-flex").classList.remove("active");
+    let focus = document.getElementById("focus").value;
+    let short_break = document.getElementById("short-break").value;
+    let long_break = document.getElementById("long-break").value;
+    
+    if(focus != ""){
+      session_seconds = Number(focus) * 60;
+    }
+    if(short_break != "")
+      short_break_minutes = Number(short_break);
+    if(long_break != "")
+      long_break_minutes = Number(long_break);
+  });
+}
 
 
 /* UPDATE HTML CONTENT */
@@ -188,3 +246,4 @@ function undoCheck(name)
 window.setInterval(updateHTML, 100);
 
 document.onclick = updateHTML;
+module.exports = {undoCheck};

@@ -29,50 +29,6 @@ alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
 
 
 /* EVENT LISTENERS FOR START AND RESET BUTTONS */
-<<<<<<< HEAD
-document.getElementById("start-btn").addEventListener('click', () => {
-	//On timer start
-  timer_container.classList.add("main-timer-active");
-  setIcon.style.display = "none";
-  helpIcon.style.display = "none";
-
-  isStarted = true;  
-  clearInterval(countdown);
-  countdown = setInterval(timer, 1000);
-  document.getElementById('list').style.display = "none";
-  index = getRadioIndex('tSelect');
-  actual = document.getElementById('table-content').childNodes[index].childNodes[3].innerHTML;
-  // display which task the Pomodoro session is currently on 
-  currTask = document.getElementById('table-content').childNodes[index].childNodes[1].innerHTML; 
-  let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
-  currTask.id = 'current_task';
-  currTaskText.style.color = 'white';
-  currTaskText.innerHTML = "Currently on task: " + currTask;
-  // disable the start button to avoid multiple text showing up
-  document.getElementById("start-btn").disabled = true;
-});
-
-document.getElementById("reset").addEventListener('click', () => {
-  if(isStarted){
-	overlay.style.display = "block";
-	reset_popup.classList.add("active");
-  }
-});
-
-document.getElementById("btn-yes").addEventListener('click', () =>{
-	clearInterval(countdown);
-	session_seconds = session_minutes * 60;
-	countdown = 0;
-	isBreak = true;
-	clearInterval(countdown);
-	countdown = setInterval(timer, 1000);
-	overlay.style.display = "none";
-	
-	reset_popup.classList.remove("active");
-});
-
-document.getElementById("btn-no").addEventListener('click', () =>{
-=======
 if(startbtn){
   document.getElementById("start-btn").addEventListener('click', () => {
     //On timer start
@@ -121,7 +77,6 @@ if(yes){
 }
 if(no){
 no.addEventListener('click', () =>{
->>>>>>> 67a1ec4f67cc4d4539059da84959705b8a5d8474
 	overlay.style.display = "none";
 	reset_popup.classList.remove("active");
 });

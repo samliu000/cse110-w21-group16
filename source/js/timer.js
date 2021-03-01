@@ -127,8 +127,8 @@ if (settings){
     let long_break = document.getElementById("long-break").value;
     
     if(focus != ""){
-      session_seconds = Number(focus) * 60;
-	  session_minutes = Number(focus);
+		session_seconds = Number(focus) * 60;
+		session_minutes = Number(focus);
     }
     if(short_break != "")
       short_break_minutes = Number(short_break);

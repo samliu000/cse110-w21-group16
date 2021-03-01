@@ -128,6 +128,7 @@ if (settings){
     
     if(focus != ""){
       session_seconds = Number(focus) * 60;
+	  session_minutes = Number(focus);
     }
     if(short_break != "")
       short_break_minutes = Number(short_break);

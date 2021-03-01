@@ -19,6 +19,8 @@
  *   Task Row Styling
  * Help/Overlay (depends on aspect ratio)
  * Settings
+ * Current Task
+ *   current task mobile
  * /
 
 
@@ -353,7 +355,7 @@ td:nth-child(5):hover{
 
 #taskForm label{
 	order:1;
-	flex-grow: 1;
+	width: 25%;
 }
 
 /***** Mobile Styling *****/
@@ -538,7 +540,7 @@ i.fa.icon{
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
-
+/*Current Task Mobile*/
 @media only screen and (max-width: 1100px) {
 	#current-task{
 		max-width: 95%;

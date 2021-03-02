@@ -75,7 +75,6 @@ function showTaskList(){
        rad.type = "radio";
        rad.id = "radio"+bId;
        rad.name = "tSelect";
-       rad.onclick = function(){updateCounter(this);};
        
    
        //delete button
@@ -117,7 +116,6 @@ function addTask(){
     rad.type = "radio";
     rad.id = "radio"+bId;
     rad.name = "tSelect";
-    rad.onclick = function(){updateCounter(this);};
     
 
     //delete button

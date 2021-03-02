@@ -83,7 +83,7 @@ no.addEventListener('click', () =>{
 
 /* TIMER - HANDLES COUNTDOWN */
 function timer() {
-  document.getElementById("start-btn").disabled = false;
+  document.getElementById("start-btn").disabled = true;
   session_seconds --;
   if (session_seconds < 0) {
     clearInterval(countdown);
@@ -112,6 +112,7 @@ function timer() {
     }else{
       session_seconds = session_minutes * 60;
       isBreak = true;
+      document.getElementById("start-btn").disabled = false;
     }
   }
 }

@@ -45,12 +45,18 @@ if(startbtn){
     }
     // display which task the Pomodoro session is currently on 
     currTask = document.getElementById('table-content').rows[index].cells[1].innerHTML; 
-    let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
+    /*let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
     currTask.id = 'current_task';
     currTaskText.style.color = 'white';
     currTaskText.innerHTML = "Currently on task: " + currTask;
-    // disable the start button during promodoro session
+    // disable the start button to avoid multiple text showing up
+    */
     document.getElementById("start-btn").disabled = true;
+	
+	let currTaskText = document.getElementById("current-task-text");
+	currTaskText.innerHTML = "Currently on task: " + currTask;
+	let currTaskBlock = document.getElementById("current-task");
+	currTaskBlock.style.display = "block";
   });
 }
 if(reset){
@@ -128,7 +134,8 @@ if (settings){
     let long_break = document.getElementById("long-break").value;
     
     if(focus != ""){
-      session_seconds = Number(focus) * 60;
+		session_seconds = Number(focus) * 60;
+		session_minutes = Number(focus);
     }
     if(short_break != "")
       short_break_minutes = Number(short_break);
@@ -166,6 +173,8 @@ function updateHTML() {
 	reset_popup.classList.remove("active");
 	setIcon.style.display = "block";
 	helpIcon.style.display = "block";
+	let currTaskBlock = document.getElementById("current-task");
+	currTaskBlock.style.display = "none";
   }else if(isBreak == false && session_count == 1){
     //document.getElementById("status").innerHTML= "Long Break!";
 	timer_container.classList.remove("main-timer-active");
@@ -174,6 +183,8 @@ function updateHTML() {
 	reset_popup.classList.remove("active");
 	setIcon.style.display = "block";
 	helpIcon.style.display = "block";
+	let currTaskBlock = document.getElementById("current-task");
+	currTaskBlock.style.display = "none";
   }
 }
 

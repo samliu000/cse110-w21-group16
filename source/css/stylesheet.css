@@ -19,6 +19,8 @@
  *   Task Row Styling
  * Help/Overlay (depends on aspect ratio)
  * Settings
+ * Current Task
+ *   current task mobile
  * /
 
 
@@ -75,7 +77,7 @@ main{
 }
 
 .main-timer-active{
-	margin-top: 25vh;
+	margin-top: 15vh;
 	transition: margin-top 2s ease-out;
 }
 
@@ -353,7 +355,7 @@ td:nth-child(5):hover{
 
 #taskForm label{
 	order:1;
-	flex-grow: 1;
+	width: 25%;
 }
 
 /***** Mobile Styling *****/
@@ -516,4 +518,36 @@ i.fa.icon{
 
 #setForm input{
 	color: white;
+}
+
+/*****Current Task*****/
+#current-task{
+    max-width: 50%;
+    margin: 0 auto;
+    margin-top: 3%;
+    background-color: var(--accent-2-transparent);
+    border-radius: 3em;
+    padding: .5em 1em;
+    max-height: 20vh;
+}
+
+#current-task-text{
+	text-align: center;
+    color: white;
+    font-size: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+/*Current Task Mobile*/
+@media only screen and (max-width: 1100px) {
+	#current-task{
+		max-width: 95%;
+	}
+	
+	#current-task-text{
+		font-size: 1.2rem;
+		-webkit-line-clamp: 5;
+	}
 }

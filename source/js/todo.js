@@ -9,6 +9,7 @@ let tName =document.getElementById('tName')
 
 let btn;
 let rad;
+let done;
 //Added if statement for testing
 if(addT){
 addT.addEventListener("click", checkFields);

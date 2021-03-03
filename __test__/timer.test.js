@@ -30,10 +30,10 @@ describe("Timer", () => {
 
 });
 
-	// test('Test Get Radio Index', () => {
-	// 	document.body.innerHTML =`<input type="radio" id="radio1" name="tSelect"></input>
-	// 	<input type="radio" id="radio1" name="tSelect" checked></input>`;
-	// 	let rad = mock_getRadioIndex('tSelect');
-	// 	expect(mock_getRadioIndex).toHaveBeenCalled();
-	// 	expect(rad).toBe(1);
-	// });
+	test('Test Get Radio Index', () => {
+		document.body.innerHTML =`<input type="radio" id="radio1" name="tSelect"></input>
+		<input type="radio" id="radio2" name="tSelect" checked></input>`;
+		let rad = mock_getRadioIndex('tSelect');
+		expect(mock_getRadioIndex).toHaveBeenCalled();
+		expect(rad).toBe(1);
+	});

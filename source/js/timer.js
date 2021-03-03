@@ -38,7 +38,7 @@ if(startbtn){
 
     isStarted = true;  
     clearInterval(countdown);
-    countdown = setInterval(timer, 1);
+    countdown = setInterval(timer, 1000);
     document.getElementById('list').style.display = "none";
     index = getRadioIndex('tSelect');
     if (index >= 0){
@@ -74,7 +74,7 @@ if(yes){
     countdown = 0;
     isBreak = true;
     clearInterval(countdown);
-    countdown = setInterval(timer, 10);
+    countdown = setInterval(timer, 1);
     overlay.style.display = "none";
     
     reset_popup.classList.remove("active");
@@ -203,7 +203,7 @@ function undoCheck(name)
     {
         if (elements[i].checked)
         {
-            elements[i].checked = false;
+          elements[i].checked = false;
         }
     }
 }

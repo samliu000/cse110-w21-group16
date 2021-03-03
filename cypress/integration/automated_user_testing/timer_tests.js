@@ -44,6 +44,19 @@ describe('Pomodoro Timer Tests', () => {
                 expect($el).to.not.have.text('25:00');
             });
         });
+
+        it('Check reset yes with diff time', () => {
+            cy.get('#settings').click();
+            cy.get('#focus').clear().type(1);
+            cy.get('#btn-set').click();
+            cy.get('#start-btn').click();
+            cy.get('#reset').click();
+            cy.get('#btn-yes').click();
+            cy.get('#timerDisplay').then(($el) => {
+                expect($el).to.have.text('1:00');
+            });
+        });
+
     });
 
     describe('Settings', () => {
@@ -55,20 +68,37 @@ describe('Pomodoro Timer Tests', () => {
                 expect($el).to.have.text('1:00');
             });
         });
-        // it('Changing Short Break Time', () => {
-        //     cy.get('#settings').click();
-        //     cy.get('#focus').clear().type(0);
-        //     cy.get('#short-break').clear().type(2);
-        //     cy.get('#btn-set').click();
-        //     cy.get('#start-btn').click();
-        //     cy.wait(1000);
-        //     cy.get('#timerDisplay').then(($el) => {
-        //         expect($el).to.have.text('2:00');
-        //     });
-        // });
+        it('Changing Short Break Time', () => {
+            cy.get('#settings').click();
+            cy.get('#focus').clear().type(0);
+            cy.get('#short-break').clear().type(2);
+            cy.get('#btn-set').click();
+            cy.get('#start-btn').click();
+            cy.wait(2000);
+            cy.get('#timerDisplay').then(($el) => {
+                expect($el).to.have.text('2:00');
+            });
+        });
 
+        it('Change long break time', () => {
+            cy.get('#settings').click();
+            cy.get('#focus').clear().type(0);
+            cy.get('#short-break').clear().type(0);
+            cy.get('#long-break').clear().type(5);
+            cy.get('#btn-set').click();
+            cy.get('#start-btn').click();
+            cy.wait(2000);
+            cy.get('#start-btn').click();
+            cy.wait(2000);
+            cy.get('#start-btn').click();
+            cy.wait(2000);
+            cy.get('#start-btn').click();
+            cy.wait(2000);
+            cy.get('#timerDisplay').then(($el) => {
+                expect($el).to.have.text('5:00');
+            });
+        });
 
-    
         it('Cancel button', () => {
             cy.get('#settings').click();
             cy.get('#btn-no-set').click();

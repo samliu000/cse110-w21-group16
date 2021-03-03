@@ -75,7 +75,7 @@ if(yes){
     countdown = 0;
     isBreak = true;
     clearInterval(countdown);
-    countdown = setInterval(timer, 1);
+    countdown = setInterval(timer, 1000);
 
     overlay.style.display = "none";
     
@@ -109,11 +109,7 @@ function timer() {
       isStarted = false;
       actual++;
       session_count ++;
-<<<<<<< HEAD
       countdown = setInterval(timer, 1000);
-=======
-      countdown = setInterval(timer, 10);
->>>>>>> e03a044e3d883c7fb6a4aeadc0f0b0b18a7a5cbb
       // hide the current task once pomo session is done
       document.getElementById('current-task').style.display = 'none';
       document.getElementById('list').style.display = "block";

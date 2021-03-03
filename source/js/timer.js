@@ -192,6 +192,7 @@ function updateHTML() {
 function getRadioIndex(name)
 {
     let elements = document.getElementsByName(name);
+    console.log(elements);
     for (let i = 0, l = elements.length; i < l; i++)
     {
         if (elements[i].checked)

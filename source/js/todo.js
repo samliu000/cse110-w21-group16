@@ -70,6 +70,14 @@ function addTask(){
 	btn.id = "edit"+bId;
 	btn.className = "fa fa-trash";
 	btn.onclick = function() {editRow(this);};
+	
+	//done button
+	done = document.createElement('i');
+	done.id = "done"+bId;
+	done.className = "fa fa-check-square";
+	done.onclick = function() {rowDone(this);};
+	
+	//<i class="fas fa-check-square"></i>
 
     //cells created
     let row = table.insertRow(-1);
@@ -78,6 +86,7 @@ function addTask(){
     let cell3 = row.insertCell(2);
     let cell4 = row.insertCell(3);
     let cell5 = row.insertCell(4);
+	let cell6 = row.insertCell(5);
     
     //cells filled
     cell1.appendChild(rad);
@@ -85,6 +94,7 @@ function addTask(){
     cell3.innerHTML = document.getElementById("est").value;
     cell4.innerHTML = 0;
     cell5.appendChild(btn);
+	cell6.appendChild(done);
 
     bId++;
     document.getElementById("add-form").style.display = "none";
@@ -94,6 +104,11 @@ function editRow(elem) {
     let row = elem.parentElement.parentElement;
     row.remove();
     
+}
+
+function rowDone(elem){
+	let row = elem.parentElement.parentElement;
+    row.classList.add("completed");
 }
 
 // eslint-disable-next-line no-unused-vars

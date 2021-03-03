@@ -22,57 +22,67 @@ const alarm = document.getElementById("alarm");
 
 
 /* EVENT LISTENERS FOR START AND RESET BUTTONS */
-document.getElementById("start-btn").addEventListener('click', () => {
-	//On timer start
-  timer_container.classList.add("main-timer-active");
-  setIcon.style.display = "none";
-  helpIcon.style.display = "none";
+if(startbtn){
+  document.getElementById("start-btn").addEventListener('click', () => {
+    //On timer start
+    timer_container.classList.add("main-timer-active");
+    setIcon.style.display = "none";
+    helpIcon.style.display = "none";
 
-  isStarted = true;  
-  clearInterval(countdown);
-  countdown = setInterval(timer, 1);
-  document.getElementById('list').style.display = "none";
-  index = getRadioIndex('tSelect');
-  if (index >= 0){
-    actual = document.getElementById('table-content').rows[index].cells[3].innerHTML;
-  // display which task the Pomodoro session is currently on 
-  currTask = document.getElementById('table-content').rows[index].cells[1].innerHTML; 
-  let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
-  currTask.id = 'current_task';
-  currTaskText.style.color = 'white';
-  currTaskText.innerHTML = "Currently on task: " + currTask;
-  }
-  // disable the start button to avoid multiple text showing up
-  document.getElementById("start-btn").disabled = true;
-});
-
-document.getElementById("reset").addEventListener('click', () => {
-  if(isStarted){
-	overlay.style.display = "block";
-	reset_popup.classList.add("active");
-  }
-});
-
-document.getElementById("btn-yes").addEventListener('click', () =>{
-	clearInterval(countdown);
-	session_seconds = session_minutes * 60;
-	countdown = 0;
-	isBreak = true;
-	clearInterval(countdown);
-	countdown = setInterval(timer, 10);
-	overlay.style.display = "none";
+    isStarted = true;  
+    clearInterval(countdown);
+    countdown = setInterval(timer, 100);
+    document.getElementById('list').style.display = "none";
+    index = getRadioIndex('tSelect');
+    if (index >= 0){
+      actual = document.getElementById('table-content').rows[index].cells[3].innerHTML;
+    }
+    // display which task the Pomodoro session is currently on 
+    currTask = document.getElementById('table-content').rows[index].cells[1].innerHTML; 
+    /*let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
+    currTask.id = 'current_task';
+    currTaskText.style.color = 'white';
+    currTaskText.innerHTML = "Currently on task: " + currTask;
+    // disable the start button to avoid multiple text showing up
+    */
+    document.getElementById("start-btn").disabled = true;
 	
-	reset_popup.classList.remove("active");
-});
-
-document.getElementById("btn-no").addEventListener('click', () =>{
+	let currTaskText = document.getElementById("current-task-text");
+	currTaskText.innerHTML = "Currently on task: " + currTask;
+	let currTaskBlock = document.getElementById("current-task");
+	currTaskBlock.style.display = "block";
+  });
+}
+if(reset){
+  reset.addEventListener('click', () => {
+    if(isStarted){
+    overlay.style.display = "block";
+    reset_popup.classList.add("active");
+    }
+  });
+}
+if(yes){
+  yes.addEventListener('click', () =>{
+    clearInterval(countdown);
+    session_seconds = session_minutes * 60;
+    countdown = 0;
+    isBreak = true;
+    clearInterval(countdown);
+    countdown = setInterval(timer, 100);
+    overlay.style.display = "none";
+    
+    reset_popup.classList.remove("active");
+  });
+}
+if(no){
+no.addEventListener('click', () =>{
 	overlay.style.display = "none";
 	reset_popup.classList.remove("active");
 });
 
 /* TIMER - HANDLES COUNTDOWN */
 function timer() {
-  document.getElementById("start-btn").disabled = false;
+  document.getElementById("start-btn").disabled = true;
   session_seconds --;
   if (session_seconds < 0) {
     clearInterval(countdown);
@@ -102,27 +112,31 @@ function timer() {
     }else{
       session_seconds = session_minutes * 60;
       isBreak = true;
+      document.getElementById("start-btn").disabled = false;
     }
   }
 }
 
 /* Settings for Timer*/
-document.getElementById("setForm").addEventListener('submit', () => {
-	event.preventDefault();
-	document.getElementById("popup-overlay").style.display = "none";
-	document.getElementById("settings-flex").classList.remove("active");
-	let focus = document.getElementById("focus").value;
-	let short_break = document.getElementById("short-break").value;
-	let long_break = document.getElementById("long-break").value;
-	
-	if(focus != ""){
+if (settings){
+  settings.addEventListener('submit', () => {
+    event.preventDefault();
+    document.getElementById("popup-overlay").style.display = "none";
+    document.getElementById("settings-flex").classList.remove("active");
+    let focus = document.getElementById("focus").value;
+    let short_break = document.getElementById("short-break").value;
+    let long_break = document.getElementById("long-break").value;
+    
+    if(focus != ""){
 		session_seconds = Number(focus) * 60;
-	}
-	if(short_break != "")
-		short_break_minutes = Number(short_break);
-	if(long_break != "")
-		long_break_minutes = Number(long_break);
-});
+		session_minutes = Number(focus);
+    }
+    if(short_break != "")
+      short_break_minutes = Number(short_break);
+    if(long_break != "")
+      long_break_minutes = Number(long_break);
+  });
+}
 
 
 /* UPDATE HTML CONTENT */
@@ -153,6 +167,8 @@ function updateHTML() {
 	reset_popup.classList.remove("active");
 	setIcon.style.display = "block";
 	helpIcon.style.display = "block";
+	let currTaskBlock = document.getElementById("current-task");
+	currTaskBlock.style.display = "none";
   }else if(isBreak == false && session_count == 1){
     //document.getElementById("status").innerHTML= "Long Break!";
 	timer_container.classList.remove("main-timer-active");
@@ -161,6 +177,8 @@ function updateHTML() {
 	reset_popup.classList.remove("active");
 	setIcon.style.display = "block";
 	helpIcon.style.display = "block";
+	let currTaskBlock = document.getElementById("current-task");
+	currTaskBlock.style.display = "none";
   }
 }
 

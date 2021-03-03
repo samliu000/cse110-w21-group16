@@ -5,8 +5,7 @@ let bId = 1;
 let addT = document.getElementById('btn-add');
 let table = document.getElementById('table-content');
 let est = document.getElementById('est');
-let tName = document.getElementById('tName');
-let addForm = document.getElementById('add-form');
+let tName =document.getElementById('tName')
 
 let btn;
 let rad;
@@ -61,9 +60,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function checkFields(){
 
-    if (tName.value != "" &&
-        est.value > 0 &&
-        est.value < 51) {
+    if (document.getElementById('tName').value != "" &&
+        document.getElementById('est').value > 0 &&
+        document.getElementById('est').value < 51) {
             addTask();
         }
 }
@@ -118,6 +117,7 @@ function addTask(){
     rad.id = "radio"+bId;
     rad.name = "tSelect";
     
+
     //delete button
 	btn = document.createElement('i');
     btn.id = Date.now();
@@ -134,8 +134,8 @@ function addTask(){
     
     //cells filled
     cell1.appendChild(rad);
-    cell2.innerText = document.tName.value;
-    cell3.innerHTML = document.est.value;
+    cell2.innerText = document.getElementById("tName").value;
+    cell3.innerHTML = document.getElementById("est").value;
     cell4.innerHTML = 0;
     cell5.appendChild(btn);
 
@@ -150,8 +150,7 @@ function addTask(){
 
     bId++;
 
-    addForm.style.display = "none";
-
+    document.getElementById("add-form").style.display = "none";
 }
 
 function editRow(elem) {
@@ -169,13 +168,13 @@ function editRow(elem) {
 
 // eslint-disable-next-line no-unused-vars
 function openForm(){
-    addForm.style.display = "block";
-    tName.value = "";
-    est.value = 1;
+    document.getElementById("add-form").style.display = "block";
+    document.getElementById('tName').value = "";
+    document.getElementById('est').value = 1;
 }
 
 // eslint-disable-next-line no-unused-vars
 function closeForm(){
-    addForm.style.display = "none";
+    document.getElementById("add-form").style.display = "none";
 }
 module.exports = {closeForm, openForm, editRow, checkFields, addTask};

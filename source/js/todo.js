@@ -5,7 +5,7 @@ let bId = 1;
 let addT = document.getElementById('btn-add');
 let table = document.getElementById('table-content');
 let est = document.getElementById('est');
-let tName =document.getElementById('tName')
+let tName =document.getElementById('tName');
 
 let btn;
 let rad;

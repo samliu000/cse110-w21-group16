@@ -104,7 +104,8 @@ main{
 
 /*Reset popup*/
 #reset-popup,
-#settings-popup{
+#settings-popup,
+#done-popup{
 	font-size: 1.25rem;
 	padding: .75em 2em;
 	margin: 0 auto;
@@ -121,7 +122,8 @@ main{
 }
 
 #reset-flex,
-#settings-flex{
+#settings-flex,
+#done-flex{
 	display: flex;
 	height: 100%;
 	width: 100%;
@@ -133,18 +135,21 @@ main{
 	z-index: 3;
 }
 
-#reset-popup p{
+#reset-popup p,
+#done-popup p{
 	text-align: center;
 	flex-basis: 15em;
     flex-grow: 1;
 }
 
-#reset-popup .form-btn{
+#reset-popup .form-btn,
+#done-popup .form-btn{
 	margin: 0 2em;
 	font-size: 1.1rem;
 }
 
 #reset-flex.active,
+#done-flex.active,
 #settings-flex.active{
 	top: 0;
 	transition: top .5s ease;

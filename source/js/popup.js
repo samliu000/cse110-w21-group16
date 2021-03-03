@@ -39,3 +39,14 @@ document.getElementById("setForm").addEventListener("keydown", ({key}) => {
 		document.getElementById("btn-no-set").click();
 	}
 });
+
+//Done
+document.getElementById("done-btn").addEventListener('click', () => {
+	document.getElementById("popup-overlay").style.display = "block";
+	document.getElementById("done-flex").classList.add("active");
+});
+
+document.getElementById("done-no").addEventListener('click', () => {
+	document.getElementById("popup-overlay").style.display = "none";
+	document.getElementById("done-flex").classList.remove("active");
+});

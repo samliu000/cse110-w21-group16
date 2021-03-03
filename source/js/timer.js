@@ -17,14 +17,8 @@ let currTask;
 
 let setIcon = document.getElementById("settings");
 let helpIcon = document.getElementById("help");
-let startbtn = document.getElementById("start-btn");
-let reset = document.getElementById("reset");
-let yes = document.getElementById("btn-yes");
-let no = document.getElementById("btn-no");
-let settings = document.getElementById("setForm");
 
-const alarm = document.createElement('audio'); // A bell sound will play when the timer reaches 0
-alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
+const alarm = document.getElementById("alarm");
 
 
 /* EVENT LISTENERS FOR START AND RESET BUTTONS */
@@ -85,7 +79,6 @@ no.addEventListener('click', () =>{
 	overlay.style.display = "none";
 	reset_popup.classList.remove("active");
 });
-}
 
 /* TIMER - HANDLES COUNTDOWN */
 function timer() {
@@ -111,8 +104,9 @@ function timer() {
       }
       session_count ++;
       countdown = setInterval(timer, 10);
-      // hide the current task once pomo session is done
-      document.getElementById('current-task').style.display = 'none';
+      console.log(document.querySelector('main').childNodes);
+      // remove the current task text before checklist appears
+      document.querySelector('main').removeChild(document.querySelector('main').childNodes[document.querySelector('main').childNodes.length - 1]);
       document.getElementById('list').style.display = "block";
       undoCheck('tSelect');
     }else{
@@ -217,4 +211,3 @@ function undoCheck(name)
 window.setInterval(updateHTML, 100);
 
 document.onclick = updateHTML;
-module.exports = {undoCheck};

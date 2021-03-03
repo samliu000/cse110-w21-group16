@@ -38,7 +38,11 @@ if(startbtn){
 
     isStarted = true;  
     clearInterval(countdown);
+<<<<<<< HEAD
     countdown = setInterval(timer, 1000);
+=======
+    countdown = setInterval(timer, 100);
+>>>>>>> a6847d3e995f70469d8b31c53f862977508fa300
     document.getElementById('list').style.display = "none";
     index = getRadioIndex('tSelect');
     if (index >= 0){

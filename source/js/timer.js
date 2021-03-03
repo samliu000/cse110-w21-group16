@@ -71,17 +71,17 @@ if(donebtn){
 		/*alarm.currentTime = 0;
 		alarm.play();*/
 		if(session_count == 4){
-		  break_minutes = long_break_minutes;
-		  session_count = 0;
+			break_minutes = long_break_minutes;
+			session_count = 0;
 		}else{
-		  break_minutes = short_break_minutes;
+			break_minutes = short_break_minutes;
 		}
 		session_seconds = break_minutes * 60;
 		isBreak = false;
 		isStarted = false;
 		if (taskInd >= 0){
-		  actual++;
-		  document.getElementById('table-content').rows[taskInd].cells[3].innerHTML = actual;
+			actual++;
+			document.getElementById('table-content').rows[taskInd].cells[3].innerHTML = actual;
 		}
 		session_count++;
 		countdown = setInterval(timer, 10);

@@ -37,7 +37,7 @@ if(startbtn){
 
     isStarted = true;  
     clearInterval(countdown);
-    countdown = setInterval(timer, 1);
+    countdown = setInterval(timer, 100);
     document.getElementById('list').style.display = "none";
     index = getRadioIndex('tSelect');
     if (index >= 0){
@@ -50,7 +50,8 @@ if(startbtn){
     currTaskText.style.color = 'white';
     currTaskText.innerHTML = "Currently on task: " + currTask;
     // disable the start button to avoid multiple text showing up
-    //document.getElementById("start-btn").disabled = true;*/
+    */
+    document.getElementById("start-btn").disabled = true;
 	
 	let currTaskText = document.getElementById("current-task-text");
 	currTaskText.innerHTML = "Currently on task: " + currTask;
@@ -73,7 +74,7 @@ if(yes){
     countdown = 0;
     isBreak = true;
     clearInterval(countdown);
-    countdown = setInterval(timer, 10);
+    countdown = setInterval(timer, 100);
     overlay.style.display = "none";
     
     reset_popup.classList.remove("active");
@@ -88,7 +89,7 @@ no.addEventListener('click', () =>{
 
 /* TIMER - HANDLES COUNTDOWN */
 function timer() {
-  document.getElementById("start-btn").disabled = false;
+  document.getElementById("start-btn").disabled = true;
   session_seconds --;
   if (session_seconds < 0) {
     clearInterval(countdown);
@@ -117,6 +118,7 @@ function timer() {
     }else{
       session_seconds = session_minutes * 60;
       isBreak = true;
+      document.getElementById("start-btn").disabled = false;
     }
   }
 }

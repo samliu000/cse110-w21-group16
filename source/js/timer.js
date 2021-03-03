@@ -23,6 +23,9 @@ let yes = document.getElementById("btn-yes");
 let no = document.getElementById("btn-no");
 let settings = document.getElementById("setForm");
 
+let donebtn = document.getElementById("done-btn");
+let taskInd;
+
 const alarm = document.createElement('audio'); // A bell sound will play when the timer reaches 0
 alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
 
@@ -39,12 +42,12 @@ if(startbtn){
     clearInterval(countdown);
     countdown = setInterval(timer, 100);
     document.getElementById('list').style.display = "none";
-    index = getRadioIndex('tSelect');
-    if (index >= 0){
-      actual = document.getElementById('table-content').rows[index].cells[3].innerHTML;
+    taskInd = getRadioIndex('tSelect');
+    if (taskInd >= 0){
+      actual = document.getElementById('table-content').rows[taskInd].cells[3].innerHTML;
     }
     // display which task the Pomodoro session is currently on 
-    currTask = document.getElementById('table-content').rows[index].cells[1].innerHTML; 
+    currTask = document.getElementById('table-content').rows[taskInd].cells[1].innerHTML; 
     /*let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
     currTask.id = 'current_task';
     currTaskText.style.color = 'white';
@@ -56,14 +59,45 @@ if(startbtn){
 	let currTaskText = document.getElementById("current-task-text");
 	currTaskText.innerHTML = "Currently on task: " + currTask;
 	let currTaskBlock = document.getElementById("current-task");
-	currTaskBlock.style.display = "block";
+	currTaskBlock.style.display = "flex";
   });
 }
+
+if(donebtn){
+	document.getElementById("done-yes").addEventListener('click', () => {
+		document.getElementById("popup-overlay").style.display = "none";
+		document.getElementById("done-flex").classList.remove("active");		
+		clearInterval(countdown);
+		/*alarm.currentTime = 0;
+		alarm.play();*/
+		if(session_count == 4){
+			break_minutes = long_break_minutes;
+			session_count = 0;
+		}else{
+			break_minutes = short_break_minutes;
+		}
+		session_seconds = break_minutes * 60;
+		isBreak = false;
+		isStarted = false;
+		if (taskInd >= 0){
+			actual++;
+			document.getElementById('table-content').rows[taskInd].cells[3].innerHTML = actual;
+		}
+		session_count++;
+		countdown = setInterval(timer, 10);
+		// hide the current task once pomo session is done	  
+		document.getElementById('current-task').style.display = 'none';
+		document.getElementById('list').style.display = "block";
+		undoCheck('tSelect');
+		document.getElementById('table-content').rows[taskInd].classList.add("completed");
+  });
+}
+
 if(reset){
   reset.addEventListener('click', () => {
     if(isStarted){
-    overlay.style.display = "block";
-    reset_popup.classList.add("active");
+		overlay.style.display = "block";
+		reset_popup.classList.add("active");
     }
   });
 }

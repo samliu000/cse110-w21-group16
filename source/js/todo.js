@@ -209,6 +209,7 @@ function openForm(){
     document.getElementById("add-form").style.display = "block";
     document.getElementById('tName').value = "";
     document.getElementById('est').value = 1;
+	document.getElementById("tName").focus(); 
 }
 
 // eslint-disable-next-line no-unused-vars

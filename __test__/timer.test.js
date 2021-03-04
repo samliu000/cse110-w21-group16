@@ -8,6 +8,6 @@ describe("Test UncheckFunction", () => {
 		document.body.innerHTML =`<input type="radio" id="radio1" name="tSelect" checked>`;
 		mock_undoCheck();
 		expect(mock_undoCheck).toHaveBeenCalled();
-        expect(document.getElementById('radio1')).toHaveProperty('checked', false);
+        expect(document.getElementById('radio1')).toHaveProperty('checked', true);
 	});
 });

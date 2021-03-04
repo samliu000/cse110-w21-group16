@@ -10,9 +10,10 @@ let tName =document.getElementById('tName')
 let btn;
 let rad;
 //Added if statement for testing
-if(addT){
-addT.addEventListener("click", checkFields);
-}
+    if(addT){
+    addT.addEventListener("click", checkFields);
+    }
+
 
 if(est){
     est.addEventListener('keydown', function(event) {
@@ -52,7 +53,9 @@ function checkFields(){
         document.getElementById('est').value > 0 &&
         document.getElementById('est').value < 51) {
             addTask();
+            return true;
         }
+    return false;
 }
 
 function addTask(){
@@ -72,7 +75,7 @@ function addTask(){
 	btn.onclick = function() {editRow(this);};
 
     //cells created
-    let row = table.insertRow(-1);
+    let row = document.getElementById('table-content').insertRow(-1);
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);

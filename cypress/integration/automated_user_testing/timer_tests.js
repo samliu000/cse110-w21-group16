@@ -87,9 +87,9 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#timerDisplay').then(($el) => {
                 expect($el).to.not.have.text('5:00');
             });
-        });*/
+        });
         
-    });
+    });*/
     describe('Settings', () => {
         it('Changing Focus Time', () => {
             cy.get('#settings').click();

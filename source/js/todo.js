@@ -1,7 +1,5 @@
 //main.js
 
-let bId = 1;
-
 let addT = document.getElementById('btn-add');
 let table = document.getElementById('table-content');
 let est = document.getElementById('est');
@@ -75,7 +73,7 @@ function showTaskList(){
         //radio button
        rad = document.createElement('input');
        rad.type = "radio";
-       rad.id = "radio"+bId;
+       rad.id = tasklist[i].id;
        rad.name = "tSelect";
        
    
@@ -91,21 +89,34 @@ function showTaskList(){
        btn.id = tasklist[i].id;
        btn.className = "fa fa-trash";
        btn.onclick = function() {editRow(this);};
+
+       //done button
+        done = document.createElement('i');
+        done.id = tasklist[i].finish;
+        done.className = "fa fa-check-square";
+        done.onclick = function() {rowDone(this);};
        
        //cells created
+        //cells created
         let row = table.insertRow(-1);
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
         let cell4 = row.insertCell(3);
         let cell5 = row.insertCell(4);
+        let cell6 = row.insertCell(5);
     
         //cells filled
-        cell1.appendChild(rad);
         cell2.innerHTML = tasklist[i].taskName;
         cell3.innerHTML = tasklist[i].estimation;
         cell4.innerHTML = tasklist[i].actual;
         cell5.appendChild(btn); // Remove row button
+        if(tasklist[i].finish != "done"){
+            cell1.appendChild(rad);
+            cell6.appendChild(done);
+        }else{
+            row.classList.add("completed");
+        }
 
     }
     document.getElementById("add-form").style.display = "none";
@@ -116,7 +127,7 @@ function addTask(){
     //radio button
     rad = document.createElement('input');
     rad.type = "radio";
-    rad.id = "radio"+bId;
+    rad.id = Date.now();
     rad.name = "tSelect";
     
 
@@ -128,7 +139,7 @@ function addTask(){
 	
 	//done button
 	done = document.createElement('i');
-	done.id = "done"+bId;
+	done.id = btn.id;
 	done.className = "fa fa-check-square";
 	done.onclick = function() {rowDone(this);};
 	
@@ -155,12 +166,11 @@ function addTask(){
         taskName: document.getElementById("tName").value,
         estimation: document.getElementById('est').value,
         actual: 0,
-        id: btn.id
+        id: btn.id,
+        finish: done.id
     });
 
     localStorage.setItem("tasklist", JSON.stringify(tasklist));
-
-    bId++;
 
     document.getElementById("add-form").style.display = "none";
 }
@@ -181,6 +191,14 @@ function editRow(elem) {
 function rowDone(elem){
 	let row = elem.parentElement.parentElement;
     row.classList.add("completed");
+    for(let i = 0; i < tasklist.length; i++){
+        if(tasklist[i].id === elem.id){
+             elem.id =  'done';
+             tasklist[i].finish = 'done';
+             console.log(tasklist[i].finish);
+        }
+    }
+    localStorage.setItem("tasklist", JSON.stringify(tasklist));
 }
 
 // eslint-disable-next-line no-unused-vars

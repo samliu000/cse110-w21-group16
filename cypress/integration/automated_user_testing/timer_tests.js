@@ -60,7 +60,7 @@ describe('Pomodoro Timer Tests', () => {
 
     });
 
-    describe('Done Prematurely Button', () => {
+    /*describe('Done Prematurely Button', () => {
         it('Done yes', () => {
             cy.get('#add-task').click();
             cy.get('#tName').clear().type('Test Task');
@@ -87,7 +87,7 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#timerDisplay').then(($el) => {
                 expect($el).to.not.have.text('5:00');
             });
-        });
+        });*/
         
     });
     describe('Settings', () => {

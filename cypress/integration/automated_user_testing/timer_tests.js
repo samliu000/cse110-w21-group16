@@ -10,7 +10,7 @@ describe('Pomodoro Timer Tests', () => {
         it('Check timer count down', () => {
 
             cy.get('#start-btn').click();
-            cy.wait(2000);
+            cy.wait(3000);
             cy.get('#timerDisplay').then(($el) => {
                 expect($el).to.have.text('24:58');
             });
@@ -37,6 +37,7 @@ describe('Pomodoro Timer Tests', () => {
 
         it('Check reset no', () => {
             cy.get('#start-btn').click();
+            cy.wait(1000);
             cy.get('#reset').click();
             cy.get('#btn-no').click();
             cy.wait(1000);
@@ -64,6 +65,7 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#settings').click();
             cy.get('#focus').clear().type(1);
             cy.get('#btn-set').click();
+            cy.wait(1000);
             cy.get('#timerDisplay').then(($el) => {
                 expect($el).to.have.text('1:00');
             });

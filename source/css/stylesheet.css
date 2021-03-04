@@ -19,6 +19,9 @@
  *   Task Row Styling
  * Help/Overlay (depends on aspect ratio)
  * Settings
+ * Current Task
+ *   current task mobile
+ * Completed Tasks
  * /
 
 
@@ -38,6 +41,7 @@
 	--before-hover: #ddd;
 	--after-hover: rgba(135, 212, 140, .7);
 	--transparent: rgba(0, 0, 0, 0);
+	--completed: rgba(0, 0, 0, .4);
 	/*
 	--after-hover: rgba(120, 170, 222, 0.75);
 	--accent-2-transparent: rgba(34, 59, 90,.5);
@@ -75,7 +79,7 @@ main{
 }
 
 .main-timer-active{
-	margin-top: 25vh;
+	margin-top: 15vh;
 	transition: margin-top 2s ease-out;
 }
 
@@ -100,7 +104,8 @@ main{
 
 /*Reset popup*/
 #reset-popup,
-#settings-popup{
+#settings-popup,
+#done-popup{
 	font-size: 1.25rem;
 	padding: .75em 2em;
 	margin: 0 auto;
@@ -117,7 +122,8 @@ main{
 }
 
 #reset-flex,
-#settings-flex{
+#settings-flex,
+#done-flex{
 	display: flex;
 	height: 100%;
 	width: 100%;
@@ -129,18 +135,21 @@ main{
 	z-index: 3;
 }
 
-#reset-popup p{
+#reset-popup p,
+#done-popup p{
 	text-align: center;
 	flex-basis: 15em;
     flex-grow: 1;
 }
 
-#reset-popup .form-btn{
+#reset-popup .form-btn,
+#done-popup .form-btn{
 	margin: 0 2em;
 	font-size: 1.1rem;
 }
 
 #reset-flex.active,
+#done-flex.active,
 #settings-flex.active{
 	top: 0;
 	transition: top .5s ease;
@@ -202,7 +211,7 @@ td:nth-child(1){
 }
 th:nth-child(2),
 td:nth-child(2){
-    width: 75%;
+    width: 72.5%;
     text-align: left;
 }
 th:nth-child(3),
@@ -222,6 +231,17 @@ td:nth-child(5){
 }
 
 td:nth-child(5):hover{
+	color: #fff;
+}
+
+th:nth-child(6),
+td:nth-child(6){
+    width: 2.5%;
+	font-size: 1.25em;
+	color: var(--before-hover);
+}
+
+td:nth-child(6):hover{
 	color: #fff;
 }
 
@@ -353,7 +373,7 @@ td:nth-child(5):hover{
 
 #taskForm label{
 	order:1;
-	flex-grow: 1;
+	width: 25%;
 }
 
 /***** Mobile Styling *****/
@@ -516,4 +536,66 @@ i.fa.icon{
 
 #setForm input{
 	color: white;
+}
+
+/*****Current Task*****/
+#current-task{
+    max-width: 50%;
+    margin: 0 auto;
+    margin-top: 3%;
+    background-color: var(--accent-2-transparent);
+    border-radius: 3em;
+    padding: .5em 1em;
+    max-height: 20vh;
+	display: flex;
+    flex-direction: column;
+}
+
+#current-task-text{
+	text-align: center;
+    color: white;
+    font-size: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+/*Current Task Mobile*/
+@media only screen and (max-width: 1100px) {
+	#current-task{
+		max-width: 95%;
+	}
+	
+	#current-task-text{
+		font-size: 1.2rem;
+		-webkit-line-clamp: 5;
+	}
+}
+
+
+/*****Completed tasks*****/
+.completed input[type="radio"] {
+    display: none;
+}
+
+tr.completed td {
+    background: var(--completed);
+    outline: .25em solid;
+    outline-color: var(--completed);
+}
+
+tr.completed td:nth-child(5),
+tr.completed td:nth-child(6) {
+    outline: 0;
+    background-color: var(--transparent);
+}
+
+tr.completed td:nth-child(6){
+	display: none;
+}
+
+#done-btn{
+	margin: 0 auto;
+    font-size: 1.2rem;
+    margin-bottom: .5em;
 }

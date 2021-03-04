@@ -91,21 +91,21 @@
 				  <span>Set the times in minutes</span>
 				  <div id="set-focus" class="set-item">
 					<label for="focus"><b>Focus</b></label>
-					<input type="number" placeholder="Try: 25" min="1" step="1" id="focus" class="in-field">
+					<input type="number" placeholder="Try: 25" min="0" step="1" id="focus" class="in-field">
 				  </div>
 				  
 				  <div id="set-short-break" class="set-item">
 					<label for="short-break"><b>Short Break:</b></label>
-					<input type="number" placeholder="Try: 5" min="1" step="1" id="short-break" class="in-field">
+					<input type="number" placeholder="Try: 5" min="0" step="1" id="short-break" class="in-field">
 				  </div>
 				  
 				  <div id="set-long-break" class="set-item">
 					<label for="long-break"><b>Long Break</b></label>
-					<input type="number" placeholder="Try: 15" min="1" step="1" id="long-break" class="in-field">
+					<input type="number" placeholder="Try: 15" min="0" step="1" id="long-break" class="in-field">
 				  </div>
 				  
 				  <div id="set-form-btn">
-					<button type="submit" id="btn-set" class="form-btn">Sumbit</button>
+					<button type="submit" id="btn-set" class="form-btn">Submit</button>
 					<button type="button" id="btn-no-set" class="form-btn">Cancel</button>
 				  </div>
 				</form>
@@ -119,8 +119,18 @@
 				<button type="button" id="btn-no" class="form-btn">No</button>
 			</div>
 		</div>
+		
+		<div id="done-flex">
+			<div id="done-popup">
+				<p>Are you sure you're done?<br/>(We're watching you)</p>
+				<button type="button" id="done-yes" class="form-btn">Yes</button>
+				<button type="button" id="done-no" class="form-btn">No</button>
+			</div>
+		</div>
+		
 		<div id="current-task" style="display:none">
-			<h3 id='current-task-text'></h3>
+			<h3 id="current-task-text"></h3>
+			<button type="button" id="done-btn" class="form-btn">Done</button>
 		</div>
     </main>
 

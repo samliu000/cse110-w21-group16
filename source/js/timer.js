@@ -65,33 +65,33 @@ if(startbtn){
 }
 
 if(donebtn){
-	  document.getElementById("done-yes").addEventListener('click', () => {
-		document.getElementById("popup-overlay").style.display = "none";
-		document.getElementById("done-flex").classList.remove("active");		
-		clearInterval(countdown);
-		/*alarm.currentTime = 0;
-		alarm.play();*/
-		if(session_count == 4){
-			break_minutes = long_break_minutes;
-			session_count = 0;
-		}else{
-			break_minutes = short_break_minutes;
-		}
-		session_seconds = break_minutes * 60;
-		isBreak = false;
-		isStarted = false;
-		if (taskInd >= 0){
+  document.getElementById("done-yes").addEventListener('click', () => {
+    document.getElementById("popup-overlay").style.display = "none";
+    document.getElementById("done-flex").classList.remove("active");		
+    clearInterval(countdown);
+    /*alarm.currentTime = 0;
+    alarm.play();*/
+    if(session_count == 4){
+      break_minutes = long_break_minutes;
+      session_count = 0;
+    }else{
+      break_minutes = short_break_minutes;
+    }
+    session_seconds = break_minutes * 60;
+    isBreak = false;
+    isStarted = false;
+    if (taskInd >= 0){
       actual++;
       console.log(actual);
-			document.getElementById('table-content').rows[taskInd].cells[3].innerHTML = actual;
-		}
-		session_count++;
-		countdown = setInterval(timer, 10);
-		// hide the current task once pomo session is done	  
-		document.getElementById('current-task').style.display = 'none';
-		document.getElementById('list').style.display = "block";
-		undoCheck('tSelect');
-		document.getElementById('table-content').rows[taskInd].classList.add("completed");
+      document.getElementById('table-content').rows[taskInd].cells[3].innerHTML = actual;
+    }
+    session_count++;
+    countdown = setInterval(timer, 10);
+    // hide the current task once pomo session is done	  
+    document.getElementById('current-task').style.display = 'none';
+    document.getElementById('list').style.display = "block";
+    undoCheck('tSelect');
+    document.getElementById('table-content').rows[taskInd].classList.add("completed");
   });
 }
 
@@ -148,7 +148,6 @@ function timer() {
         let storedTask = JSON.parse(localStorage.getItem('tasklist'));
         if(storedTask != null){
           for(let i = 0; i < storedTask.length; i++){
-            console.log(storedTask[i].id)
             if(storedTask[i].id == taskId){
               storedTask[i].actual = actual;
               localStorage.setItem('tasklist', JSON.stringify(storedTask));

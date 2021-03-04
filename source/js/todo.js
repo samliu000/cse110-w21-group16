@@ -1,7 +1,5 @@
 //main.js
 
-let bId = 1;
-
 let addT = document.getElementById('btn-add');
 let table = document.getElementById('table-content');
 let est = document.getElementById('est');
@@ -174,8 +172,6 @@ function addTask(){
 
     localStorage.setItem("tasklist", JSON.stringify(tasklist));
 
-    bId++;
-
     document.getElementById("add-form").style.display = "none";
 }
 
@@ -197,9 +193,9 @@ function rowDone(elem){
     row.classList.add("completed");
     for(let i = 0; i < tasklist.length; i++){
         if(tasklist[i].id === elem.id){
-             elem.id =  'done'
-             tasklist[i].finish = 'done'
-             console.log(tasklist[i].finish)
+             elem.id =  'done';
+             tasklist[i].finish = 'done';
+             console.log(tasklist[i].finish);
         }
     }
     localStorage.setItem("tasklist", JSON.stringify(tasklist));

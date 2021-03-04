@@ -7,7 +7,6 @@ let short_break_minutes = 5;
 let long_break_minutes = 15;
 let isBreak = true; 
 let session_count = 1;
-let index;
 let actual;
 let isStarted = false;
 let timer_container = document.getElementById("timer");
@@ -25,6 +24,7 @@ let settings = document.getElementById("setForm");
 
 let donebtn = document.getElementById("done-btn");
 let taskInd;
+let taskId;
 
 const alarm = document.createElement('audio'); // A bell sound will play when the timer reaches 0
 alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
@@ -43,11 +43,12 @@ if(startbtn){
     countdown = setInterval(timer, 100);
     document.getElementById('list').style.display = "none";
     taskInd = getRadioIndex('tSelect');
+    taskId = getTaskId('tSelect');
     if (taskInd >= 0){
       actual = document.getElementById('table-content').rows[taskInd].cells[3].innerHTML;
+      currTask = document.getElementById('table-content').rows[taskInd].cells[1].innerHTML; 
     }
     // display which task the Pomodoro session is currently on 
-    currTask = document.getElementById('table-content').rows[taskInd].cells[1].innerHTML; 
     /*let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
     currTask.id = 'current_task';
     currTaskText.style.color = 'white';
@@ -64,7 +65,7 @@ if(startbtn){
 }
 
 if(donebtn){
-	document.getElementById("done-yes").addEventListener('click', () => {
+	  document.getElementById("done-yes").addEventListener('click', () => {
 		document.getElementById("popup-overlay").style.display = "none";
 		document.getElementById("done-flex").classList.remove("active");		
 		clearInterval(countdown);
@@ -80,7 +81,8 @@ if(donebtn){
 		isBreak = false;
 		isStarted = false;
 		if (taskInd >= 0){
-			actual++;
+      actual++;
+      console.log(actual);
 			document.getElementById('table-content').rows[taskInd].cells[3].innerHTML = actual;
 		}
 		session_count++;
@@ -139,9 +141,20 @@ function timer() {
       session_seconds = break_minutes * 60;
       isBreak = false;
       isStarted = false;
-      if (index >= 0){
+      if (taskInd >= 0){
         actual++;
-        document.getElementById('table-content').rows[index].cells[3].innerHTML = actual;
+        console.log(actual);
+        document.getElementById('table-content').rows[taskInd].cells[3].innerHTML = actual;
+        let storedTask = JSON.parse(localStorage.getItem('tasklist'));
+        if(storedTask != null){
+          for(let i = 0; i < storedTask.length; i++){
+            console.log(storedTask[i].id)
+            if(storedTask[i].id == taskId){
+              storedTask[i].actual = actual;
+              localStorage.setItem('tasklist', JSON.stringify(storedTask));
+            }
+          }
+        }
       }
       session_count ++;
       countdown = setInterval(timer, 10);
@@ -232,6 +245,19 @@ function getRadioIndex(name)
         if (elements[i].checked)
         {
             return i;
+        }
+    }
+}
+
+function getTaskId(name)
+{
+    let elements = document.getElementsByName(name);
+
+    console.log(elements);
+    for (let i = 0, l = elements.length; i < l; i++){
+        if (elements[i].checked) 
+        {
+            return elements[i].id;
         }
     }
 }

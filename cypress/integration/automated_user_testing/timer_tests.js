@@ -93,7 +93,7 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#tName').clear().type('Test Task');
             cy.get('#est').clear().type('1');
             cy.get('#btn-add').click();
-            cy.get('input[name="tSelect"]')
+            cy.get('input[name="tSelect"]').click();
             cy.get('#start-btn').click();
             cy.get('#done-btn').click();
             cy.get('#done-no').click();

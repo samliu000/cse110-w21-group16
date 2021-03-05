@@ -87,7 +87,8 @@ if(donebtn){
     document.getElementById('current-task').style.display = 'none';
     document.getElementById('list').style.display = "block";
     undoCheck('tSelect');
-    document.getElementById('table-content').rows[taskInd].classList.add("completed");
+	if(taskInd >= 0)
+		document.getElementById('table-content').rows[taskInd].classList.add("completed");
   });
 }
 

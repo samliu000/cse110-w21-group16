@@ -194,9 +194,9 @@ function countdownDisplay() {
   let session_minutes = Math.floor(session_seconds / 60);
   let title = (currTask == 0) ? `${session_minutes}m` : `${session_minutes}m: ${currTask}`;
   if(isStarted && document.title != title){
-	  document.title = title;
+		document.title = title;
   } else if(!isStarted && document.title != "Pomodoro Timer!")
-	  document.title = "Pomodoro Timer!";
+		document.title = "Pomodoro Timer!";
   let remaining_seconds = session_seconds % 60;
   document.getElementById("timerDisplay").textContent = `${session_minutes}:${remaining_seconds < 10 ? '0' : ''}${remaining_seconds}`;
 }

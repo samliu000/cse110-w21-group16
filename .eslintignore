@@ -4,4 +4,8 @@ test/*
 node_modules/*
 __test__/*
 cypress/*
+<<<<<<< HEAD
 coverage/*
+=======
+coverage/*
+>>>>>>> aa0be7b211dc9e97552f962879102b4a405ffd3b

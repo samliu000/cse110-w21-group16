@@ -70,7 +70,11 @@ describe('Pomodoro Timer Tests', () => {
 
     });
 
+<<<<<<< HEAD
     describe('Done Prematurely Button', () => {
+=======
+    /*describe('Done Prematurely Button', () => {
+>>>>>>> aa0be7b211dc9e97552f962879102b4a405ffd3b
         it('Done yes', () => {
             cy.get('#add-task').click();
             cy.get('#tName').clear().type('Test Task');
@@ -81,7 +85,11 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#done-btn').click();
             cy.get('#done-yes').click();
             cy.get('#timerDisplay').then(($el) => {
+<<<<<<< HEAD
                 expect($el).to.not.have.text('25:00');
+=======
+                expect($el).to.have.text('5:00');
+>>>>>>> aa0be7b211dc9e97552f962879102b4a405ffd3b
             });
         });
 
@@ -99,7 +107,11 @@ describe('Pomodoro Timer Tests', () => {
             });
         });
         
+<<<<<<< HEAD
     });
+=======
+    });*/
+>>>>>>> aa0be7b211dc9e97552f962879102b4a405ffd3b
     describe('Settings', () => {
         it('Changing Focus Time', () => {
             cy.get('#settings').click();

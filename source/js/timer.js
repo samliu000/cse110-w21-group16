@@ -49,19 +49,14 @@ if(startbtn){
       actual = document.getElementById('table-content').rows[taskInd].cells[3].innerHTML;
       currTask = document.getElementById('table-content').rows[taskInd].cells[1].innerHTML; 
     }
-    // display which task the Pomodoro session is currently on 
-    /*let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
-    currTask.id = 'current_task';
-    currTaskText.style.color = 'white';
-    currTaskText.innerHTML = "Currently on task: " + currTask;
-    // disable the start button to avoid multiple text showing up
-    */
     document.getElementById("start-btn").disabled = true;
 	
-	let currTaskText = document.getElementById("current-task-text");
-	currTaskText.innerHTML = "Currently on task: " + currTask;
-	let currTaskBlock = document.getElementById("current-task");
-	currTaskBlock.style.display = "flex";
+  if(currTask != undefined) {
+    let currTaskText = document.getElementById("current-task-text");
+    currTaskText.innerHTML = "Currently on task: " + currTask;
+    let currTaskBlock = document.getElementById("current-task");
+    currTaskBlock.style.display = "flex";
+  }
   });
 }
 
@@ -90,6 +85,7 @@ if(donebtn){
     countdown = setInterval(timer, 10);
     // hide the current task once pomo session is done	  
     document.getElementById('current-task').style.display = 'none';
+    currTask = undefined;
     document.getElementById('list').style.display = "block";
     undoCheck('tSelect');
     document.getElementById('table-content').rows[taskInd].classList.add("completed");

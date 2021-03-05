@@ -143,9 +143,6 @@ function timer() {
       session_seconds = break_minutes * 60;
       isBreak = false;
       isStarted = false;
-<<<<<<< HEAD
-      actual++;
-=======
       if (taskInd >= 0){
         actual++;
         console.log(actual);
@@ -160,7 +157,6 @@ function timer() {
           }
         }
       }
->>>>>>> aa0be7b211dc9e97552f962879102b4a405ffd3b
       session_count ++;
       countdown = setInterval(timer, 1000);
       // hide the current task once pomo session is done
@@ -206,6 +202,7 @@ function countdownDisplay() {
 
 function updateHTML() {
   countdownDisplay();
+  /*
   if(index >= 0){
     let x = document.getElementById("table-content").childNodes[index].cells;
     x[3].innerHTML = actual;
@@ -252,8 +249,6 @@ function getRadioIndex(name)
         }
     }
 }
-<<<<<<< HEAD
-=======
 
 function getTaskId(name)
 {
@@ -268,7 +263,6 @@ function getTaskId(name)
     }
 }
 
->>>>>>> aa0be7b211dc9e97552f962879102b4a405ffd3b
 //
 function undoCheck(name)
 {

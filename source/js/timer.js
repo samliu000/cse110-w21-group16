@@ -52,11 +52,12 @@ if(startbtn){
 		currTask = "";
     // display which task the Pomodoro session is currently on 
     document.getElementById("start-btn").disabled = true;
-	
-	let currTaskText = document.getElementById("current-task-text");
-	currTaskText.innerHTML = "Currently on task: " + currTask;
-	let currTaskBlock = document.getElementById("current-task");
-	currTaskBlock.style.display = "flex";
+	if(currTask != 0){
+		let currTaskText = document.getElementById("current-task-text");
+		currTaskText.innerHTML = "Currently on task: " + currTask;
+		let currTaskBlock = document.getElementById("current-task");
+		currTaskBlock.style.display = "flex";
+	}
   });
 }
 

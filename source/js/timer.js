@@ -1,4 +1,5 @@
 //timer.js
+
 let countdown = 0; // variable to set/clear intervals
 let session_seconds = 1500; // seconds left on the clock
 let session_minutes = 25;
@@ -40,7 +41,7 @@ if(startbtn){
 
     isStarted = true;  
     clearInterval(countdown);
-    countdown = setInterval(timer, 100);
+    countdown = setInterval(timer, 1000);
     document.getElementById('list').style.display = "none";
     taskInd = getRadioIndex('tSelect');
     taskId = getTaskId('tSelect');
@@ -110,7 +111,8 @@ if(yes){
     countdown = 0;
     isBreak = true;
     clearInterval(countdown);
-    countdown = setInterval(timer, 100);
+    countdown = setInterval(timer, 1000);
+
     overlay.style.display = "none";
     
     reset_popup.classList.remove("active");
@@ -156,7 +158,7 @@ function timer() {
         }
       }
       session_count ++;
-      countdown = setInterval(timer, 10);
+      countdown = setInterval(timer, 1000);
       // hide the current task once pomo session is done
       document.getElementById('current-task').style.display = 'none';
       document.getElementById('list').style.display = "block";
@@ -200,11 +202,11 @@ function countdownDisplay() {
 
 function updateHTML() {
   countdownDisplay();
-  /* 
+  /*
   if(index >= 0){
     let x = document.getElementById("table-content").childNodes[index].cells;
-    x[3].value = actual;
-  }*/
+    x[3].innerHTML = actual;
+  }
   
   //Block is causing TypeError
   /*if(isBreak == true){
@@ -269,12 +271,12 @@ function undoCheck(name)
     {
         if (elements[i].checked)
         {
-            elements[i].checked = false;
+          elements[i].checked = false;
         }
     }
 }
 
-window.setInterval(updateHTML, 100);
+window.setInterval(updateHTML, 1000);
 
 document.onclick = updateHTML;
 module.exports = {undoCheck};

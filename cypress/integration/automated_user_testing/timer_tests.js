@@ -30,6 +30,9 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#long-break').clear().type(0);
             cy.get('#btn-set').click();
             cy.get('#start-btn').click();
+            cy.get('#timerDisplay').then(($el) => {
+                expect($el).to.not.have.text('25:00');
+            });
             cy.wait(4000);
         });
     });
@@ -70,26 +73,18 @@ describe('Pomodoro Timer Tests', () => {
 
     });
 
-<<<<<<< HEAD
     describe('Done Prematurely Button', () => {
-=======
-    /*describe('Done Prematurely Button', () => {
->>>>>>> aa0be7b211dc9e97552f962879102b4a405ffd3b
         it('Done yes', () => {
             cy.get('#add-task').click();
             cy.get('#tName').clear().type('Test Task');
             cy.get('#est').clear().type('1');
             cy.get('#btn-add').click();
-            cy.get('#radio1').click();
+            cy.get('input[name="tSelect"]').click();
             cy.get('#start-btn').click();
             cy.get('#done-btn').click();
             cy.get('#done-yes').click();
             cy.get('#timerDisplay').then(($el) => {
-<<<<<<< HEAD
                 expect($el).to.not.have.text('25:00');
-=======
-                expect($el).to.have.text('5:00');
->>>>>>> aa0be7b211dc9e97552f962879102b4a405ffd3b
             });
         });
 
@@ -98,7 +93,7 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#tName').clear().type('Test Task');
             cy.get('#est').clear().type('1');
             cy.get('#btn-add').click();
-            cy.get('#radio1').click();
+            cy.get('input[name="tSelect"]')
             cy.get('#start-btn').click();
             cy.get('#done-btn').click();
             cy.get('#done-no').click();
@@ -107,11 +102,7 @@ describe('Pomodoro Timer Tests', () => {
             });
         });
         
-<<<<<<< HEAD
     });
-=======
-    });*/
->>>>>>> aa0be7b211dc9e97552f962879102b4a405ffd3b
     describe('Settings', () => {
         it('Changing Focus Time', () => {
             cy.get('#settings').click();
@@ -164,3 +155,31 @@ describe('Pomodoro Timer Tests', () => {
     });
 
 });
+
+describe('Automated Button Testing', () => {
+    it('Check the add task button', () => {
+      cy.visit('/source/index.html')
+      cy.contains('+Add Task').click()
+      cy.get('input[id="tName"]').click()
+      .type('example').should('have.value','example')
+      cy.get('button[id="btn-add"]').click()
+      cy.get('table[id=table-content]').contains('example')	
+  
+    });
+   it('Checks the delete task button', () =>{
+       cy.visit('/source/index.html')
+       cy.contains('+Add Task').click()
+       cy.get('input[id="tName"]').click().type('example')
+       cy.get('button[id="btn-add"]').click()
+       cy.get('i[class="fa fa-trash"]').click()
+       cy.get('example').should('not.exist');
+  });
+    it('Check the cancel button', () => {
+        cy.visit('/source/index.html')
+       cy.contains('+Add Task').click()
+       cy.get('input[id="tName"]').click().type('example')
+        cy.get('button[class="btn-cancel"]').click()
+        cy.get('example').should('not.exist');
+    });
+  
+  });

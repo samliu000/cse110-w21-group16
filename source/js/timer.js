@@ -27,8 +27,8 @@ let donebtn = document.getElementById("done-btn");
 let taskInd;
 let taskId;
 
-const alarm = document.createElement('audio'); // A bell sound will play when the timer reaches 0
-alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
+const alarm = document.getElementById('alarm'); // A bell sound will play when the timer reaches 0
+//alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
 
 
 /* EVENT LISTENERS FOR START AND RESET BUTTONS */
@@ -70,8 +70,8 @@ if(donebtn){
     document.getElementById("popup-overlay").style.display = "none";
     document.getElementById("done-flex").classList.remove("active");		
     clearInterval(countdown);
-    /*alarm.currentTime = 0;
-    alarm.play();*/
+    /*alarm.currentTime = 0;*/
+    alarm.play();
     if(session_count == 4){
       break_minutes = long_break_minutes;
       session_count = 0;

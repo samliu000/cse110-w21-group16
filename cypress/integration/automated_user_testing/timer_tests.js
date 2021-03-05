@@ -6,6 +6,55 @@ describe('Pomodoro Timer Tests', () => {
       cy.visit('/source/index.html');
     });
     
+    describe('Storage', () => {
+
+        it('Nothing in storage', () => {
+            cy.get('#add-task').click();
+            cy.get('#tName').clear().type('Test Task');
+            cy.get('#est').clear().type('1');
+            cy.get('#btn-add').click();
+            cy.get('#add-task').click();
+            cy.get('*[class="fa fa-trash"]').click();
+
+            // settings
+            cy.get('#settings').click();
+            cy.get('#focus').clear().type(0);
+            cy.get('#short-break').clear().type(0);
+            cy.get('#long-break').clear().type(5);
+            cy.get('#btn-set').click();
+            cy.get('#start-btn').click();
+            cy.wait(2000);
+        });
+
+        it('Check if stored item is populated in timer', () => {
+
+            // make task
+            cy.get('#add-task').click();
+            cy.get('#tName').clear().type('Test Task');
+            cy.get('#est').clear().type('1');
+            cy.get('#btn-add').click();
+            cy.get('#add-task').click();
+            cy.get('#tName').clear().type('Test Task2');
+            cy.get('#est').clear().type('2');
+            cy.get('#btn-add').click();
+            cy.get('input[name="tSelect"]').first().click();
+
+            // adjust settings
+            cy.get('#settings').click();
+            cy.get('#focus').clear().type(0);
+            cy.get('#short-break').clear().type(0);
+            cy.get('#long-break').clear().type(5);
+            cy.get('#btn-set').click();
+            cy.get('#start-btn').click();
+            cy.wait(2000);
+
+            cy.visit('/source/index.html');
+
+            // I expect a radio button to be there
+            cy.get('input[name="tSelect"]').first().click();
+        });
+    });
+
     describe('Start Button', () => {
         it('Check timer count down', () => {
 
@@ -38,6 +87,12 @@ describe('Pomodoro Timer Tests', () => {
     });
 
     describe('Reset Button', () => {
+
+        it('Check reset while not started', () => {
+            cy.get('#reset').click();
+            cy.get('#btn-yes').should('not.be.visible');
+        });
+
         it('Check reset yes', () => {
             cy.get('#start-btn').click();
             cy.get('#reset').click();
@@ -88,12 +143,42 @@ describe('Pomodoro Timer Tests', () => {
             });
         });
 
+        it('Done yes on fourth pomo session', () => {
+            // make task
+            cy.get('#add-task').click();
+            cy.get('#tName').clear().type('Test Task');
+            cy.get('#est').clear().type('1');
+            cy.get('#btn-add').click();
+            cy.get('input[name="tSelect"]').click();
+
+            // adjust settings
+            cy.get('#settings').click();
+            cy.get('#focus').clear().type(0);
+            cy.get('#short-break').clear().type(0);
+            cy.get('#long-break').clear().type(80);
+            cy.get('#btn-set').click();
+
+            // start timer and wait till long timer
+            cy.get('#start-btn').click();
+            cy.wait(2000);
+            cy.get('#start-btn').click();
+            cy.wait(2000);
+            cy.get('#start-btn').click();
+            cy.wait(2000);
+            cy.get('#start-btn').click();
+            cy.get('#done-btn').click();
+            cy.get('#done-yes').click();
+            cy.get('#timerDisplay').then(($el) => {
+                expect($el).to.not.have.text('0:00');
+            });
+        });
+
         it('Done no', () => {
             cy.get('#add-task').click();
             cy.get('#tName').clear().type('Test Task');
             cy.get('#est').clear().type('1');
             cy.get('#btn-add').click();
-            cy.get('input[name="tSelect"]')
+            cy.get('input[name="tSelect"]').click();
             cy.get('#start-btn').click();
             cy.get('#done-btn').click();
             cy.get('#done-no').click();
@@ -104,6 +189,14 @@ describe('Pomodoro Timer Tests', () => {
         
     });
     describe('Settings', () => {
+        it('No Change', () => {
+            cy.get('#settings').click();
+            cy.get('#btn-set').click();
+            cy.get('#timerDisplay').then(($el) => {
+                expect($el).to.have.text('25:00');
+            });
+        });
+
         it('Changing Focus Time', () => {
             cy.get('#settings').click();
             cy.get('#focus').clear().type(1);
@@ -113,6 +206,7 @@ describe('Pomodoro Timer Tests', () => {
                 expect($el).to.have.text('1:00');
             });
         });
+
         it('Changing Short Break Time', () => {
             cy.get('#settings').click();
             cy.get('#focus').clear().type(0);

@@ -10,7 +10,7 @@ describe("UndoCheck", () => {
 		document.body.innerHTML =`<input type="radio" id="radio1" name="tSelect" checked></input>`;
 		mock_undoCheck('tSelect');
 		expect(mock_undoCheck).toHaveBeenCalled();
-        expect(document.getElementById('radio1')).toHaveProperty('checked', true);
+        expect(document.getElementById('radio1')).toHaveProperty('checked', false);
 	});
 });
 describe("Timer", () => {

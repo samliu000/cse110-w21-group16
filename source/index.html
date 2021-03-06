@@ -2,11 +2,16 @@
 
 <head>
     <head>
+		<title>Pomodoro Timer!</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>PomoTimer</title>
+		<link rel="icon" href="img/pomoTimer.png">
         <link rel="stylesheet" href="css/stylesheet.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-		    <script src="https://use.fontawesome.com/5ac31ccdf4.js"></script>
+		<link rel="icon" href="img/favicon.png" type="image/ico"/>
+		<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"/>
+		<script src="https://use.fontawesome.com/5ac31ccdf4.js"></script>
       </head>  
 </head>
 
@@ -34,8 +39,9 @@
 			</div>
         </div>
         <!-- start and reset buttons -->
+
+		<audio src="audio/Freshstart.mp3" id="alarm"></audio>
         
-     
 		<div id="list">
 			<div id="table">
 				<table id="table-header">
@@ -87,7 +93,7 @@
 		<i id="settings" class="fa fa-cog icon"></i>
 		<div id="settings-flex">
 			<div id="settings-popup">
-				<form id="setForm">
+				<form id="setForm" tabindex="1">
 				  <span>Set the times in minutes</span>
 				  <div id="set-focus" class="set-item">
 					<label for="focus"><b>Focus</b></label>

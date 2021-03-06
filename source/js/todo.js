@@ -101,7 +101,8 @@ function showTaskList(){
        
        //cells created
         //cells created
-        let row = table.insertRow(-1);
+        //necessary for testing
+        let row = document.getElementById('table-content').insertRow(-1);
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
@@ -216,4 +217,4 @@ function openForm(){
 function closeForm(){
     document.getElementById("add-form").style.display = "none";
 }
-module.exports = {closeForm, openForm, editRow, checkFields, addTask};
+module.exports = {closeForm, openForm, editRow, checkFields, addTask,rowDone,showTaskList};

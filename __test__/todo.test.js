@@ -4,6 +4,23 @@ const mock_openForm = jest.fn(res.openForm);
 const mock_editRow = jest.fn(res.editRow);
 const mock_checkFields = jest.fn(res.checkFields);
 const mock_addTask = jest.fn(res.addTask);
+const mock_rowDone = jest.fn(res.rowDone);
+const mock_showTaskList = jest.fn(res.showTaskList);
+
+
+
+beforeEach(() => {
+	// to fully reset the state between tests, clear the storage
+	localStorage.clear();
+	// and reset all mocks
+	jest.clearAllMocks();
+	
+	// clearAllMocks will impact your other mocks too, so you can optionally reset individual mocks instead:
+	localStorage.setItem.mockClear();
+	// you can also directly reset the storage (same as .clear above)
+	localStorage.__STORE__ = {};
+
+  });
 
 	describe("Unit Test of closeForm", () => {
 
@@ -38,8 +55,10 @@ const mock_addTask = jest.fn(res.addTask);
 		test('Ensures editRow deletes the row', () => {
 			document.body.innerHTML =`<div id="grandparent"><div id=parent"> <i id = "child"></div>`;
 			mock_editRow(document.getElementById('child'));
-			expect(mock_openForm).toHaveBeenCalled();
+			expect(mock_editRow).toHaveBeenCalled();
 			expect(document.getElementById('grandparent')).toBe(null);
+			expect(localStorage.length).toBe(1);
+			expect(localStorage.__STORE__["tasklist"]).not.toBeNull();
 		})
 	})
 	describe("Unit Tests of checkField, EST max = 50, TaskName nonempty", () => {
@@ -81,18 +100,56 @@ const mock_addTask = jest.fn(res.addTask);
 			expect(document.getElementsByClassName("fa fa-trash")).not.toBe(null);
 			expect(mock_addTask).toHaveBeenCalled();
 		});
-		test('Test creation of rows and columns', () => {
+		test('Test creation of rows and columns and local storage', () => {
 			console.error = jest.fn();
 			document.body.innerHTML =`<table id="table-content"></table><input value="name" id="tName"><input value="10" id="est"><div class="add-popup" id="add-form"><div>`;
 			mock_addTask();
 			expect(mock_addTask).toHaveBeenCalled();
-			expect(document.getElementById('table-content').rows[0].cells.length).toBe(5);
+			expect(document.getElementById('table-content').rows[0].cells.length).toBe(6);
 			expect(document.getElementById('table-content').rows[0].cells[1].innerText).toBe('name');
 			expect(document.getElementById('table-content').rows[0].cells[2].innerHTML).toBe('10');
+			expect(document.getElementById('table-content').rows[0].cells[3].innerHTML).toBe('0');
+			expect(localStorage.length).toBe(1);
+
+			expect(localStorage.__STORE__["tasklist"]).not.toBeNull();
+
+
 
 		});
 	});
+	describe("Unit Tests of showTaskList", () => {
+		test('Test Creation of new radio', () => {
+			document.body.innerHTML =`<table id="table-content"></table><input value="name" id="tName"><input value="10" id="est"><div class="add-popup" id="add-form"><div>`;
+			mock_showTaskList();
+			global.table = document.getElementById('table-content');
+			expect(document.getElementsByName('tSelect')).not.toBe(null);
+			expect(mock_showTaskList).toHaveBeenCalled();
+		});
+	
+		test('Test creation of rows and columns and local storage', () => {
+			console.error = jest.fn();
+			document.body.innerHTML =`<table id="table-content"></table><input value="name" id="tName"><input value="10" id="est"><div class="add-popup" id="add-form"><div>`;
+			mock_showTaskList();
+			expect(mock_showTaskList).toHaveBeenCalled();
+			expect(document.getElementById('table-content').rows[0].cells.length).toBe(6);
+	
 
+
+
+		});
+	});
+	describe("Unit Tests of rowDone", () => {
+		test('Test Completition and Setting of Local Storage', () => {
+			document.body.innerHTML =`<div id="grandparent"><div id=parent"> <i id = "child"></div>`;
+		let child = document.getElementById('child');
+		mock_rowDone(child);
+		expect(mock_rowDone).toHaveBeenCalled();
+		expect(localStorage.length).toBe(1);
+		expect(localStorage.__STORE__["tasklist"]).not.toBeNull();
+		child.parentElement.parentElement.classList.contains("completed");
+		//expect(document.getElementById('done')).not.toBeNull();
+		});
+	});
 });
 
 

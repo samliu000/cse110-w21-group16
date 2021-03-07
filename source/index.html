@@ -2,11 +2,16 @@
 
 <head>
     <head>
+		<title>Pomodoro Timer!</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>PomoTimer</title>
+		<link rel="icon" href="img/pomoTimer.png">
         <link rel="stylesheet" href="css/stylesheet.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-		    <script src="https://use.fontawesome.com/5ac31ccdf4.js"></script>
+		<link rel="icon" href="img/favicon.png" type="image/ico"/>
+		<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"/>
+		<script src="https://use.fontawesome.com/5ac31ccdf4.js"></script>
       </head>  
 </head>
 
@@ -34,8 +39,9 @@
 			</div>
         </div>
         <!-- start and reset buttons -->
+
+		<audio src="audio/Freshstart.mp3" id="alarm"></audio>
         
-     
 		<div id="list">
 			<div id="table">
 				<table id="table-header">
@@ -70,7 +76,7 @@
 				  		  
 				  <div id="add-form-btn">
 					<button type="button" id="btn-add" class="form-btn">+Add Task</button>
-					<button type="button" class="btn-cancel form-btn" onclick="closeForm()">Cancel</button>
+					<button type="button" id="btn-cancel" class="btn-cancel form-btn" onclick="closeForm()">Cancel</button>
 				  </div>
 				</form>
 			</div>
@@ -78,8 +84,8 @@
 		
 		<i id="help" class="fa fa-question-circle icon" ></i>
 		<div id="help-overlay">
-			<img src="img/desktop-help.jpg" alt="Tutorial image" id="help-desktop-img">
-			<img src="img/mobile-help.jpg" alt="Tutorial image" id="help-mobile-img">
+			<img src="img/desktop-onboarding.jpg" alt="Tutorial image" id="help-desktop-img">
+			<img src="img/mobile-onboarding.jpg" alt="Tutorial image" id="help-mobile-img">
 		</div>
 		
 		<div id="popup-overlay" class="icon"></div>
@@ -87,21 +93,21 @@
 		<i id="settings" class="fa fa-cog icon"></i>
 		<div id="settings-flex">
 			<div id="settings-popup">
-				<form id="setForm">
+				<form id="setForm" tabindex="1">
 				  <span>Set the times in minutes</span>
 				  <div id="set-focus" class="set-item">
 					<label for="focus"><b>Focus</b></label>
-					<input type="number" placeholder="Try: 25" min="1" step="1" id="focus" class="in-field">
+					<input type="number" placeholder="Try: 25" min="0" step="1" id="focus" class="in-field">
 				  </div>
 				  
 				  <div id="set-short-break" class="set-item">
 					<label for="short-break"><b>Short Break:</b></label>
-					<input type="number" placeholder="Try: 5" min="1" step="1" id="short-break" class="in-field">
+					<input type="number" placeholder="Try: 5" min="0" step="1" id="short-break" class="in-field">
 				  </div>
 				  
 				  <div id="set-long-break" class="set-item">
 					<label for="long-break"><b>Long Break</b></label>
-					<input type="number" placeholder="Try: 15" min="1" step="1" id="long-break" class="in-field">
+					<input type="number" placeholder="Try: 15" min="0" step="1" id="long-break" class="in-field">
 				  </div>
 				  
 				  <div id="set-form-btn">
@@ -134,8 +140,16 @@
 		</div>
     </main>
 
-    <script src="js/timer.js"></script>
+    <!-- <script src="js/timer.js"></script>
     <script src="js/todo.js"></script>
-	<script src="js/popup.js"></script>
+	<script src="js/popup.js"></script> -->
+
+	<!-- <script src="../instrumented/js/timer.js"></script>
+    <script src="../instrumented/js/todo.js"></script>
+	<script src="../instrumented/js/popup.js"></script> -->
+	<script src="./js/timer.js"></script>
+    <script src="./js/todo.js"></script>
+	<script src="./js/popup.js"></script>
+
 </body>
 </html>

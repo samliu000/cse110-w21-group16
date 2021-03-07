@@ -1,4 +1,5 @@
-import {undoCheck} from "/source/js/timer.js";
+import {undoCheck
+	from "/source/js/timer.js";
 describe('Uncheck Button', () => {
 	it('Check the start button', () => {
 		cy.visit('./cypress/integration/unit_tests/testing.html');

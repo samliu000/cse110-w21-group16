@@ -12,9 +12,10 @@ let done;
 let tasklist = [];
 
 //Added if statement for testing
-if(addT){
-addT.addEventListener("click", checkFields);
-}
+    if(addT){
+    addT.addEventListener("click", checkFields);
+    }
+
 
 if(est){
     est.addEventListener('keydown', function(event) {
@@ -64,7 +65,9 @@ function checkFields(){
         document.getElementById('est').value > 0 &&
         document.getElementById('est').value < 51) {
             addTask();
+            return true;
         }
+    return false;
 }
 
 function showTaskList(){
@@ -98,7 +101,8 @@ function showTaskList(){
        
        //cells created
         //cells created
-        let row = table.insertRow(-1);
+        //necessary for testing
+        let row = document.getElementById('table-content').insertRow(-1);
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
@@ -146,7 +150,7 @@ function addTask(){
 	//<i class="fas fa-check-square"></i>
 
     //cells created
-    let row = table.insertRow(-1);
+    let row = document.getElementById('table-content').insertRow(-1);
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
@@ -206,10 +210,11 @@ function openForm(){
     document.getElementById("add-form").style.display = "block";
     document.getElementById('tName').value = "";
     document.getElementById('est').value = 1;
+	document.getElementById("tName").focus(); 
 }
 
 // eslint-disable-next-line no-unused-vars
 function closeForm(){
     document.getElementById("add-form").style.display = "none";
 }
-module.exports = {closeForm, openForm, editRow, checkFields, addTask};
+module.exports = {closeForm, openForm, editRow, checkFields, addTask,rowDone,showTaskList};

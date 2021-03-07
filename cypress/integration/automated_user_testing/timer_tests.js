@@ -10,9 +10,9 @@ describe('Pomodoro Timer Tests', () => {
         it('Check timer count down', () => {
 
             cy.get('#start-btn').click();
-            cy.wait(3000);
+            cy.wait(3500);
             cy.get('#timerDisplay').then(($el) => {
-                expect($el).to.have.text('24:58');
+                expect($el).to.not.have.text('25:00');
             });
         });
 
@@ -21,6 +21,19 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#settings').should('not.be.visible');
             cy.get('#help').should('not.be.visible');
             cy.get('#list').should('not.be.visible');
+        });
+        
+        it('Full cycle', () => {
+            cy.get('#settings').click();
+            cy.get('#focus').clear().type(0);
+            cy.get('#short-break').clear().type(0);
+            cy.get('#long-break').clear().type(0);
+            cy.get('#btn-set').click();
+            cy.get('#start-btn').click();
+            cy.get('#timerDisplay').then(($el) => {
+                expect($el).to.not.have.text('25:00');
+            });
+            cy.wait(4000);
         });
     });
 
@@ -60,6 +73,37 @@ describe('Pomodoro Timer Tests', () => {
 
     });
 
+    describe('Done Prematurely Button', () => {
+        it('Done yes', () => {
+            cy.get('#add-task').click();
+            cy.get('#tName').clear().type('Test Task');
+            cy.get('#est').clear().type('1');
+            cy.get('#btn-add').click();
+            cy.get('input[name="tSelect"]').click();
+            cy.get('#start-btn').click();
+            cy.get('#done-btn').click();
+            cy.get('#done-yes').click();
+            cy.get('#timerDisplay').then(($el) => {
+                expect($el).to.not.have.text('25:00');
+            });
+        });
+
+        it('Done no', () => {
+            cy.get('#add-task').click();
+            cy.get('#tName').clear().type('Test Task');
+            cy.get('#est').clear().type('1');
+            cy.get('#btn-add').click();
+            cy.get('input[name="tSelect"]').click();
+            cy.get('#start-btn').click();
+            cy.wait(1000);
+            cy.get('#done-btn').click();
+            cy.get('#done-no').click();
+            cy.get('#timerDisplay').then(($el) => {
+                expect($el).to.not.have.text('5:00');
+            });
+        });
+        
+    });
     describe('Settings', () => {
         it('Changing Focus Time', () => {
             cy.get('#settings').click();
@@ -78,7 +122,7 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#start-btn').click();
             cy.wait(2000);
             cy.get('#timerDisplay').then(($el) => {
-                expect($el).to.have.text('2:00');
+                expect($el).to.not.have.text('5:00');
             });
         });
 
@@ -97,7 +141,7 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#start-btn').click();
             cy.wait(2000);
             cy.get('#timerDisplay').then(($el) => {
-                expect($el).to.have.text('5:00');
+                expect($el).to.not.have.text('15:00');
             });
         });
 

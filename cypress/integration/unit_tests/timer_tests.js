@@ -173,6 +173,7 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#btn-set').click();
 
             // start timer so we can click on done
+            cy.get('input[name="tSelect"]').click();
             cy.get('#start-btn').click();
             cy.wait(1000);
             cy.get('#done-btn').click();

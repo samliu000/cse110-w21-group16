@@ -1,5 +1,7 @@
 name: Cypress tests
-on: [push]
+on:
+  pull_request:
+    branches: [ main ]
 jobs:
   cypress-run:
     name: Cypress run
@@ -7,8 +9,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
+      
+      - name: Instrument Code
+        run: |
+          npm install -g nyc
+          npx nyc instrument --compact=false source source/instrumented
+      
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
           spec: cypress/integration/unit_tests/timer_tests.js
+      
+      

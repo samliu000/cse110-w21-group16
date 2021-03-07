@@ -36,8 +36,13 @@
   "nyc": {
     "report-dir": "cypress-coverage"
   },
-    "jest": {
-      "resetMocks": false,
-      "setupFiles": ["jest-localstorage-mock"]
-    }
+  "jest": {
+    "resetMocks": false,
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ]
+  },
+  "dependencies": {
+    "nyc": "^15.1.0"
   }
+}

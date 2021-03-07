@@ -93,7 +93,6 @@ if(donebtn){
     let storedTask = JSON.parse(localStorage.getItem('tasklist'));
       for(let i = 0; i < storedTask.length; i++){
         if(storedTask[i].id == taskId){
-            console.log("Hello")
             storedTask[i].actual = actual;
             storedTask[i].finish = 'done';
             localStorage.setItem('tasklist', JSON.stringify(storedTask));

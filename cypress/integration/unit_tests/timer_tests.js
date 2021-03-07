@@ -166,8 +166,15 @@ describe('Pomodoro Timer Tests', () => {
             cy.wait(2000);
             cy.get('#start-btn').click();
             cy.wait(2000);
+
+            // modify focus time
+            cy.get('#settings').click();
+            cy.get('#focus').clear().type(1);
+            cy.get('#btn-set').click();
+
+            // start timer so we can click on done
             cy.get('#start-btn').click();
-            cy.wait(50);
+            cy.wait(1000);
             cy.get('#done-btn').click();
             cy.get('#done-yes').click();
             cy.get('#timerDisplay').then(($el) => {

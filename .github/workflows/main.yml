@@ -14,10 +14,13 @@ jobs:
       - name: Instrument Code
         run: |
           npx nyc instrument --compact=false source source/instrumented
-      
       - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          spec: cypress/integration/unit_tests/timer_tests.js
+        run: |
+          npx cypress run --spec cypress/integration/unit_tests/timer_tests.js
+      
+#       - name: Cypress run
+#         uses: cypress-io/github-action@v2
+#         with:
+#           spec: cypress/integration/unit_tests/timer_tests.js
       
       

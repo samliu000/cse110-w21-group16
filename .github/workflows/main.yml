@@ -13,7 +13,6 @@ jobs:
       
       - name: Instrument Code
         run: |
-          npm install -g nyc
           npx nyc instrument --compact=false source source/instrumented
       
       - name: Cypress run

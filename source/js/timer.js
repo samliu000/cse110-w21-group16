@@ -146,12 +146,11 @@ function timer() {
         console.log(actual);
         document.getElementById('table-content').rows[taskInd].cells[3].innerHTML = actual;
         let storedTask = JSON.parse(localStorage.getItem('tasklist'));
-        if(storedTask != null){
-          for(let i = 0; i < storedTask.length; i++){
-            if(storedTask[i].id == taskId){
-              storedTask[i].actual = actual;
-              localStorage.setItem('tasklist', JSON.stringify(storedTask));
-            }
+        console.log("Hello");
+        for(let i = 0; i < storedTask.length; i++){
+          if(storedTask[i].id == taskId){
+            storedTask[i].actual = actual;
+            localStorage.setItem('tasklist', JSON.stringify(storedTask));
           }
         }
       }

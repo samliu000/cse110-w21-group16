@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 jobs:
   cypress-run:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -19,8 +19,11 @@ jobs:
           npm ci
           npm run build --if-present
           npm install -g cypress
-#          npm install nyc
-      - name: Run Cypress
-        run: |
-          npx nyc instrument --compact=false source source/instrumented
-          run: npx cypress run --spec cypress/integration/unit_tests/timer_tests.js 
+          npm install nyc
+      - name: Instrument code
+        run: npx nyc instrument --compact=false source source/instrumented
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          spec: cypress/integration/unit_tests/timer_tests.js 
+          

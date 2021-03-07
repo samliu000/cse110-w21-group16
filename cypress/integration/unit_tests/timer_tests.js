@@ -136,6 +136,7 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#btn-add').click();
             cy.get('input[name="tSelect"]').click();
             cy.get('#start-btn').click();
+            cy.wait(1000);
             cy.get('#done-btn').click();
             cy.get('#done-yes').click();
             cy.get('#timerDisplay').then(($el) => {
@@ -166,6 +167,7 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#start-btn').click();
             cy.wait(2000);
             cy.get('#start-btn').click();
+            cy.wait(50);
             cy.get('#done-btn').click();
             cy.get('#done-yes').click();
             cy.get('#timerDisplay').then(($el) => {

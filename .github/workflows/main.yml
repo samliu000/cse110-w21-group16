@@ -5,8 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 jobs:
-  cypress-run:
+  build:
     runs-on: ubuntu-latest
+    steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
@@ -20,5 +21,3 @@ jobs:
           npm install -g nyc
       - name: Instrument code
         run: npx nyc instrument --compact=false source source/instrumented
-      
-          

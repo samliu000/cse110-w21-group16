@@ -13,7 +13,7 @@ let isStarted = false;
 let timer_container = document.getElementById("timer");
 let overlay = document.getElementById("popup-overlay");
 let reset_popup = document.getElementById("reset-flex");
-let currTask;
+let currTask = "";
 
 let setIcon = document.getElementById("settings");
 let helpIcon = document.getElementById("help");
@@ -27,8 +27,8 @@ let donebtn = document.getElementById("done-btn");
 let taskInd;
 let taskId;
 
-const alarm = document.createElement('audio'); // A bell sound will play when the timer reaches 0
-alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
+const alarm = document.getElementById('alarm'); // A bell sound will play when the timer reaches 0
+//alarm.setAttribute("src", "../alarm/radar_-_ios_7.mp3");
 
 
 /* EVENT LISTENERS FOR START AND RESET BUTTONS */
@@ -48,20 +48,16 @@ if(startbtn){
     if (taskInd >= 0){
       actual = document.getElementById('table-content').rows[taskInd].cells[3].innerHTML;
       currTask = document.getElementById('table-content').rows[taskInd].cells[1].innerHTML; 
-    }
+    } else 
+		currTask = "";
     // display which task the Pomodoro session is currently on 
-    /*let currTaskText = document.querySelector('main').appendChild(document.createElement('h1')); 
-    currTask.id = 'current_task';
-    currTaskText.style.color = 'white';
-    currTaskText.innerHTML = "Currently on task: " + currTask;
-    // disable the start button to avoid multiple text showing up
-    */
     document.getElementById("start-btn").disabled = true;
-	
-	let currTaskText = document.getElementById("current-task-text");
-	currTaskText.innerHTML = "Currently on task: " + currTask;
-	let currTaskBlock = document.getElementById("current-task");
-	currTaskBlock.style.display = "flex";
+	if(currTask != 0){
+		let currTaskText = document.getElementById("current-task-text");
+		currTaskText.innerHTML = "Currently on task: " + currTask;
+		let currTaskBlock = document.getElementById("current-task");
+		currTaskBlock.style.display = "flex";
+	}
   });
 }
 
@@ -70,8 +66,8 @@ if(donebtn){
     document.getElementById("popup-overlay").style.display = "none";
     document.getElementById("done-flex").classList.remove("active");		
     clearInterval(countdown);
-    /*alarm.currentTime = 0;
-    alarm.play();*/
+    /*alarm.currentTime = 0;*/
+    alarm.play();
     if(session_count == 4){
       break_minutes = long_break_minutes;
       session_count = 0;
@@ -92,7 +88,8 @@ if(donebtn){
     document.getElementById('current-task').style.display = 'none';
     document.getElementById('list').style.display = "block";
     undoCheck('tSelect');
-    document.getElementById('table-content').rows[taskInd].classList.add("completed");
+	if(taskInd >= 0)
+		document.getElementById('table-content').rows[taskInd].classList.add("completed");
   });
 }
 
@@ -196,6 +193,11 @@ if (settings){
 /* UPDATE HTML CONTENT */
 function countdownDisplay() {
   let session_minutes = Math.floor(session_seconds / 60);
+  let title = (currTask == 0) ? `${session_minutes}m` : `${session_minutes}m: ${currTask}`;
+  if(isStarted && document.title != title){
+		document.title = title;
+  } else if(!isStarted && document.title != "Pomodoro Timer!")
+		document.title = "Pomodoro Timer!";
   let remaining_seconds = session_seconds % 60;
   document.getElementById("timerDisplay").textContent = `${session_minutes}:${remaining_seconds < 10 ? '0' : ''}${remaining_seconds}`;
 }

@@ -2,6 +2,7 @@ name: Cypress tests
 on:
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 jobs:
   cypress-run:
     name: Cypress run

@@ -3,7 +3,6 @@ name: Cypress Tests
 on:
   pull_request:
     branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 jobs:
   cypress-run:
@@ -11,7 +10,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -21,8 +19,7 @@ jobs:
           npm ci
           npm run build --if-present
           npm install -g cypress
-          npm install -g nyc
-
+          npm install nyc
       - name: Run Cypress
         run: |
           npx nyc instrument --compact=false source source/instrumented

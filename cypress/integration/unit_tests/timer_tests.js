@@ -3,7 +3,7 @@ describe('Pomodoro Timer Tests', () => {
         return false;
     });
     beforeEach(() => {
-      cy.visit('/source/index.html');
+      cy.visit('/source/instrumented/index.html');
     });
     
     describe('Storage', () => {

@@ -223,26 +223,25 @@ td:nth-child(4){
     width: 10%;
 }
 
-th:nth-child(5),
+th:nth-child(5){
+	width: 5%;
+}
+
 td:nth-child(5){
     width: 2.5%;
 	font-size: 1.25em;
 	color: var(--before-hover);
 }
 
-td:nth-child(5):hover{
+td:nth-child(5):hover,
+td:nth-child(6):hover{
 	color: #fff;
 }
 
-th:nth-child(6),
 td:nth-child(6){
     width: 2.5%;
 	font-size: 1.25em;
 	color: var(--before-hover);
-}
-
-td:nth-child(6):hover{
-	color: #fff;
 }
 
 /*Scrollbar*/

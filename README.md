@@ -1,11 +1,12 @@
 # CSE 110 Winter 2021 Group 16 - Team Skynet
-Pomodoro Timer Website: https://samliu000.github.io/cse110-w21-group16/
+**Pomodoro Timer Website**: https://samliu000.github.io/cse110-w21-group16/ 
+**Code Coverage**: https://samliu000.github.io/cse110-w21-group16/coverage/lcov-report/index.html
 
 Group Members: Aven Huang, Fengdi Liu, Joshue Aguirre, Kevin Stubbings, Matias Lin, Lara Daneshgaran Bajastani, Shuhua Xie, Samuel Liu, Yuru Zhou
 
 ---
 
-# Pomodoro Timer - CSE 110 Team 16
+# Pomodoro Timer
 Pomodoro Timer is a tomato timer meaning that it is a fruit not a vegetable. 
 
 ## Features
@@ -23,13 +24,11 @@ Pomodoro Timer is a tomato timer meaning that it is a fruit not a vegetable.
 - Cypress/Jest testing
 - Cypress cross browser testing
 
+**Combined Code Coverage** - https://samliu000.github.io/cse110-w21-group16/coverage/lcov-report/index.html
+
 ### App Walkthough
 
-
-### Code Coverage
-https://samliu000.github.io/cse110-w21-group16/coverage/lcov-report/index.html
-
-### :Libraries Used
+### Libraries Used
 
 - [Cypress](https://github.com/codepath/CPAsyncHttpClient) - For unit/integration/browser testing and coverage report
 - [Jest](https://github.com/bumptech/glide) - For unit testing and coverage report

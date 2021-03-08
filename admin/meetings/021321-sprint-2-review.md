@@ -1,6 +1,6 @@
 ## Sprint-2-review
 
-#### Saturday 2/13/21, 3:00-3:50 pm on Zoom, Team 16/Skynet     
+#### Saturday 2/13/21, 3:00-3:30 pm on Zoom, Team 16/Skynet     
   - Attendees: Aven Huang, Fengdi Liu, Joshue Aguirre, Matias Lin,    
     Lara Daneshgaran Bajastani, Shuhua Xie, Samuel Liu, Yuru Zhou
 

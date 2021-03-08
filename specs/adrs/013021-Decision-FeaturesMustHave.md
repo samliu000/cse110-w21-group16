@@ -38,12 +38,12 @@ Lara Daneshgaran Bajastani, Shuhua Xie, Yuru Zhou
 ## Decision Outcome
 
 Chosen option: 
-* Project Must have features: Timer; List; Notifictions
-* Timer's must have features: Start button; Break button; Pomodora finisish naturally
-* When it is on task the timer will be on Theme A; if user press break the timer will switch to Theme B 
-* When Pomodora timer finsh: the timer will start to count for the break; Will ask the user which task he/she worked on and ask if user finished. 
-* What happen if one pomodora timer finished: break will start once a pomodora timer is finished
-* When we add the task list to the project: We will use priority system to range tasks
+* Project Must have features: Timer; List; Notifictions, because based on the users' stories these features are the must to have features for the pomodora timer.
+* Timer's must have features: Start button; Break button; Pomodora finisish naturally, becuare as the timer the most basic funciton is start and break.
+* When it is on task the timer will be on Theme A; if user press break the timer will switch to Theme B, because this will help the user adjustment themselves from working mode to relex mode.
+* When Pomodora timer finsh: Will ask the user which task he/she worked on and ask if user finished, because this will help the users keep on track. 
+* What happen if one pomodora timer finished: break will start once a pomodora timer is finished, because this will force the users to take a break and which is good for users' health. 
+* When we add the task list to the project: We will use priority system to range tasks, because which will help users to track their tasks.
 * We will talk about the notification part later. 
 * List feature: Johuse will take responsiblity;
 * Timer feature: Yuru and Aven will work on timer.

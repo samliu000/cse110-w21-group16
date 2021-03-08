@@ -11,7 +11,7 @@ Group Members: Aven Huang, Fengdi Liu, Joshue Aguirre, Kevin Stubbings, Matias L
 Pomodoro Timer is a tomato timer meaning that it is a fruit not a vegetable. 
 
 ## Features
-- 25 min focus sessions followed by 5 min breaks
+- Default timer will be 25 min focus sessions followed by 5 min breaks
 - Every fourth completed pomo session will reward user with a longer break
 - Completely customizable focus/break/longbreak times
 - Optional Todo List with estimated/actual number of pomodoro sesions for each task

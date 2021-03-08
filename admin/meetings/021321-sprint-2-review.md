@@ -8,3 +8,16 @@
    1. The rough code of List and Timer
    2. Setup github enviroment 
    3. Plan about the next week
+
+#### What should our team start doing?
+   1. We will sharing ideas when developing.
+   2. More checkup meeting.
+
+#### What should our team stop doing?
+   1. Currently we are doing everything well. There is nothing we should stop doing.
+
+#### What should our team continue doing?
+   1. Continue be a positive team.  
+   2. React on slack.
+   3. Efficient team Meetings. 
+  

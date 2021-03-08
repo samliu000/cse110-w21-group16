@@ -1,13 +1,8 @@
-## Meeting 7
+## Sprint-4-review
 
 #### Saturday 2/27/21, 3:00-3:50 pm on Zoom, Team 16/Skynet     
   - Attendees: Fengdi Liu, Joshue Aguirre, Matias Lin,    
     Lara Daneshgaran Bajastani, Samuel Liu, Yuru Zhou, Shuhua Xie, Kevin Stubbings
-    
-#### Purpose: 
-  - Check the tasks we are working.
-  - Finish up the tasks we need to finish.
-  - Prepare the next week's work
   
 #### Current agenda, everything was accomplished:     
    1. Project roles
@@ -34,28 +29,5 @@
    9. Local storage task list
    10. Plan about the next week
  
-#### Tasks need to be completed:    
-   1. Local storage part done (Yuru)
-   2. Test the timer on js (Sam)
-   3. Unit test (Kevin)
-   4. Test on github (Kevin)
-
-#### Project Timeline Week 9, due dates:    
-   1. Test the timer on js(Sam)
-   2. Unit test (Kevin will be done by Monday)
-   3. Work on github (Done by Wednesday)
-   4. Local storage part (Yuru done by Monday)
-   5. Fix the bug of the list (Yuru)
-   6. Fix the current timer.play() error (Joshue)
-   7. Fix the list bug (Aven by Sunday)
-   8. Icon did not change on the tab (Joshue done by Sunday)
-   9. Move the task to the middle of the screen (Shuhua done by Sunday)
-   
-#### Decisions made:   
-  - What need be done this week:
-     * a. Get everything done by next week
-     * b. Test every part of our project
-     * c. Fix all bugs
-     * d. Make the css and icon part looks good.
 
     

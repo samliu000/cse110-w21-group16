@@ -1,6 +1,6 @@
 ## Sprint-3-review
 
-#### Saturday 2/20/21, 3:00-3:30 pm on Zoom, Team 16/Skynet     
+#### Saturday 2/20/21, 3:00-3:15 pm on Zoom, Team 16/Skynet     
   - Attendees: Aven Huang, Fengdi Liu, Joshue Aguirre, Matias Lin,    
     Lara Daneshgaran Bajastani, Samuel Liu, Yuru Zhou
 

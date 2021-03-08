@@ -1,4 +1,4 @@
-# Team Structure Desicion
+# Team Role Desicion
 
 * Status: [proposed | agreed]
 * Deciders: [Aven Huang, Fengdi Liu, Joshue Aguirre, Kevin Stubbings, Matias Lin,

@@ -1,22 +1,9 @@
 ## Sprint-4-review
 
-#### Saturday 2/27/21, 3:00-3:50 pm on Zoom, Team 16/Skynet     
+#### Saturday 2/27/21, 3:00-3:30 pm on Zoom, Team 16/Skynet     
   - Attendees: Fengdi Liu, Joshue Aguirre, Matias Lin,    
     Lara Daneshgaran Bajastani, Samuel Liu, Yuru Zhou, Shuhua Xie, Kevin Stubbings
   
-#### Current agenda, everything was accomplished:     
-   1. Project roles
-   2. Brainstrom
-   3. The key features of this project
-   4. The weekly plan about our project
-   5. The first phase design
-   6. The rough Timer and List code 
-   7. Setup github enviroment
-   8. Weekly work planning
-   9. Setup testing enviorment
-   10. Setup the css and html part for our code
-   11. Finish the our code(Timer and List)
-
 #### Tasks completed from previous week: 
    1. The code of List and Timer
    2. Setup test enviroment 
@@ -28,6 +15,18 @@
    8. Enter button task
    9. Local storage task list
    10. Plan about the next week
- 
+
+#### What should our team start doing?
+   1. We are on correct track, keep doing what we have.
+
+#### What should our team stop doing?
+   1. Currently we are doing everything well. There is nothing we should stop doing.
+
+#### What should our team continue doing?
+   1. Continue be a positive team.  
+   2. React on slack.
+   3. Efficient team Meetings. 
+   4. Regular Checkups
+   5. Slack updates 
 
     

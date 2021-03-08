@@ -8,7 +8,7 @@
 
 Should the estimated pomos be editable after the user adds the task to the list?
 
-## Decision Drivers <!-- optional -->
+## Decision Drivers
 
 * we want to hold the users accountable, this app is likely for users that struggle to focus and perhaps have lower self discipline
 * we also want to help the user learn to better use their time

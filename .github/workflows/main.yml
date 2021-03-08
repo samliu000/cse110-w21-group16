@@ -1,28 +1,22 @@
-name: Cypress Tests
-# Controls when the action will run. 
+name: Cypress tests
 on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
+    name: Cypress run
+    runs-on: ubuntu-16.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: install dependencies
+      
+      - name: Instrument Code
         run: |
-          npm ci
-          npm run build --if-present
-          npm install -g nyc
-      - name: Instrument code
-        run: npx nyc instrument --compact=false source source/instrumented
+          npx nyc instrument --compact=false source source/instrumented
       - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          spec: cypress/integration/unit_tests/timer_tests.js 
-          
+        run: |
+          npx cypress run --spec cypress/integration/unit_tests/timer_tests.js
+      - name: Code Coverage
+        run: |
+          npx merge-cypress-jest-coverage

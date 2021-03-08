@@ -89,7 +89,15 @@ if(donebtn){
     document.getElementById('list').style.display = "block";
     undoCheck('tSelect');
 	if(taskInd >= 0)
-		document.getElementById('table-content').rows[taskInd].classList.add("completed");
+    document.getElementById('table-content').rows[taskInd].classList.add("completed");
+    let storedTask = JSON.parse(localStorage.getItem('tasklist'));
+      for(let i = 0; i < storedTask.length; i++){
+        if(storedTask[i].id == taskId){
+            storedTask[i].actual = actual;
+            storedTask[i].finish = 'done';
+            localStorage.setItem('tasklist', JSON.stringify(storedTask));
+        }
+      }
   });
 }
 
@@ -145,12 +153,10 @@ function timer() {
         console.log(actual);
         document.getElementById('table-content').rows[taskInd].cells[3].innerHTML = actual;
         let storedTask = JSON.parse(localStorage.getItem('tasklist'));
-        if(storedTask != null){
-          for(let i = 0; i < storedTask.length; i++){
-            if(storedTask[i].id == taskId){
-              storedTask[i].actual = actual;
-              localStorage.setItem('tasklist', JSON.stringify(storedTask));
-            }
+        for(let i = 0; i < storedTask.length; i++){
+          if(storedTask[i].id == taskId){
+            storedTask[i].actual = actual;
+            localStorage.setItem('tasklist', JSON.stringify(storedTask));
           }
         }
       }

@@ -198,7 +198,6 @@ function rowDone(elem){
         if(tasklist[i].id === elem.id){
              elem.id =  'done';
              tasklist[i].finish = 'done';
-             console.log(tasklist[i].finish);
         }
     }
     localStorage.setItem("tasklist", JSON.stringify(tasklist));

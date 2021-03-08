@@ -1,6 +1,6 @@
 ## Sprint-5-review
 
-#### Saturday 3/06/21, 3:00-3:50 pm on Zoom, Team 16/Skynet     
+#### Saturday 3/06/21, 3:00-3:15 pm on Zoom, Team 16/Skynet     
   - Attendees: Fengdi Liu, Joshue Aguirre, Matias Lin,    
     Lara Daneshgaran Bajastani, Samuel Liu, Yuru Zhou, Shuhua Xie, Kevin Stubbings
 
@@ -19,3 +19,16 @@
    12. Add Icon to our website
    13. Plan about the next week
  
+#### What should our team start doing?
+   1. Start to close the unused branches in Github
+   2. Start to clean up the method headers
+
+#### What should our team stop doing?
+   1. Currently we are doing everything well. There is nothing we should stop doing.
+
+#### What should our team continue doing?
+   1. Continue be a positive team.  
+   2. React on slack.
+   3. Efficient team Meetings. 
+   4. Continus weekly checkups
+  

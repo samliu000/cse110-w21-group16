@@ -16,15 +16,15 @@ Pomodoro Timer is a tomato timer meaning that it is a fruit not a vegetable.
 - Reset button for when user loses focus and needs to start over
 - Beautiful alarm sound when timer finishes
 
-### App Walkthough
-
-
 ### Code Quality/Testing
 - ESLint (both on VSCode IDE and automated through Github Actions)
 - Codefactor.io (examines code on pull request)
 - JSDoc
 - Cypress/Jest testing
 - Cypress cross browser testing
+
+### App Walkthough
+
 
 ### Code Coverage
 https://samliu000.github.io/cse110-w21-group16/coverage/lcov-report/index.html

@@ -31,4 +31,7 @@
    2. React on slack.
    3. Efficient team Meetings. 
    4. Continus weekly checkups
+   5. Continus the bug reportings.
+   6. Continus combin user stories and product feature, to make our project more user friendly
+   7. Keep closing issues.
   

@@ -17,3 +17,9 @@
 
 #### What should our team continue doing?
    1. Continue be a positive team.  
+
+
+#### Done from previous week?
+   1. Design the interface feature
+   2. Checkout the doable of the planning
+   3. Page design

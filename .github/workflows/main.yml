@@ -14,10 +14,7 @@ jobs:
       - name: Instrument Code
         run: |
           rm -rf source/instrumented
-          cp source/instrIndex.html source/instrumented
-          cd source/instrumented
-          mv instrIndex.html index.html
-          cd ../../
+          cp source/instrumentedIndex/index.html source/instrumented
           npx nyc instrument --compact=false source source/instrumented
       - name: Cypress run
         run: |

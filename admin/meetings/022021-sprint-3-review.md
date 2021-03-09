@@ -28,6 +28,5 @@
    4. Continue have weekly checkups.
    5. Keep estimating features(deadlines) and time consuming. 
 
-#### Done from previous week?
 
 

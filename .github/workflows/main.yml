@@ -13,10 +13,15 @@ jobs:
       
       - name: Instrument Code
         run: |
+          rm -rf source/instrumented
+          cp source/instrIndex.html source/instrumented
+          cd source/instrumented
+          mv instrIndex.html index.html
+          cd ../../
           npx nyc instrument --compact=false source source/instrumented
       - name: Cypress run
         run: |
-          npx cypress run --spec cypress/integration/unit_tests/timer_tests.js
+          npx cypress run --spec cypress/integration/unit_tests/*.js
       - name: Code Coverage
         run: |
           npx merge-cypress-jest-coverage

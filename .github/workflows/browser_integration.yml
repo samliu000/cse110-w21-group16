@@ -1,0 +1,19 @@
+name: Cypress Browser Tests
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  cypress-run:
+    name: Cypress run
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Run integration tests cross browser
+        run: |
+              npx cypress run --browser chromium --headless --spec cypress/integration/e2e/*.js
+              npx cypress run --browser edge --headless --spec cypress/integration/e2e/*.js
+              npx cypress run --browser firefox --headless --spec cypress/integration/e2e/*.js
+

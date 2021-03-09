@@ -5,9 +5,14 @@
     Lara Daneshgaran Bajastani, Samuel Liu, Yuru Zhou
 
 #### Tasks completed from previous week: 
-   1. The code of List and Timer
-   2. Setup test enviroment 
-   3. Plan about the next week
+   1. Design the frond-end 
+   2. css and html part
+   3. write code for reset button
+   4. write code for small break and big break
+   5. write code for increament Pomo count
+   6. write code for edit and add task
+   8. Checkout the doable of the planning
+   9. Setup test enviroment 
   
 #### What should our team start doing?
    1. Master schedule with meetings
@@ -24,11 +29,5 @@
    5. Keep estimating features(deadlines) and time consuming. 
 
 #### Done from previous week?
-   1. Design the frond-end 
-   2. css and html part
-   3. write code for reset button
-   4. write code for small break and big break
-   5. write code for increament Pomo count
-   6. write code for edit and add task
-   8. Checkout the doable of the planning
+
 

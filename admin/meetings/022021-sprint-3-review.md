@@ -22,4 +22,13 @@
    3. Efficient team Meetings. 
    4. Continue have weekly checkups.
    5. Keep estimating features(deadlines) and time consuming. 
-  
+
+#### Done from previous week?
+   1. Design the frond-end 
+   2. css and html part
+   3. write code for reset button
+   4. write code for small break and big break
+   5. write code for increament Pomo count
+   6. write code for edit and add task
+   8. Checkout the doable of the planning
+

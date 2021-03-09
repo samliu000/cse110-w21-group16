@@ -51,7 +51,6 @@ beforeEach(() => {
 		});
 	describe("unit Test of editRow", () => {
 		test('Ensures editRow deletes the row', () => {
-				localStorage.setItem.mockClear();
 			document.body.innerHTML =`<div id="grandparent"><div id=parent"> <i id = "child"></div>`;
 			mock_editRow(document.getElementById('child'));
 			expect(mock_editRow).toHaveBeenCalled();
@@ -99,7 +98,6 @@ beforeEach(() => {
 			expect(mock_addTask).toHaveBeenCalled();
 		});
 		test('Test creation of rows and columns and local storage', () => {
-			localStorage.setItem.mockClear();
 			console.error = jest.fn();
 			document.body.innerHTML =`<table id="table-content"></table><input value="name" id="tName"><input value="10" id="est"><div class="add-popup" id="add-form"><div>`;
 			mock_addTask();
@@ -138,7 +136,6 @@ beforeEach(() => {
 	});
 	describe("Unit Tests of rowDone", () => {
 		test('Test Completition and Setting of Local Storage', () => {
-				localStorage.setItem.mockClear();
 			document.body.innerHTML =`<div id="grandparent"><div id=parent"> <i id = "child"></div>`;
 		let child = document.getElementById('child');
 		mock_rowDone(child);

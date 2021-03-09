@@ -25,7 +25,7 @@ document.getElementById("btn-no-set").addEventListener('click', () => {
 });
 
 document.getElementById("focus").addEventListener('input', () => {
-    let focus = document.getElementById("focus").value;
+	let focus = document.getElementById("focus").value;
 	if (focus == "e")
 		return;
 	let short_break = document.getElementById("short-break");

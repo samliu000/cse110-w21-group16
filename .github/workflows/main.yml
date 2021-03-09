@@ -13,6 +13,7 @@ jobs:
       
       - name: Instrument Code
         run: |
+          rm -rf source/instrumented
           npx nyc instrument --compact=false source source/instrumented
       - name: Cypress run
         run: |

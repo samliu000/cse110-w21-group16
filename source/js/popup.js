@@ -25,7 +25,7 @@ document.getElementById("btn-no-set").addEventListener('click', () => {
 });
 
 document.getElementById("focus").addEventListener('input', () => {
-    	let focus = document.getElementById("focus").value;
+    let focus = document.getElementById("focus").value;
 	let short_break = document.getElementById("short-break");
 	let long_break = document.getElementById("long-break");
 	short_break.placeholder = "Try: " + Math.ceil((Number(focus) / 5));

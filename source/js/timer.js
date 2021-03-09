@@ -77,18 +77,15 @@ if(donebtn){
     session_seconds = break_minutes * 60;
     isBreak = false;
     isStarted = false;
-    if (taskInd >= 0){
-      actual++;
-      console.log(actual);
-      document.getElementById('table-content').rows[taskInd].cells[3].innerHTML = actual;
-    }
+	actual++;
+	console.log(actual);
+	document.getElementById('table-content').rows[taskInd].cells[3].innerHTML = actual;
     session_count++;
     countdown = setInterval(timer, 10);
     // hide the current task once pomo session is done	  
     document.getElementById('current-task').style.display = 'none';
     document.getElementById('list').style.display = "block";
     undoCheck('tSelect');
-	if(taskInd >= 0)
     document.getElementById('table-content').rows[taskInd].classList.add("completed");
     let storedTask = JSON.parse(localStorage.getItem('tasklist'));
       for(let i = 0; i < storedTask.length; i++){

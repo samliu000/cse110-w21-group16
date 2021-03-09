@@ -30,4 +30,7 @@ jobs:
     - run: npm install -g jest
 
     - name: Run Jest
-      run: npx jest __test__
+      run: |
+        npx jest __test__
+        npx merge-cypress-jest-coverage
+      

@@ -1,4 +1,5 @@
 # Long breaks aftetr reset: keep track of short breaks taken even after reset
+
 * Status: accepted
 * Deciders: no objections from entire group meeting
 * Date: 02-06-2021
@@ -7,7 +8,7 @@
 
 After the reset button is hit, do we also reset the counter until the next long break?
 
-## Decision Drivers <!-- optional -->
+## Decision Drivers
 
 * ease of programming
 * don't want to frustrate the user

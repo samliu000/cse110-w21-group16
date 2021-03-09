@@ -8,7 +8,7 @@
 
 Since we want to assign a task to each pomodoro, should we select the task 
 
-## Decision Drivers <!-- optional -->
+## Decision Drivers
 
 * we want to be able to count the number of pomodoros a user spends on each task
 * we should remember that the goal of this app is to keep the user focused

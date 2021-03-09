@@ -1,6 +1,6 @@
 ## Meeting 4  
 
-#### Saturday 2/6/21, 3:00-3:50 pm on Zoom, Team 16/Skynet     
+#### Saturday 2/6/21, 3:15-3:50 pm on Zoom, Team 16/Skynet     
   - Attendees: Aven Huang, Fengdi Liu, Joshue Aguirre, Kevin Stubbings, Matias Lin,    
     Lara Daneshgaran Bajastani, Shuhua Xie, Samuel Liu, Yuru Zhou
 

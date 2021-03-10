@@ -58,7 +58,7 @@ describe('Test Input Exptected Filter', () => {
 			cy.visit('/source/instrumented/index.html');
 			cy.get('#add-task').click();
 			cy.get('#tName').invoke("val","test").type('{esc}');
-			cy.get("#add-form").should('have.attr', 'style', 'display: none')
+			cy.get("#add-form").should('have.attr', 'style', 'display: none;')
 	
 		});
 	});
@@ -76,7 +76,7 @@ describe('Test Input Exptected Filter', () => {
 			cy.get('#add-task').click();
 			cy.get('#tName').invoke("val","test");
 			cy.get('#est').invoke("val", 2).type('{esc}');
-			cy.get("#add-form").should('have.attr', 'style', 'display: none')
+			cy.get("#add-form").should('have.attr', 'style', 'display: none;')
 		});
 	});
 });

@@ -3,6 +3,5 @@ docs/*
 test/*
 node_modules/*
 __test__/*
-cypress/*
 coverage/*
 source/instrumented/*

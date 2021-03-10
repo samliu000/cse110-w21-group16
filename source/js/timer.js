@@ -55,14 +55,11 @@ if(startbtn){
   //Get the id of the choosen task
   taskId = getTaskId('tSelect');
 
-  console.log(taskInd)
-
   if (taskInd >= 0){
     //Store the current task actual column
     actual = document.getElementById('table-content').rows[taskInd].cells[3].innerHTML;
     //Store the current task name
     currTask = document.getElementById('table-content').rows[taskInd].cells[1].innerHTML;
-    console.log(currTask) 
   }else{
     currTask = "";
   }
@@ -306,19 +303,13 @@ function getRadioIndex(name)
 {
   let elements = document.getElementsByName(name);
   let storedTask = JSON.parse(localStorage.getItem('tasklist'));
-  console.log(storedTask)
   //Find the element by checking which element was selected
   for (let i = 0; i < elements.length; i++)
   {   
-      console.log(elements)
-      console.log(elements[i].checked)
-      console.log(storedTask[i].finish !== "done")
       if (elements[i].checked && storedTask[i].finish !== "done"){
         //Return the index of current task
-        console.log(i)
         return i;
       }
-      console.log(i)
   }
 }
 
@@ -332,7 +323,7 @@ function getTaskId(name)
     let storedTask = JSON.parse(localStorage.getItem('tasklist'));
     //Find the element by checking which element was selected
     for (let i = 0, l = elements.length; i < l; i++){
-        if (elements[i].checked && storedTask[i].finish != done) 
+        if (elements[i].checked && storedTask[i].finish != "done") 
         {
           //Return the id of the current task
           return elements[i].id;

@@ -17,6 +17,7 @@ describe('Test Help Popup and Done button', () => {
         cy.get('#help-overlay').click();
         cy.get("#help-overlay").should('have.attr', 'style', 'display: none;');
 	});
+/*
     it('Checks that the done button pops up the confirmation menu', () =>{
         cy.visit('/source/instrumented/index.html');
         cy.get('#start-btn').click();
@@ -32,6 +33,7 @@ describe('Test Help Popup and Done button', () => {
         cy.get('#popup-overlay').should('have.attr', 'style', 'display: none;');
         cy.get('#done-flex').should('not.satisfy', ClassInList(['active']));
     });
+    */
 });
 
 

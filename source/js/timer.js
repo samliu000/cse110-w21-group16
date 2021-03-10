@@ -117,7 +117,6 @@ if(donebtn){
           storedTask[i].actual = actual;
           storedTask[i].finish = 'done';
           localStorage.setItem('tasklist', JSON.stringify(storedTask));
-          localStorage.setItem()
       }
     }
   });

@@ -136,12 +136,29 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#btn-add').click();
             cy.get('input[name="tSelect"]').click();
             cy.get('#start-btn').click();
-            cy.wait(1000);
+            cy.wait(500);
             cy.get('#done-btn').click();
             cy.get('#done-yes').click();
             cy.get('#timerDisplay').then(($el) => {
                 expect($el).to.not.have.text('25:00');
             });
+        });
+
+        it('Done with multiple items', () => {
+            cy.get('#add-task').click();
+            cy.get('#tName').clear().type('Test Task1');
+            cy.get('#est').clear().type('1');
+            cy.get('#btn-add').click();
+            cy.get('input[name="tSelect"]').click();
+            cy.get('#add-task').click();
+            cy.get('#tName').clear().type('Test Task2');
+            cy.get('#est').clear().type('1');
+            cy.get('#btn-add').click();
+            cy.get('#start-btn').click();
+            cy.wait(500);
+            cy.get('#done-btn').click();
+            cy.get('#done-yes').click();
+            cy.get('input[name="tSelect"]').first().should('not.be.visible');
         });
 
         it('Done yes on fourth pomo session', () => {

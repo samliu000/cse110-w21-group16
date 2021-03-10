@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1615275201333" clover="3.2.0">
-  <project timestamp="1615275201334" name="All files">
+<coverage generated="1615275561390" clover="3.2.0">
+  <project timestamp="1615275561390" name="All files">
     <metrics statements="290" coveredstatements="119" conditionals="102" coveredconditionals="18" methods="27" coveredmethods="8" elements="419" coveredelements="145" complexity="0" loc="290" ncloc="290" packages="1" files="2" classes="2"/>
     <file name="timer.js" path="C:\Users\boo13\CSE110\cse110-w21-group16\source\js\timer.js">
       <metrics statements="180" coveredstatements="35" conditionals="68" coveredconditionals="7" methods="12" coveredmethods="1"/>

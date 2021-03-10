@@ -403,6 +403,10 @@ input[type=number] {
     justify-content: space-between;
   }
   
+  #taskForm input{
+	  font-size: 16px;
+  }
+  
   #add-task{
 	  margin-top: 1em;
   }
@@ -555,6 +559,11 @@ i.fa.icon{
 	color: white;
 }
 
+@media only screen and (min-width: 950px) {
+	.set-item input{
+		font-size: 16px;
+	}
+}
 /*****Current Task*****/
 #current-task{
     max-width: 50%;

@@ -21,3 +21,11 @@
    2. React on slack.
    3. Efficient team Meetings. 
   
+#### Finished from last week
+   1. Decide the page looking
+   2. Write code for timer
+   3. Write code for list
+   4. Start setting up test enviroment
+   5. Track push to githup
+   6. checkout the doable of the planning
+  

@@ -28,6 +28,7 @@ Pomodoro Timer is a tomato timer meaning that it is a fruit not a vegetable.
 **Combined Code Coverage** - https://samliu000.github.io/cse110-w21-group16/coverage/lcov-report/index.html
 
 ### App Walkthough
+![Walkthrough](https://github.com/samliu000/cse110-w21-group16/blob/main/source/img/desktop-onboarding.jpg)
 
 ### Libraries Used
 

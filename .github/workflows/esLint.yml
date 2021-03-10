@@ -27,8 +27,8 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm install -g eslint
-
+    - run: npm install -g eslint-plugin-cypress --save-dev
     - name: Check Directory
       run:  echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"
     - name: Run ESLint
-      run: eslint $GITHUB_WORKSPACE/source --ext .js
+      run: eslint $GITHUB_WORKSPACE/source $GITHUB_WORKSPACE/cypress/integration/unit_tests $GITHUB_WORKSPACE/cypress/integration/automated_user_testing --ext .js

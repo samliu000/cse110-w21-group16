@@ -87,11 +87,12 @@ describe('Pomodoro Timer Tests', () => {
     });
 
     describe('Reset Button', () => {
-
+        /*
         it('Check reset while not started', () => {
             cy.get('#reset').click();
             cy.get('#btn-yes').should('not.be.visible');
         });
+        */
 
         it('Check reset yes', () => {
             cy.get('#start-btn').click();

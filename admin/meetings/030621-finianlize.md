@@ -1,6 +1,6 @@
 ## Meeting 8
 
-#### Saturday 3/06/21, 3:00-3:50 pm on Zoom, Team 16/Skynet     
+#### Saturday 3/06/21, 3:15-3:50 pm on Zoom, Team 16/Skynet     
   - Attendees: Fengdi Liu, Joshue Aguirre, Matias Lin,    
     Lara Daneshgaran Bajastani, Samuel Liu, Yuru Zhou, Shuhua Xie, Kevin Stubbings
     

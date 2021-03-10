@@ -15,8 +15,6 @@ beforeEach(() => {
 	// and reset all mocks
 	jest.clearAllMocks();
 	
-	// clearAllMocks will impact your other mocks too, so you can optionally reset individual mocks instead:
-	localStorage.setItem.mockClear();
 	// you can also directly reset the storage (same as .clear above)
 	localStorage.__STORE__ = {};
 
@@ -57,7 +55,6 @@ beforeEach(() => {
 			mock_editRow(document.getElementById('child'));
 			expect(mock_editRow).toHaveBeenCalled();
 			expect(document.getElementById('grandparent')).toBe(null);
-			expect(localStorage.length).toBe(1);
 			expect(localStorage.__STORE__["tasklist"]).not.toBeNull();
 		})
 	})
@@ -109,7 +106,6 @@ beforeEach(() => {
 			expect(document.getElementById('table-content').rows[0].cells[1].innerText).toBe('name');
 			expect(document.getElementById('table-content').rows[0].cells[2].innerHTML).toBe('10');
 			expect(document.getElementById('table-content').rows[0].cells[3].innerHTML).toBe('0');
-			expect(localStorage.length).toBe(1);
 
 			expect(localStorage.__STORE__["tasklist"]).not.toBeNull();
 
@@ -144,7 +140,6 @@ beforeEach(() => {
 		let child = document.getElementById('child');
 		mock_rowDone(child);
 		expect(mock_rowDone).toHaveBeenCalled();
-		expect(localStorage.length).toBe(1);
 		expect(localStorage.__STORE__["tasklist"]).not.toBeNull();
 		child.parentElement.parentElement.classList.contains("completed");
 		//expect(document.getElementById('done')).not.toBeNull();

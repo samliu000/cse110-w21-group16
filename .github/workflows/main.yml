@@ -19,3 +19,5 @@ jobs:
       - name: Cypress run
         run: |
           npx cypress run --spec cypress/integration/unit_tests/*.js
+      - name: Coverage
+        run: npx merge-cypress-jest-coverage

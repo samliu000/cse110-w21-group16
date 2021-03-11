@@ -8,7 +8,7 @@ Group Members: Aven Huang, Fengdi Liu, Joshue Aguirre, Kevin Stubbings, Matias L
 ---
 
 # Pomodoro Timer
-Pomodoro Timer is a tomato timer meaning that it is a fruit not a vegetable. 
+Oftentimes, people find it hard to focus on tasks, making them take much longer than they need to. Especially now that everyone is at home and has access to many more distractions, we need something to help keep us accountable and to help us work efficiently. Our Pomodoro Timer is a tool that will help its users overcome these distractions and difficulties.
 
 ## Features
 - Default timer will be 25 min focus sessions followed by 5 min breaks

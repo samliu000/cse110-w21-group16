@@ -33,4 +33,5 @@ jobs:
     - name: Run Jest
       run: |
         npx jest __test__
-        npx merge-cypress-jest-coverage
+    - name: Coverage
+      run: npx merge-cypress-jest-coverage

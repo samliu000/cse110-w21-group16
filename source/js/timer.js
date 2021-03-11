@@ -243,13 +243,13 @@ if (settings){
     let long_break = document.getElementById("long-break").value;
     //Set the necessary varibles to user input
     if(focus != ""){
-		session_seconds = Number(focus) * 60;
-		session_minutes = Number(focus);
+		session_seconds = (Number(focus) * 60 > 0) ? (Number(focus) * 60) : 3;
+		session_minutes = (Number(focus) > 0) ? Number(focus) : .05;
     }
     if(short_break != "")
-      short_break_minutes = Number(short_break);
+      short_break_minutes = (Number(short_break) > 0) ? Number(short_break) : .05;
     if(long_break != "")
-      long_break_minutes = Number(long_break);
+      long_break_minutes = (Number(long_break) > 0) ? Number(long_break) : .05;
   });
 }
 

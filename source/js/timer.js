@@ -47,7 +47,7 @@ if(startbtn){
   isStarted = true;  
   //Start the timer
   clearInterval(countdown);
-  countdown = setInterval(timer, 10);
+  countdown = setInterval(timer, 1000);
   //Hide task list
   document.getElementById('list').style.display = "none";
   //Get the index of the choosen task
@@ -105,7 +105,7 @@ if(donebtn){
     //unselect the task
     undoCheck('tSelect');
     //Start the timer
-    countdown = setInterval(timer, 10);
+    countdown = setInterval(timer, 1000);
     //Hide the current task once pomo session is done	  
     document.getElementById('current-task').style.display = 'none';
     document.getElementById('list').style.display = "block";

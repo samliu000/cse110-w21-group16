@@ -7,7 +7,6 @@ let break_minutes = 5;// break minutes
 let short_break_minutes = 5; //short break minutes
 let long_break_minutes = 15;//long break minutes
 let isBreak = true; //determines if timer is on break
-let breakCounter = true;	//is true if current timer is a break, false if timer for pomo session or not running
 let session_count = 1;//the number of pomodoro session has done
 let actual;//the actual column number
 let isStarted = false;//determines if the time has been started

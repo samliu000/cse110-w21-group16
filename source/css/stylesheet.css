@@ -72,7 +72,7 @@ main{
 	justify-content: center;
 	border-radius: 3rem;
 	align-items: center;
-		
+	padding: 1.5%;
 	margin: 0 auto;
 	margin-top: 5vh;
 	transition: margin-top 2s ease-out;
@@ -417,18 +417,10 @@ input[type=number] {
     margin: 0;
 	width: 5%;
   }
+
   th:nth-child(2),
   td:nth-child(2){
     width: 60%;
-    text-align: left;
-  }
-  th:nth-child(3),
-  td:nth-child(3){
-    width: 10%;
-  }
-  th:nth-child(4),
-  td:nth-child(4){
-    width: 10%;
   }
 
   th:nth-child(5){
@@ -440,7 +432,6 @@ input[type=number] {
 	color: #fff;
 	width: 5%;
   }
-
 }
 
 /*****Help*****/
@@ -559,9 +550,13 @@ i.fa.icon{
 	color: white;
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (max-width: 950px) {
 	.set-item input{
 		font-size: 16px;
+	}
+	
+	#settings-flex.active{
+		top: -25vh;
 	}
 }
 /*****Current Task*****/

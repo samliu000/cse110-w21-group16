@@ -1,7 +1,4 @@
 describe('Pomodoro Timer Tests', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false;
-    });
     beforeEach(() => {
       cy.visit('/source/instrumented/index.html');
     });
@@ -87,12 +84,12 @@ describe('Pomodoro Timer Tests', () => {
     });
 
     describe('Reset Button', () => {
-        /*
+        
         it('Check reset while not started', () => {
             cy.get('#reset').click();
             cy.get('#btn-yes').should('not.be.visible');
         });
-        */
+        
 
         it('Check reset yes', () => {
             cy.get('#start-btn').click();
@@ -127,7 +124,7 @@ describe('Pomodoro Timer Tests', () => {
             });
         });
 
-    });
+    }); 
 
     describe('Done Prematurely Button', () => {
         it('Done yes', () => {
@@ -179,21 +176,22 @@ describe('Pomodoro Timer Tests', () => {
 
             // start timer and wait till long timer
             cy.get('#start-btn').click();
-            cy.wait(2000);
+            cy.wait(4000);
             cy.get('#start-btn').click();
-            cy.wait(2000);
+            cy.wait(4000);
             cy.get('#start-btn').click();
-            cy.wait(2000);
+            cy.wait(4000);
 
             // modify focus time
             cy.get('#settings').click();
             cy.get('#focus').clear().type(1);
             cy.get('#btn-set').click();
-
+            cy.wait(1000);
+            
             // start timer so we can click on done
             cy.get('input[name="tSelect"]').click();
             cy.get('#start-btn').click();
-            cy.wait(1000);
+            cy.wait(3000);
             cy.get('#done-btn').click();
             cy.get('#done-yes').click();
             cy.get('#timerDisplay').then(($el) => {

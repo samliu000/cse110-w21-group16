@@ -94,7 +94,7 @@ if(donebtn){
     else{
       break_minutes = short_break_minutes;
     }
-    session_seconds = break_minutes * 60;
+    session_seconds = parseInt(break_minutes * 60);
     isBreak = false;
     isStarted = false;
     //If a task was chosen, increment the actual count and store the 
@@ -142,7 +142,7 @@ if(yes){
   yes.addEventListener('click', () =>{
     //Reset and restart the timer
     clearInterval(countdown);
-    session_seconds = session_minutes * 60;
+    session_seconds = parseInt(session_minutes * 60);
     countdown = 0;
     isBreak = true;
     countdown = setInterval(timer, 1000);
@@ -192,7 +192,7 @@ function timer() {
       else{
         break_minutes = short_break_minutes;
       }
-      session_seconds = break_minutes * 60;
+      session_seconds = parseInt(break_minutes * 60);
       isBreak = false;
       isStarted = false;
       //If a task was chosen, increment the actual count and store the 
@@ -222,7 +222,7 @@ function timer() {
     }
     //Else isBreak is false, set the timer to pomodoro session
     else{
-      session_seconds = session_minutes * 60;
+      session_seconds = parseInt(session_minutes * 60);
       isBreak = true;
       document.getElementById("start-btn").disabled = false;
     }
@@ -243,13 +243,13 @@ if (settings){
     let long_break = document.getElementById("long-break").value;
     //Set the necessary varibles to user input
     if(focus != ""){
-		session_seconds = (Number(focus) * 60 > 0) ? (Number(focus) * 60) : 3;
-		session_minutes = (Number(focus) > 0) ? Number(focus) : .05;
+		session_seconds = (Number(focus) * 60 > 0) ? (Number(focus) * 60) : 1;
+		session_minutes = (Number(focus) > 0) ? Number(focus) : .017;
     }
     if(short_break != "")
-      short_break_minutes = (Number(short_break) > 0) ? Number(short_break) : .05;
+      short_break_minutes = (Number(short_break) > 0) ? Number(short_break) : .017;
     if(long_break != "")
-      long_break_minutes = (Number(long_break) > 0) ? Number(long_break) : .05;
+      long_break_minutes = (Number(long_break) > 0) ? Number(long_break) : .017;
   });
 }
 
@@ -262,9 +262,13 @@ function countdownDisplay() {
   let session_minutes = Math.floor(session_seconds / 60);
   //Update the brower title
   let title = (currTask == 0) ? `${session_minutes}m` : `${session_minutes}m: ${currTask}`;
-  if(isStarted && document.title != title){
+  let bk = `${session_minutes}m: Break!`;
+  if (!isBreak){
+		if(document.title != bk)
+			document.title = bk;
+  } else if(isStarted && document.title != title){
 		document.title = title;
-  }else if(!isStarted && document.title != "Pomodoro Timer!"){
+  } else if(!isStarted && document.title != "Pomodoro Timer!"){
     document.title = "Pomodoro Timer!";
   }
   //Find the remaining seconds

@@ -47,7 +47,7 @@ if(startbtn){
   isStarted = true;  
   //Start the timer
   clearInterval(countdown);
-  countdown = setInterval(timer, 10);
+  countdown = setInterval(timer, 1000);
   //Hide task list
   document.getElementById('list').style.display = "none";
   //Get the index of the choosen task
@@ -105,7 +105,7 @@ if(donebtn){
     //unselect the task
     undoCheck('tSelect');
     //Start the timer
-    countdown = setInterval(timer, 10);
+    countdown = setInterval(timer, 1000);
     //Hide the current task once pomo session is done	  
     document.getElementById('current-task').style.display = 'none';
     document.getElementById('list').style.display = "block";
@@ -214,7 +214,7 @@ function timer() {
       //Increment the session count
       session_count ++;
       //Start the timer
-      countdown = setInterval(timer, 10);
+      countdown = setInterval(timer, 1000);
       //Hide the current task once pomodoro session is done
       document.getElementById('current-task').style.display = 'none';
       document.getElementById('list').style.display = "block";
@@ -243,13 +243,13 @@ if (settings){
     let long_break = document.getElementById("long-break").value;
     //Set the necessary varibles to user input
     if(focus != ""){
-		session_seconds = Number(focus) * 60;
-		session_minutes = Number(focus);
+		session_seconds = (Number(focus) * 60 > 0) ? (Number(focus) * 60) : 3;
+		session_minutes = (Number(focus) > 0) ? Number(focus) : .05;
     }
     if(short_break != "")
-      short_break_minutes = Number(short_break);
+      short_break_minutes = (Number(short_break) > 0) ? Number(short_break) : .05;
     if(long_break != "")
-      long_break_minutes = Number(long_break);
+      long_break_minutes = (Number(long_break) > 0) ? Number(long_break) : .05;
   });
 }
 

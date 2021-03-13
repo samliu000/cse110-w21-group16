@@ -30,7 +30,7 @@ describe('user simulation tests', () => {
             //Ensures that the only task left has correct name
             cy.get('#table-content').contains('asdfffffffffffffffffffffffffffffffasassfsfasdfsfsafsaf');
 
-        })
+        });
     });
     it('New User Checks the Help Button, Adds Task, then Resets and Done', () => {
         cy.visit('/source/index.html ');
@@ -51,6 +51,6 @@ describe('user simulation tests', () => {
       
         cy.get('table').contains('td', '1').should('be.visible');
 
-        })
+        });
     });
    

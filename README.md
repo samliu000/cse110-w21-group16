@@ -36,4 +36,8 @@ Oftentimes, people find it hard to focus on tasks, making them take much longer 
 
 - [Cypress](https://github.com/codepath/CPAsyncHttpClient) - For unit/integration/browser testing and coverage report
 - [Jest](https://github.com/bumptech/glide) - For unit testing and coverage report
+- [jest-localstorage-mock](https://www.npmjs.com/package/jest-localstorage-mock) - Used for jest testing to mimic local storage
 - [Merge-Cypress-Jest-Coverage](https://www.npmjs.com/package/merge-cypress-jest-coverage) - Merges cypress and jest coverage reports
+- [babel-plugin-istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) - Used for code instrumenting
+- [JSDocs](https://jsdoc.app/) - Used for creating jsdocs for all of our javascript files
+- [nyc](https://www.npmjs.com/package/nyc) - Istanbul's state of the command line interface

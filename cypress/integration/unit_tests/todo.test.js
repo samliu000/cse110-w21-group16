@@ -110,7 +110,7 @@ describe('Test Input Exptected Filter', () => {
 			cy.get('#table-content').contains('td', 'test2');
 			cy.get('*[class^="fa fa-check-square"]').first().click();
 			cy.get('*[class^="fa fa-check-square"]').eq(2).click();
-			cy.reload();
+			cy.reload(true);
 			cy.get('#table-content').contains('td', 'test');
 	});
 });

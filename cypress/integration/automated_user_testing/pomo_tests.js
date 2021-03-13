@@ -52,15 +52,14 @@ describe('Pomodoro Timer Tests', () => {
           });
           });
         it('Check the seconds', () => {
-		 cy.visit('/source/index.html ');
-		 cy.get('div[id="timerDisplay"]').then((timer) => {
-		 cy.get('button[id="start-btn"]').click();
-       
-          	cy.wait(3000).then(() => {
-		       const endTime = timer.text();
-		       var arrayEnd = endTime.split(":");
-		       expect(58).equals(parseInt(arrayEnd[1],10));
-         	});
+	cy.visit('/source/index.html ');
+	cy.get('div[id="timerDisplay"]').then((timer) => {
+	cy.get('button[id="start-btn"]').click();
+	cy.wait(3000).then(() => {
+	const endTime = timer.text();
+        var arrayEnd = endTime.split(":");
+	expect(58).equals(parseInt(arrayEnd[1],10));
+         });
          });
          });
       

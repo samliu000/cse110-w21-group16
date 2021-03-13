@@ -24,6 +24,7 @@ describe('Test Help Popup and Done button', () => {
 		cy.get('#tName').invoke("val","test");
 		cy.get('#est').invoke("val", 2).type('{enter}');
 		cy.get('#table-content').contains('td', 'test');
+        cy.get('input[name="tSelect"]').click();
         cy.get('#start-btn').click();
         cy.get('#done-btn').click();
         cy.get('#popup-overlay').should('have.attr', 'style', 'display: block;');
@@ -35,6 +36,7 @@ describe('Test Help Popup and Done button', () => {
 		cy.get('#tName').invoke("val","test");
 		cy.get('#est').invoke("val", 2).type('{enter}');
 		cy.get('#table-content').contains('td', 'test');
+        cy.get('input[name="tSelect"]').click();
         cy.get('#start-btn').click();
         cy.get('#done-btn').click();
         cy.get('#done-no').click();

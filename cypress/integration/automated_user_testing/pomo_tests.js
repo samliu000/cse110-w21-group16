@@ -47,10 +47,10 @@ describe('Pomodoro Timer Tests', () => {
               const endTime = timer.text();
               var arrayStart = startTime.split(":");
               var arrayEnd = endTime.split(":");
-              expect(parseInt(arrayStart[0]-1,10)).equals(parseInt(arrayEnd[0],10))
-          })
-          })
-          })
+              expect(parseInt(arrayStart[0]-1,10)).equals(parseInt(arrayEnd[0],10));
+          });
+          });
+          });
         it('Check the seconds', () => {
           cy.visit('/source/index.html ');
          cy.get('div[id="timerDisplay"]').then((timer) => {
@@ -59,12 +59,11 @@ describe('Pomodoro Timer Tests', () => {
        
           cy.wait(3000).then(() => {
                const endTime = timer.text();
-               var arrayStart = startTime.split(":");
                var arrayEnd = endTime.split(":");
-               expect(58).equals(parseInt(arrayEnd[1],10))
-         })
-         })
-         })
+               expect(58).equals(parseInt(arrayEnd[1],10));
+         });
+         });
+         });
       
       
         });
@@ -198,7 +197,7 @@ describe('Pomodoro Timer Tests', () => {
                 cy.get(`[id^=${me}]`).eq(1).click();
                 cy.get(`[id^=${me}]`).should('not.exist');
 
-            })
+            });
       
         });
         it('Checks check button', () => {
@@ -219,7 +218,7 @@ describe('Pomodoro Timer Tests', () => {
                 cy.get(`[id^=${me}]`).eq(2).click();
                 (cy.get(`[id^=${me}]`).eq(2)).should('not.exist');
 
-            })
+            });
       
         });
 

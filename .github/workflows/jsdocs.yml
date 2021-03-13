@@ -25,10 +25,14 @@ jobs:
     - run: npm run build --if-present
     - name: Run JSDocs
       run: npx jsdoc source/js --verbose -d ./docs/jsdocs
-    - name: Push to Github
+    - name: Commit Docs
       run: |
-        git remote set-url origin https://github.com/samliu000/cse110-w21-group16.git
-        git status
-        git add docs/jsdocs
-        git commit -m "Modifying jsdocs"
-        git push origin main
+        git config --local user.name "samliu000"
+        git add ./docs/jsdocs
+        git commit -m "Updating jsdocs"
+        
+    - name: Push changes # push the output folder to your repo
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        force: true

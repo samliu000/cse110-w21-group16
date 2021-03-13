@@ -2,15 +2,15 @@ const ClassInList = (expectedClasses) => {
     return ($el) => {
       const classList = Array.from($el[0].classList); 
       return expectedClasses.some(expectedClass => classList.includes(expectedClass));
-    }
-}	
+    };
+};
 
 describe('Test Help Popup and Done button', () => {
     
 	it('Check that the help icon brings up the overlay', () => {
 		cy.visit('/source/instrumented/index.html ');
 		cy.get('#help').click();
-        cy.get("#help-overlay").should('have.attr', 'style', 'display: flex;')
+        cy.get("#help-overlay").should('have.attr', 'style', 'display: flex;');
 	});
     it('Check that the overlay dissapears on click', () => {
 		cy.visit('/source/instrumented/index.html ');
@@ -59,14 +59,14 @@ describe('Test Settings Popup', () => {
 	it('Check that the settings icon brings up the overlay', () => {
 		cy.visit('/source/instrumented/index.html ');
 		cy.get('#settings').click();
-        cy.get("#popup-overlay").should('have.attr', 'style', 'display: block;')
+        cy.get("#popup-overlay").should('have.attr', 'style', 'display: block;');
         cy.get('#settings-flex').should('satisfy', ClassInList(['active']));
     });
     it('Check that the overlay dissapears on click of cancel button', () => {
 		cy.visit('/source/instrumented/index.html ');
         cy.get('#settings').click();
 		cy.get('#btn-no-set').click();
-        cy.get("#popup-overlay").should('have.attr', 'style', 'display: none;')
+        cy.get("#popup-overlay").should('have.attr', 'style', 'display: none;');
     
         cy.get('#settings-flex').should('not.satisfy', ClassInList(['active']));
 
@@ -75,7 +75,7 @@ describe('Test Settings Popup', () => {
             cy.visit('/source/instrumented/index.html ');
             cy.get('#settings').click();
             cy.get('#setForm').type('{esc}', {force: true});
-            cy.get("#popup-overlay").should('have.attr', 'style', 'display: none;')
+            cy.get("#popup-overlay").should('have.attr', 'style', 'display: none;');
            
             cy.get('#settings-flex').should('not.satisfy', ClassInList(['active']));
     });

@@ -11,7 +11,33 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#est').clear().type('1');
             cy.get('#btn-add').click();
             cy.get('#add-task').click();
-            cy.get('*[class="fa fa-trash"]').click();
+            cy.get('#tName').clear().type('Test Task2');
+            cy.get('#est').clear().type('1');
+            cy.get('#btn-add').click();
+
+            // settings
+            cy.get('#settings').click();
+            cy.get('#focus').clear().type(0);
+            cy.get('#short-break').clear().type(0);
+            cy.get('#long-break').clear().type(5);
+            cy.get('#btn-set').click();
+            cy.get('#start-btn').click();
+            cy.wait(2000);
+        });
+
+        it('Delete button', () => {
+            cy.get('#add-task').click();
+            cy.get('#tName').clear().type('Test Task');
+            cy.get('#est').clear().type('1');
+            cy.get('#btn-add').click();
+            cy.get('#add-task').click();
+            cy.get('#tName').clear().type('Test Task2');
+            cy.get('#est').clear().type('1');
+            cy.get('#btn-add').click();
+
+            cy.visit('/source/instrumented/index.html');
+            cy.get('*[class^="fa fa-check-square"]').last().click();
+            cy.get('*[class^="fa fa-trash"]').last().click();
 
             // settings
             cy.get('#settings').click();
@@ -49,6 +75,12 @@ describe('Pomodoro Timer Tests', () => {
 
             // I expect a radio button to be there
             cy.get('input[name="tSelect"]').first().click();
+
+            
+            cy.get('*[class^="fa fa-check-square"]').first().click();
+            cy.get('*[class^="fa fa-trash"]').first().click();
+            cy.get('*[class^="fa fa-check-square"]').first().click();
+            cy.get('*[class^="fa fa-trash"]').first().click();
         });
     });
 
@@ -140,6 +172,7 @@ describe('Pomodoro Timer Tests', () => {
             cy.get('#timerDisplay').then(($el) => {
                 expect($el).to.not.have.text('25:00');
             });
+            cy.get('*[class^="fa fa-trash"]').first().click();
         });
 
         it('Done with multiple items', () => {

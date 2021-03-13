@@ -17,23 +17,30 @@ describe('Test Help Popup and Done button', () => {
         cy.get('#help-overlay').click();
         cy.get("#help-overlay").should('have.attr', 'style', 'display: none;');
 	});
-/*
-    it('Checks that the done button pops up the confirmation menu', () =>{
-        cy.visit('/source/instrumented/index.html');
+	
+   it('Checks that the done button pops up the confirmation menu', () =>{
+        cy.visit('/source/index.html');
+		cy.get('#add-task').click();
+		cy.get('#tName').invoke("val","test");
+		cy.get('#est').invoke("val", 2).type('{enter}');
+		cy.get('#table-content').contains('td', 'test');
         cy.get('#start-btn').click();
         cy.get('#done-btn').click();
         cy.get('#popup-overlay').should('have.attr', 'style', 'display: block;');
         cy.get('#done-flex').should('satisfy', ClassInList(['active']));
     });
     it('Checks that the no button after the done button removes the popup', () =>{
-        cy.visit('/source/instrumented/index.html');
+        cy.visit('/source/index.html');
+		cy.get('#add-task').click();
+		cy.get('#tName').invoke("val","test");
+		cy.get('#est').invoke("val", 2).type('{enter}');
+		cy.get('#table-content').contains('td', 'test');
         cy.get('#start-btn').click();
         cy.get('#done-btn').click();
         cy.get('#done-no').click();
         cy.get('#popup-overlay').should('have.attr', 'style', 'display: none;');
         cy.get('#done-flex').should('not.satisfy', ClassInList(['active']));
     });
-    */
 });
 
 

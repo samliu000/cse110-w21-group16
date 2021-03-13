@@ -1,4 +1,4 @@
-# CSE 110 Winter 2021 Group 16 - Team Skynet
+# CSE 110 Winter 2021 Group 16 - Team Skynet [![CodeFactor](https://www.codefactor.io/repository/github/samliu000/cse110-w21-group16/badge?s=6d60878b8d2bbab355b78a139a176ebc354bc773)](https://www.codefactor.io/repository/github/samliu000/cse110-w21-group16)
 **Pomodoro Timer Website**: https://samliu000.github.io/cse110-w21-group16/ 
 
 **Code Coverage**: https://samliu000.github.io/cse110-w21-group16/coverage/lcov-report/index.html

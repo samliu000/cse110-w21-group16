@@ -16,7 +16,7 @@ describe('Test Input Exptected Filter', () => {
 		cy.get('#tName').invoke("val","test");
 		cy.get('#est').invoke("val", '+');
 		cy.get('#btn-add').click().then(() =>{ 
-			expect(cy.get('#est').val).to.equal(undefined)
+			expect(cy.get('#est').val).to.equal(undefined);
 		});
 	});
 
@@ -29,7 +29,7 @@ describe('Test Input Exptected Filter', () => {
 		cy.get('#tName').invoke("val","test");
 		cy.get('#est').invoke("val", '-');
 		cy.get('#btn-add').click().then(() =>{ 
-			expect(cy.get('#est').val).to.equal(undefined)
+			expect(cy.get('#est').val).to.equal(undefined);
 		});
 
 
@@ -40,7 +40,7 @@ describe('Test Input Exptected Filter', () => {
 		cy.get('#tName').invoke("val","test");
 		cy.get('#est').type('e1');
 		cy.get('#btn-add').click().then(() =>{ 
-			expect(cy.get('#est').val).to.equal(undefined)
+			expect(cy.get('#est').val).to.equal(undefined);
 		});
 
 
@@ -50,7 +50,7 @@ describe('Test Input Exptected Filter', () => {
 		it('Check that the addTask function is run on enter', () => {
 			cy.visit('/source/instrumented/index.html');
 			cy.get('#add-task').click();
-			cy.get('#tName').invoke("val","test")
+			cy.get('#tName').invoke("val","test");
 			cy.get('#tName').invoke("val","test").type('{enter}');
 			cy.get('#table-content').contains('td', 'test');
 	
@@ -59,7 +59,7 @@ describe('Test Input Exptected Filter', () => {
 			cy.visit('/source/instrumented/index.html');
 			cy.get('#add-task').click();
 			cy.get('#tName').invoke("val","test").type('{esc}');
-			cy.get("#add-form").should('have.attr', 'style', 'display: none;')
+			cy.get("#add-form").should('have.attr', 'style', 'display: none;');
 	
 		});
 	});
@@ -77,7 +77,7 @@ describe('Test Input Exptected Filter', () => {
 			cy.get('#add-task').click();
 			cy.get('#tName').invoke("val","test");
 			cy.get('#est').invoke("val", 2).type('{esc}');
-			cy.get("#add-form").should('have.attr', 'style', 'display: none;')
+			cy.get("#add-form").should('have.attr', 'style', 'display: none;');
 		});
 	});
 	describe('Test Local Storage', () => {
@@ -110,7 +110,7 @@ describe('Test Input Exptected Filter', () => {
 			cy.get('#table-content').contains('td', 'test2');
 			cy.get('*[class^="fa fa-check-square"]').first().click();
 			cy.get('*[class^="fa fa-check-square"]').eq(2).click();
-			cy.reload(true);
+			cy.visit('/source/instrumented/index.html');
 			cy.get('#table-content').contains('td', 'test');
 	});
 });

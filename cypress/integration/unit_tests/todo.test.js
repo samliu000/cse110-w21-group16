@@ -1,6 +1,6 @@
 describe('Test Add Button', () => {
 	it('Check that the addTask function is run on click', () => {
-		cy.visit('/source/instrumented/index.html');
+		cy.visit('/source/index.html');
 		cy.get('#add-task').click();
 		cy.get('#tName').invoke("val","test");
 		cy.get('#btn-add').click().then(() =>{ 
@@ -11,19 +11,20 @@ describe('Test Add Button', () => {
 });
 describe('Test Input Exptected Filter', () => {
 	it('Check that the adding forbidden letter + is rejected', () => {
-		cy.visit('/source/instrumented/index.html');
+		cy.visit('/source/index.html');
 		cy.get('#add-task').click();
 		cy.get('#tName').invoke("val","test");
 		cy.get('#est').invoke("val", '+');
 		cy.get('#btn-add').click().then(() =>{ 
 			expect(cy.get('#est').val).to.equal(undefined)
 		});
+	});
 
 
 
 	});
 	it('Check that the adding forbidden letter - is rejected', () => {
-		cy.visit('/source/instrumented/index.html');
+		cy.visit('/source/index.html');
 		cy.get('#add-task').click();
 		cy.get('#tName').invoke("val","test");
 		cy.get('#est').invoke("val", '-');
@@ -34,10 +35,10 @@ describe('Test Input Exptected Filter', () => {
 
 	});
 	it('Check that the adding forbidden letter e is rejected', () => {
-		cy.visit('/source/instrumented/index.html');
+		cy.visit('/source/index.html');
 		cy.get('#add-task').click();
 		cy.get('#tName').invoke("val","test");
-		cy.get('#est').invoke("val", 'e');
+		cy.get('#est').type('e1');
 		cy.get('#btn-add').click().then(() =>{ 
 			expect(cy.get('#est').val).to.equal(undefined)
 		});
@@ -47,7 +48,7 @@ describe('Test Input Exptected Filter', () => {
 
 	describe('Test Enter/ESC Button for TaskName', () => {
 		it('Check that the addTask function is run on enter', () => {
-			cy.visit('/source/instrumented/index.html');
+			cy.visit('/source/index.html');
 			cy.get('#add-task').click();
 			cy.get('#tName').invoke("val","test")
 			cy.get('#tName').invoke("val","test").type('{enter}');
@@ -55,7 +56,7 @@ describe('Test Input Exptected Filter', () => {
 	
 		});
 		it('Check that the addTask function is run on esc', () => {
-			cy.visit('/source/instrumented/index.html');
+			cy.visit('/source/index.html');
 			cy.get('#add-task').click();
 			cy.get('#tName').invoke("val","test").type('{esc}');
 			cy.get("#add-form").should('have.attr', 'style', 'display: none;')
@@ -64,7 +65,7 @@ describe('Test Input Exptected Filter', () => {
 	});
 	describe('Test Enter/ESC Button for Estimate', () => {
 		it('Check that the est function is run on enter', () => {
-			cy.visit('/source/instrumented/index.html');
+			cy.visit('/source/index.html');
 			cy.get('#add-task').click();
 			cy.get('#tName').invoke("val","test");
 			cy.get('#est').invoke("val", 2).type('{enter}');
@@ -72,11 +73,35 @@ describe('Test Input Exptected Filter', () => {
 	
 		});
 		it('Check that the addTask function is run on esc', () => {
-			cy.visit('/source/instrumented/index.html');
+			cy.visit('/source/index.html');
 			cy.get('#add-task').click();
 			cy.get('#tName').invoke("val","test");
 			cy.get('#est').invoke("val", 2).type('{esc}');
 			cy.get("#add-form").should('have.attr', 'style', 'display: none;')
 		});
+	});
+	describe('Test Local Storage', () => {
+		it('should save my tname and expected', () => {
+			cy.visit('/source/index.html');
+			cy.get('#add-task').click();
+			cy.get('#tName').invoke("val","test");
+			cy.get('#est').invoke("val", 2).type('{enter}');
+			cy.get('#table-content').contains('td', 'test');
+			cy.get('#add-task').click();
+			cy.reload();
+			cy.get('#table-content').contains('td', 'test');
+	});
+});
+
+	describe('Test Done Button and Local Storage', () => {
+		it('should save my tname and expected', () => {
+			cy.visit('/source/index.html');
+			cy.get('#add-task').click();
+			cy.get('#tName').invoke("val","test");
+			cy.get('#est').invoke("val", 2).type('{enter}');
+			cy.get('#table-content').contains('td', 'test');
+			cy.get('*[class^="fa fa-check-square"]').click();
+			cy.reload();
+			cy.get('#table-content').contains('td', 'test');
 	});
 });

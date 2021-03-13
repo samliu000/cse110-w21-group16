@@ -31,7 +31,7 @@ describe('Test Help Popup and Done button', () => {
         cy.get('#done-flex').should('satisfy', ClassInList(['active']));
     });
     it('Checks that the no button after the done button removes the popup', () =>{
-        cy.visit('/source/instrumented/index.html);
+        cy.visit('/source/instrumented/index.html');
 		cy.get('#add-task').click();
 		cy.get('#tName').invoke("val","test");
 		cy.get('#est').invoke("val", 2).type('{enter}');

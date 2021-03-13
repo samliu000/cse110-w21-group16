@@ -16,15 +16,16 @@ jobs:
       matrix:
         node-version: [15.x]
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Build
+      uses: andstor/jsdoc-action@v1
       with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run build --if-present
-    - name: Run JSDocs
-      run: npx jsdoc source/js --verbose -d ./docs/jsdocs
+        source_dir: ./source/js
+        output_dir: ./docs/jsdocs
+        template: minami
+        
     - name: Commit Docs
       run: |
         git config --local user.name "samliu000"

@@ -13,9 +13,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  merge-job:
-    #only run on merge
-    if: github.event.pull_request.merged == true
+  build:
     runs-on: ubuntu-latest
 
     strategy:

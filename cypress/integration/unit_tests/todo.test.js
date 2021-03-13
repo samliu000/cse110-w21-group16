@@ -100,7 +100,16 @@ describe('Test Input Exptected Filter', () => {
 			cy.get('#tName').invoke("val","test");
 			cy.get('#est').invoke("val", 2).type('{enter}');
 			cy.get('#table-content').contains('td', 'test');
-			cy.get('*[class^="fa fa-check-square"]').click();
+			cy.get('#add-task').click();
+			cy.get('#tName').invoke("val","test2");
+			cy.get('#est').invoke("val", 3).type('{enter}');
+			cy.get('#table-content').contains('td', 'test2');
+			cy.get('#add-task').click();
+			cy.get('#tName').invoke("val","test3");
+			cy.get('#est').invoke("val", 4).type('{enter}');
+			cy.get('#table-content').contains('td', 'test2');
+			cy.get('*[class^="fa fa-check-square"]').first().click();
+			cy.get('*[class^="fa fa-check-square"]').eq(2).click();
 			cy.reload();
 			cy.get('#table-content').contains('td', 'test');
 	});

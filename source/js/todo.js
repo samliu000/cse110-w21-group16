@@ -118,7 +118,6 @@ function showTaskList(){
         done.onclick = function() {rowDone(this);};
        
         //cells created
-        //cells created
         let row = document.getElementById('table-content').insertRow(-1);
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);

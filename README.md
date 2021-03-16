@@ -5,7 +5,8 @@
 
 **JS Docs**: https://samliu000.github.io/cse110-w21-group16/docs/jsdocs/index.html
 
-**Browsers Supported**: Microsoft Edge (Version 88,89) , Firefox (Version 86 and ESR), Safari (Version 13, 14), Chrome (Version 88,89)
+**Browsers Supported**: Desktop: Microsoft Edge (Version 44,89) , Firefox (Version 86 and ESR), Safari (Version 13, 14), Chrome (Version 88,89)
+                        Mobile: Chrome and Safari
 
 Group Members: Aven Huang, Fengdi Liu, Joshue Aguirre, Kevin Stubbings, Matias Lin, Lara Daneshgaran Bajastani, Shuhua Xie, Samuel Liu, Yuru Zhou
 

@@ -7,6 +7,8 @@
 
 **Browsers Supported**: Desktop: Microsoft Edge (Version 44,89) , Firefox (Version 86 and ESR), Safari (Version 13, 14), Chrome (Version 88,89)
                         Mobile: Chrome and Safari
+                        
+**Onboarding Doc (For new members)**: https://hackmd.io/@kudT6CHmReWLsx8u1J-vlg/ryI5cjqQd
 
 Group Members: Aven Huang, Fengdi Liu, Joshue Aguirre, Kevin Stubbings, Matias Lin, Lara Daneshgaran Bajastani, Shuhua Xie, Samuel Liu, Yuru Zhou
 
